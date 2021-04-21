@@ -97,7 +97,7 @@ Steve::Steve()
     filename[0]="steve.bmp";
     filename[1]="steve_caraTras.bmp";
     filename[2]="steve_caraAba.bmp";
-    filename[3]="pelo.bmp";
+    filename[3]="steve_pelo.bmp";
     filename[4]="steve_caraDer.bmp";
     filename[5]="steve_caraIzq.bmp";
 
