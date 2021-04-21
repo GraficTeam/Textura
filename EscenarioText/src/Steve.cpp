@@ -68,28 +68,44 @@ Steve::Steve()
     cabeza[1][0]=2; cabeza[1][1]=8; cabeza[1][2]=0;
     cabeza[2][0]=2; cabeza[2][1]=6; cabeza[2][2]=0;
     cabeza[3][0]=0; cabeza[3][1]=6; cabeza[3][2]=0;
-    cabeza[4][0]=0; cabeza[4][1]=8; cabeza[4][2]=-1;
-    cabeza[5][0]=2; cabeza[5][1]=8; cabeza[5][2]=-1;
-    cabeza[6][0]=2; cabeza[6][1]=6; cabeza[6][2]=-1;
-    cabeza[7][0]=0; cabeza[7][1]=6; cabeza[7][2]=-1;
+    cabeza[4][0]=0; cabeza[4][1]=8; cabeza[4][2]=-2;
+    cabeza[5][0]=2; cabeza[5][1]=8; cabeza[5][2]=-2;
+    cabeza[6][0]=2; cabeza[6][1]=6; cabeza[6][2]=-2;
+    cabeza[7][0]=0; cabeza[7][1]=6; cabeza[7][2]=-2;
 
     cabeza[8][0]=0; cabeza[8][1]=6; cabeza[8][2]=0;
     cabeza[9][0]=2; cabeza[9][1]=6; cabeza[9][2]=0;
-    cabeza[10][0]=2; cabeza[10][1]=6; cabeza[10][2]=-1;
-    cabeza[11][0]=0; cabeza[11][1]=6; cabeza[11][2]=-1;
+    cabeza[10][0]=2; cabeza[10][1]=6; cabeza[10][2]=-2;
+    cabeza[11][0]=0; cabeza[11][1]=6; cabeza[11][2]=-2;
+    //arriba
     cabeza[12][0]=0; cabeza[12][1]=8; cabeza[12][2]=0;
     cabeza[13][0]=2; cabeza[13][1]=8; cabeza[13][2]=0;
-    cabeza[14][0]=2; cabeza[14][1]=8; cabeza[14][2]=-1;
-    cabeza[15][0]=0; cabeza[15][1]=8; cabeza[15][2]=-1;
+    cabeza[14][0]=2; cabeza[14][1]=8; cabeza[14][2]=-2;
+    cabeza[15][0]=0; cabeza[15][1]=8; cabeza[15][2]=-2;
 
     cabeza[16][0]=2; cabeza[16][1]=8; cabeza[16][2]=0;
-    cabeza[17][0]=2; cabeza[17][1]=8; cabeza[17][2]=-1;
-    cabeza[18][0]=2; cabeza[18][1]=6; cabeza[18][2]=-1;
+    cabeza[17][0]=2; cabeza[17][1]=8; cabeza[17][2]=-2;
+    cabeza[18][0]=2; cabeza[18][1]=6; cabeza[18][2]=-2;
     cabeza[19][0]=2; cabeza[19][1]=6; cabeza[19][2]=0;
     cabeza[20][0]=0; cabeza[20][1]=8; cabeza[20][2]=0;
-    cabeza[21][0]=0; cabeza[21][1]=8; cabeza[21][2]=-1;
-    cabeza[22][0]=0; cabeza[22][1]=6; cabeza[22][2]=-1;
+    cabeza[21][0]=0; cabeza[21][1]=8; cabeza[21][2]=-2;
+    cabeza[22][0]=0; cabeza[22][1]=6; cabeza[22][2]=-2;
     cabeza[23][0]=0; cabeza[23][1]=6; cabeza[23][2]=0;
+
+    auxT[0][0]=0; auxT[0][1]=1; auxT[0][2]=0;
+    auxT[1][0]=1; auxT[1][1]=1; auxT[1][2]=0;
+    auxT[2][0]=1; auxT[2][1]=0; auxT[2][2]=0;
+    auxT[3][0]=0; auxT[3][1]=0; auxT[3][2]=0;
+
+    auxT[4][0]=0; auxT[4][1]=0; auxT[4][2]=-1;
+    auxT[5][0]=1; auxT[5][1]=0; auxT[5][2]=-1;
+    auxT[6][0]=1; auxT[6][1]=0; auxT[6][2]=0;
+    auxT[7][0]=0; auxT[7][1]=0; auxT[7][2]=0;
+
+    auxT[8][0]=1; auxT[8][1]=1; auxT[8][2]=0;
+    auxT[9][0]=1; auxT[9][1]=1; auxT[9][2]=-1;
+    auxT[10][0]=1; auxT[10][1]=0; auxT[10][2]=-1;
+    auxT[11][0]=1; auxT[11][1]=0; auxT[11][2]=0;
 }
 
 Steve::~Steve()
@@ -97,7 +113,7 @@ Steve::~Steve()
     //dtor
 }
 
-void Steve::loadTextureFromFile(char *filename)
+void Steve::loadTextureFromFile(char *filename,int i)
 {
 	glClearColor (0.0, 0.0, 0.0, 0.0);
 	glShadeModel(GL_FLAT);
@@ -106,9 +122,9 @@ void Steve::loadTextureFromFile(char *filename)
 	RgbImage theTexMap( filename );
 
     //generate an OpenGL texture ID for this texture
-    glGenTextures(1, &texture[0]);
+    glGenTextures(1, &texture[i]);
     //bind to the new texture ID
-    glBindTexture(GL_TEXTURE_2D, texture[0]);
+    glBindTexture(GL_TEXTURE_2D, texture[i]);
 
 
     glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -120,11 +136,42 @@ void Steve::loadTextureFromFile(char *filename)
     theTexMap.Reset();
 }
 
+void Steve::texturiza(char *filename,int nText,float aux[][3],int i,int nCara)
+{
+    if(nCara==1)
+    {
+        nCara--;
+    }
+    else
+    {
+        if(nCara==2)
+        {
+            nCara=4;
+        }
+    }
+    loadTextureFromFile(filename,nText);
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, texture[nText]);
+    glBegin(GL_QUADS);
+        glTexCoord3fv(auxT[nCara]);
+        glVertex3fv(aux[i]);
+        glTexCoord3fv(auxT[nCara+1]);
+        glVertex3fv(aux[i+1]);
+        glTexCoord3fv(auxT[nCara+2]);
+        glVertex3fv(aux[i+2]);
+        glTexCoord3fv(auxT[nCara+3]);
+        glVertex3fv(aux[i+3]);
+    glEnd();
+    glDisable(GL_TEXTURE_2D);
+}
+
 void Steve::draw()
 {
     int i;
     glColor3f(1.0f, 1.0f, 1.0f);
     i=0;
+    glPushMatrix();
+    glScalef(15,15,15);
     while(i<24)
     {
         glBegin(GL_QUADS);
@@ -197,24 +244,17 @@ void Steve::draw()
     }
     glColor3f(1.0f, 1.0f, 1.0f);
     i=0;
+    glPushMatrix();
+    glTranslatef(0,0,0.5);
     while(i<24)
     {
         if(i==0)
         {
-            loadTextureFromFile(filename);
-            glEnable(GL_TEXTURE_2D);
-            glBindTexture(GL_TEXTURE_2D, texture[0]);
-            glBegin(GL_QUADS);
-                glTexCoord2f(cabeza[i][0], cabeza[i][1]);
-                glVertex3fv(cabeza[i]);
-                glTexCoord2f(cabeza[i+1][0], cabeza[i+1][1]);
-                glVertex3fv(cabeza[i+1]);
-                glTexCoord2f(cabeza[i+2][0], cabeza[i+2][1]);
-                glVertex3fv(cabeza[i+2]);
-                glTexCoord2f(cabeza[i+3][0], cabeza[i+3][1]);
-                glVertex3fv(cabeza[i+3]);
-            glEnd();
-            glDisable(GL_TEXTURE_2D);
+            texturiza(filename,0,cabeza,i,1);
+        }
+        if(i==12)
+        {
+            texturiza(filename2,1,cabeza,i,2);
         }
         else
         {
@@ -227,5 +267,7 @@ void Steve::draw()
         }
         i+=4;
     }
+    glPopMatrix();
+    glPopMatrix();
 }
 

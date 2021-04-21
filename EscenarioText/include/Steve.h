@@ -4,7 +4,6 @@
 #include <GL/glut.h>
 #include <stdlib.h>
 #include "RgbImage.h"
-#define NTextures 2
 
 class Steve
 {
@@ -12,13 +11,16 @@ class Steve
         float pierna[24][3];
         float torso[24][3];
         float cabeza[24][3];
-        GLuint	texture[NTextures];
-        char* filename = "textura3.bmp";
+        float auxT[12][3];
+        GLuint	texture[4];
+        char* filename = "steve.bmp";
+        char* filename2 = "pelo.bmp";
     public:
         Steve();
         virtual ~Steve();
         void draw();
-        void loadTextureFromFile(char*);
+        void loadTextureFromFile(char*,int);
+        void texturiza(char *,int ,float (*)[3] ,int ,int);
 };
 
 #endif // STEVE_H

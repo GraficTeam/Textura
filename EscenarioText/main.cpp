@@ -48,7 +48,7 @@ void reshape(int width, int height)
     if(hazPerspectiva)
         gluPerspective(60.0f,(GLfloat)width/(GLfloat)height,1.0f,80.0f);
     else
-        glOrtho(-20, 20, -20, 20, 1, 20);
+        glOrtho(-600, 600, -325, 325, -900, 900);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z);
@@ -61,23 +61,23 @@ void drawAxis()
      //X axis in red
      glBegin(GL_LINES);
        glColor3f(1.0f,0.0f,0.0f);
-       glVertex3f(X_MIN,0.0,0.0);
+       glVertex3f(-600,0.0,0.0);
        glColor3f(1.0f,0.0f,0.0f);
-       glVertex3f(X_MAX,0.0,0.0);
+       glVertex3f(600,0.0,0.0);
      glEnd();
      //Y axis in green
      glBegin(GL_LINES);
        glColor3f(0.0f,1.0f,0.0f);
-       glVertex3f(0.0,Y_MIN,0.0);
+       glVertex3f(0.0,-325,0.0);
        glColor3f(0.0f,1.0f,0.0f);
-       glVertex3f(0.0,Y_MAX,0.0);
+       glVertex3f(0.0,325,0.0);
      glEnd();
      //Z axis in blue
      glBegin(GL_LINES);
        glColor3f(0.0f,0.0f,1.0f);
-       glVertex3f(0.0,0.0,Z_MIN);
+       glVertex3f(0.0,0.0,-900);
        glColor3f(0.0f,0.0f,1.0f);
-       glVertex3f(0.0,0.0,Z_MAX);
+       glVertex3f(0.0,0.0,900);
      glEnd();
  }
 
@@ -136,7 +136,7 @@ int main(int argc, char *argv[])
       //Establece la posicion de la esquina superior izquierda del grafico en la pantalla
       glutInitWindowPosition(100,100);
       //se establece el ancho y la altura de la ventana de visualizacion
-      glutInitWindowSize(1080,640);
+      glutInitWindowSize(1200,650);
       //se crea la ventana de visualizacion
       glutCreateWindow("Sistema");
       //se ejecuta la funcion de inicializacion de parametros
