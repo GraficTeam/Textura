@@ -8,7 +8,7 @@ class Textur
 {
     private:
         float auxT[12][3];
-        GLuint texture[10];
+        GLuint texture[24];
     public:
         Textur();
         virtual ~Textur();

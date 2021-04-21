@@ -68,11 +68,13 @@ Steve::Steve()
     cabeza[1][0]=2; cabeza[1][1]=8; cabeza[1][2]=0;
     cabeza[2][0]=2; cabeza[2][1]=6; cabeza[2][2]=0;
     cabeza[3][0]=0; cabeza[3][1]=6; cabeza[3][2]=0;
+
     cabeza[4][0]=0; cabeza[4][1]=8; cabeza[4][2]=-2;
     cabeza[5][0]=2; cabeza[5][1]=8; cabeza[5][2]=-2;
     cabeza[6][0]=2; cabeza[6][1]=6; cabeza[6][2]=-2;
     cabeza[7][0]=0; cabeza[7][1]=6; cabeza[7][2]=-2;
 
+    //abajo
     cabeza[8][0]=0; cabeza[8][1]=6; cabeza[8][2]=0;
     cabeza[9][0]=2; cabeza[9][1]=6; cabeza[9][2]=0;
     cabeza[10][0]=2; cabeza[10][1]=6; cabeza[10][2]=-2;
@@ -92,23 +94,33 @@ Steve::Steve()
     cabeza[22][0]=0; cabeza[22][1]=6; cabeza[22][2]=-2;
     cabeza[23][0]=0; cabeza[23][1]=6; cabeza[23][2]=0;
 
-    /*auxT[0][0]=0; auxT[0][1]=1; auxT[0][2]=0;
-    auxT[1][0]=1; auxT[1][1]=1; auxT[1][2]=0;
-    auxT[2][0]=1; auxT[2][1]=0; auxT[2][2]=0;
-    auxT[3][0]=0; auxT[3][1]=0; auxT[3][2]=0;
-
-    auxT[4][0]=0; auxT[4][1]=0; auxT[4][2]=-1;
-    auxT[5][0]=1; auxT[5][1]=0; auxT[5][2]=-1;
-    auxT[6][0]=1; auxT[6][1]=0; auxT[6][2]=0;
-    auxT[7][0]=0; auxT[7][1]=0; auxT[7][2]=0;
-
-    auxT[8][0]=1; auxT[8][1]=1; auxT[8][2]=0;
-    auxT[9][0]=1; auxT[9][1]=1; auxT[9][2]=-1;
-    auxT[10][0]=1; auxT[10][1]=0; auxT[10][2]=-1;
-    auxT[11][0]=1; auxT[11][1]=0; auxT[11][2]=0;*/
-
     filename[0]="steve.bmp";
-    filename[1]="pelo.bmp";
+    filename[1]="steve_caraTras.bmp";
+    filename[2]="steve_caraAba.bmp";
+    filename[3]="pelo.bmp";
+    filename[4]="steve_caraDer.bmp";
+    filename[5]="steve_caraIzq.bmp";
+
+    filename[6]="steve_Pecho.bmp";
+    filename[7]="steve_Espalda.bmp";
+    filename[8]="steve_cintura.bmp";
+    filename[9]="steve_cuello.bmp";
+    filename[10]="steve_costDer.bmp";
+    filename[11]="steve_costIzq.bmp";
+
+    filename[12]="steve_brazo.bmp";
+    filename[13]="steve_brazoAtr.bmp";
+    filename[14]="steve_brazoArri.bmp";
+    filename[15]="steve_brazoAba.bmp";
+    filename[16]="steve_brazoDer.bmp";
+    filename[17]="steve_brazoIzq.bmp";
+
+    filename[18]="steve_pierna.bmp";
+    filename[19]="steve_piernaAtra.bmp";
+    filename[20]="steve_pierArri.bmp";
+    filename[21]="steve_pierAba.bmp";
+    filename[22]="steve_pierDer.bmp";
+    filename[23]="steve_pierIzq.bmp";
 }
 
 Steve::~Steve()
@@ -119,101 +131,156 @@ void Steve::draw()
 {
     int i;
     glColor3f(1.0f, 1.0f, 1.0f);
-    i=0;
     glPushMatrix();
-    glScalef(15,15,15);
-    while(i<24)
-    {
-        glBegin(GL_QUADS);
-            glVertex3fv(pierna[i]);
-            glVertex3fv(pierna[i+1]);
-            glVertex3fv(pierna[i+2]);
-            glVertex3fv(pierna[i+3]);
-        glEnd();
-        i+=4;
-    }
 
-    glPushMatrix();
-    glTranslatef(1,0,0);
-    glColor3f(1.0f, 0.0f, 0.0f);
-    i=0;
-    while(i<24)
-    {
-        glBegin(GL_QUADS);
-            glVertex3fv(pierna[i]);
-            glVertex3fv(pierna[i+1]);
-            glVertex3fv(pierna[i+2]);
-            glVertex3fv(pierna[i+3]);
-        glEnd();
-        i+=4;
-    }
-    glPopMatrix();
+    //glRotatef(180,0,1,0);
 
-    glPushMatrix();
-    glTranslatef(-1,3,0);
-    glColor3f(0.0f, 1.0f, 0.0f);
-    i=0;
-    while(i<24)
-    {
-        glBegin(GL_QUADS);
-            glVertex3fv(pierna[i]);
-            glVertex3fv(pierna[i+1]);
-            glVertex3fv(pierna[i+2]);
-            glVertex3fv(pierna[i+3]);
-        glEnd();
-        i+=4;
-    }
-    glPopMatrix();
+    glScalef(25,25,25);
 
-    glPushMatrix();
-    glTranslatef(2,3,0);
-    glColor3f(0.0f, 0.0f, 1.0f);
-    i=0;
-    while(i<24)
-    {
-        glBegin(GL_QUADS);
-            glVertex3fv(pierna[i]);
-            glVertex3fv(pierna[i+1]);
-            glVertex3fv(pierna[i+2]);
-            glVertex3fv(pierna[i+3]);
-        glEnd();
-        i+=4;
-    }
-    glPopMatrix();
-    glColor3f(1.0f, 1.0f, 0.0f);
-    i=0;
-    while(i<24)
-    {
-        glBegin(GL_QUADS);
-            glVertex3fv(torso[i]);
-            glVertex3fv(torso[i+1]);
-            glVertex3fv(torso[i+2]);
-            glVertex3fv(torso[i+3]);
-        glEnd();
-        i+=4;
-    }
-    glColor3f(1.0f, 1.0f, 1.0f);
-    i=0;
+    //Cabeza
     glPushMatrix();
     glTranslatef(0,0,0.5);
+    i=0;
     while(i<24)
     {
-        if(i==0)
-            t.texturiza(filename[0],0,cabeza,i,1);
-        if(i==12)
-            t.texturiza(filename[1],1,cabeza,i,2);
-        else
+        switch(i)
         {
-            glBegin(GL_QUADS);
-                glVertex3fv(cabeza[i]);
-                glVertex3fv(cabeza[i+1]);
-                glVertex3fv(cabeza[i+2]);
-                glVertex3fv(cabeza[i+3]);
-            glEnd();
+            case 0: t.texturiza(filename[0],0,cabeza,i,1);
+                    break;
+            case 4: t.texturiza(filename[1],1,cabeza,i,1);
+                    break;
+            case 8: t.texturiza(filename[2],2,cabeza,i,2);
+                    break;
+            case 12: t.texturiza(filename[3],3,cabeza,i,2);
+                     break;
+            case 16: t.texturiza(filename[4],4,cabeza,i,3);
+                     break;
+            case 20: t.texturiza(filename[5],5,cabeza,i,3);
+                     break;
         }
         i+=4;
     }
     glPopMatrix();
+
+    //torso
+    i=0;
+    while(i<24)
+    {
+        switch(i)
+        {
+            case 0: t.texturiza(filename[6],6,torso,i,1);
+                    break;
+            case 4: t.texturiza(filename[7],7,torso,i,1);
+                    break;
+            case 8: t.texturiza(filename[8],8,torso,i,2);
+                    break;
+            case 12: t.texturiza(filename[9],9,torso,i,2);
+                     break;
+            case 16: t.texturiza(filename[10],10,torso,i,3);
+                     break;
+            case 20: t.texturiza(filename[11],11,torso,i,3);
+                     break;
+        }
+        i+=4;
+    }
+
+    //Brazo izquierdo
+    glPushMatrix();
+    glTranslatef(-1,3,0);
+    i=0;
+    while(i<24)
+    {
+        switch(i)
+        {
+            case 0: t.texturiza(filename[12],12,pierna,i,1);
+                    break;
+            case 4: t.texturiza(filename[13],13,pierna,i,1);
+                    break;
+            case 8: t.texturiza(filename[14],14,pierna,i,2);
+                    break;
+            case 12: t.texturiza(filename[15],15,pierna,i,2);
+                     break;
+            case 16: t.texturiza(filename[16],16,pierna,i,3);
+                     break;
+            case 20: t.texturiza(filename[17],17,pierna,i,3);
+                     break;
+        }
+        i+=4;
+    }
+    glPopMatrix();
+
+    //Brazo derecho
+    glPushMatrix();
+    glTranslatef(2,3,0);
+    i=0;
+    while(i<24)
+    {
+        switch(i)
+        {
+            case 0: t.texturiza(filename[12],12,pierna,i,1);
+                    break;
+            case 4: t.texturiza(filename[13],13,pierna,i,1);
+                    break;
+            case 8: t.texturiza(filename[14],14,pierna,i,2);
+                    break;
+            case 12: t.texturiza(filename[15],15,pierna,i,2);
+                     break;
+            case 16: t.texturiza(filename[17],17,pierna,i,3);
+                     break;
+            case 20: t.texturiza(filename[16],16,pierna,i,3);
+                     break;
+        }
+        i+=4;
+    }
+    glPopMatrix();
+
+    //Pierna izquiera
+    i=0;
+    while(i<24)
+    {
+        switch(i)
+        {
+            case 0: t.texturiza(filename[18],18,pierna,i,1);
+                    break;
+            case 4: t.texturiza(filename[19],19,pierna,i,1);
+                    break;
+            case 8: t.texturiza(filename[20],20,pierna,i,2);
+                    break;
+            case 12: t.texturiza(filename[21],21,pierna,i,2);
+                     break;
+            case 16: t.texturiza(filename[22],22,pierna,i,3);
+                     break;
+            case 20: t.texturiza(filename[23],23,pierna,i,3);
+                     break;
+        }
+        i+=4;
+    }
+
+    //Pierna derecha
+    glPushMatrix();
+    glTranslatef(1,0,0);
+    i=0;
+    while(i<24)
+    {
+        switch(i)
+        {
+            case 0: t.texturiza(filename[18],18,pierna,i,1);
+                    break;
+            case 4: t.texturiza(filename[19],19,pierna,i,1);
+                    break;
+            case 8: t.texturiza(filename[20],20,pierna,i,2);
+                    break;
+            case 12: t.texturiza(filename[21],21,pierna,i,2);
+                     break;
+            case 16: t.texturiza(filename[22],22,pierna,i,3);
+                     break;
+            case 20: t.texturiza(filename[23],23,pierna,i,3);
+                     break;
+        }
+        i+=4;
+    }
+    glPopMatrix();
+
     glPopMatrix();
 }
 
