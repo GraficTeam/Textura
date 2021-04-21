@@ -48,6 +48,7 @@
 		<Unit filename="include/Fuente.h" />
 		<Unit filename="include/RgbImage.h" />
 		<Unit filename="include/Steve.h" />
+		<Unit filename="include/Textur.h" />
 		<Unit filename="include/Zombie.h" />
 		<Unit filename="include/Zomibe.h" />
 		<Unit filename="include/steve.bmp" />
@@ -56,6 +57,7 @@
 		<Unit filename="src/Fuente.cpp" />
 		<Unit filename="src/RgbImage.cpp" />
 		<Unit filename="src/Steve.cpp" />
+		<Unit filename="src/Textur.cpp" />
 		<Unit filename="src/Zombie.cpp" />
 		<Unit filename="src/Zomibe.cpp" />
 		<Unit filename="src/steve.bmp" />

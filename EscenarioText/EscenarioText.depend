@@ -109,10 +109,10 @@
 	"Cerdo.h"
 	"Zombie.h"
 
-1618994835 c:\users\victor\desktop\proyectos\textura\escenariotext\include\steve.h
+1619028747 c:\users\victor\desktop\proyectos\textura\escenariotext\include\steve.h
 	<GL/glut.h>
 	<stdlib.h>
-	"RgbImage.h"
+	"Textur.h"
 
 1618985133 c:\users\victor\desktop\proyectos\textura\escenariotext\include\rgbimage.h
 	<stdio.h>
@@ -144,7 +144,7 @@
 	<windows.h>
 	"GL/gl.h"
 
-1618994791 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\steve.cpp
+1619028543 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\steve.cpp
 	"Steve.h"
 
 1618985134 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\zombie.cpp
@@ -217,4 +217,12 @@
 	<GL/glut.h>
 	<stdlib.h>
 	"RgbImage.h"
+
+1619028481 c:\users\victor\desktop\proyectos\textura\escenariotext\include\textur.h
+	<GL/glut.h>
+	<stdlib.h>
+	"RgbImage.h"
+
+1619028690 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\textur.cpp
+	"Textur.h"
 
