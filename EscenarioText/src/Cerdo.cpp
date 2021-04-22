@@ -152,7 +152,7 @@ Cerdo::~Cerdo()
 }
 
 void Cerdo::draw()
-{
+{/*
     int i;
     glPushMatrix();
     //glRotatef(180,0,1,0);
@@ -298,5 +298,5 @@ void Cerdo::draw()
     glPopMatrix();
 
     glPopMatrix();
-
+*/
 }

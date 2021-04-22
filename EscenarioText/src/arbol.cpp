@@ -47,7 +47,7 @@ void arbol::tronco()
     i=0;
     while(i<24)
     {
-        t.texturiza(filename[0],0,cubo,i);
+        t.texturiza(0,cubo,i);
         i+=4;
         if(i==8)
             i=16;
@@ -60,7 +60,7 @@ void arbol::hoja()
     i=0;
     while(i<24)
     {
-        t.texturiza(filename[1],1,cubo,i);
+        t.texturiza(1,cubo,i);
         i+=4;
     }
 }
@@ -68,9 +68,15 @@ void arbol::hoja()
 void arbol::draw()
 {
     int i;
+    if(band==0)
+    {
+
+        for(i=0;i<2;i++)
+            t.loadTextureFromFile(filename[i],i);
+        band=1;
+    }
     glColor3f(1.0f, 1.0f, 1.0f);
     glPushMatrix();
-    glScalef(40,40,40);
     glPushMatrix();
     tronco();
     glTranslated(0,1,0);

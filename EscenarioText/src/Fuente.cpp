@@ -85,7 +85,7 @@ Fuente::~Fuente()
     //dtor
 }
 void Fuente::draw()
-{
+{/*
 
     int i;
     glColor3f(1.0f, 1.0f, 1.0f);
@@ -213,5 +213,5 @@ void Fuente::draw()
     }
     glPopMatrix();
 
-
+*/
 }

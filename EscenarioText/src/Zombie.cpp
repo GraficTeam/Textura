@@ -2,7 +2,6 @@
 
 Zombie::Zombie()
 {
-
     pierna[0][0]=0; pierna[0][1]=3; pierna[0][2]=0;
     pierna[1][0]=1; pierna[1][1]=3; pierna[1][2]=0;
     pierna[2][0]=1; pierna[2][1]=0; pierna[2][2]=0;
@@ -116,14 +115,6 @@ Zombie::Zombie()
     filename[16]="Zombie_brazo.bmp";
     filename[17]="Zombie_brazo.bmp";
 
-   /*
-    filename[12]="steve_brazo.bmp";
-    filename[13]="steve_brazoAtr.bmp";
-    filename[14]="steve_brazoArri.bmp";
-    filename[15]="steve_brazoAba.bmp";
-    filename[16]="steve_brazoDer.bmp";
-    filename[17]="steve_brazoIzq.bmp";*/
-
     filename[18]="steve_pierna.bmp";
     filename[19]="steve_piernaAtra.bmp";
     filename[20]="steve_pierArri.bmp";
@@ -137,10 +128,15 @@ Zombie::~Zombie()
     //dtor
 }
 
-
 void Zombie::draw()
 {
     int i;
+    if(band==0)
+    {
+        for(i=0;i<24;i++)
+            t.loadTextureFromFile(filename[i],i);
+        band=1;
+    }
     glColor3f(1.0f, 1.0f, 1.0f);
     glPushMatrix();
     //Cabeza
@@ -151,17 +147,17 @@ void Zombie::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[0],0,cabeza,i);
+            case 0: t.texturiza(0,cabeza,i);
                     break;
-            case 4: t.texturiza(filename[1],1,cabeza,i);
+            case 4: t.texturiza(1,cabeza,i);
                     break;
-            case 8: t.texturiza(filename[2],2,cabeza,i);
+            case 8: t.texturiza(2,cabeza,i);
                     break;
-            case 12: t.texturiza(filename[3],3,cabeza,i);
+            case 12: t.texturiza(3,cabeza,i);
                      break;
-            case 16: t.texturiza(filename[4],4,cabeza,i);
+            case 16: t.texturiza(4,cabeza,i);
                      break;
-            case 20: t.texturiza(filename[5],5,cabeza,i);
+            case 20: t.texturiza(5,cabeza,i);
                      break;
         }
         i+=4;
@@ -174,17 +170,17 @@ void Zombie::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[6],6,torso,i);
+            case 0: t.texturiza(6,torso,i);
                     break;
-            case 4: t.texturiza(filename[7],7,torso,i);
+            case 4: t.texturiza(7,torso,i);
                     break;
-            case 8: t.texturiza(filename[8],8,torso,i);
+            case 8: t.texturiza(8,torso,i);
                     break;
-            case 12: t.texturiza(filename[9],9,torso,i);
+            case 12: t.texturiza(9,torso,i);
                      break;
-            case 16: t.texturiza(filename[10],10,torso,i);
+            case 16: t.texturiza(10,torso,i);
                      break;
-            case 20: t.texturiza(filename[11],11,torso,i);
+            case 20: t.texturiza(11,torso,i);
                      break;
         }
         i+=4;
@@ -199,17 +195,17 @@ void Zombie::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[12],12,pierna,i);
+            case 0: t.texturiza(12,pierna,i);
                     break;
-            case 4: t.texturiza(filename[13],13,pierna,i);
+            case 4: t.texturiza(13,pierna,i);
                     break;
-            case 8: t.texturiza(filename[14],14,pierna,i);
+            case 8: t.texturiza(14,pierna,i);
                     break;
-            case 12: t.texturiza(filename[15],15,pierna,i);
+            case 12: t.texturiza(15,pierna,i);
                      break;
-            case 16: t.texturiza(filename[16],16,pierna,i);
+            case 16: t.texturiza(16,pierna,i);
                      break;
-            case 20: t.texturiza(filename[17],17,pierna,i);
+            case 20: t.texturiza(17,pierna,i);
                      break;
         }
         i+=4;
@@ -226,17 +222,17 @@ void Zombie::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[12],12,pierna,i);
+            case 0: t.texturiza(12,pierna,i);
                     break;
-            case 4: t.texturiza(filename[13],13,pierna,i);
+            case 4: t.texturiza(13,pierna,i);
                     break;
-            case 8: t.texturiza(filename[14],14,pierna,i);
+            case 8: t.texturiza(14,pierna,i);
                     break;
-            case 12: t.texturiza(filename[15],15,pierna,i);
+            case 12: t.texturiza(15,pierna,i);
                      break;
-            case 16: t.texturiza(filename[17],17,pierna,i);
+            case 16: t.texturiza(17,pierna,i);
                      break;
-            case 20: t.texturiza(filename[16],16,pierna,i);
+            case 20: t.texturiza(16,pierna,i);
                      break;
         }
         i+=4;
@@ -249,17 +245,17 @@ void Zombie::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[18],18,pierna,i);
+            case 0: t.texturiza(18,pierna,i);
                     break;
-            case 4: t.texturiza(filename[19],19,pierna,i);
+            case 4: t.texturiza(19,pierna,i);
                     break;
-            case 8: t.texturiza(filename[20],20,pierna,i);
+            case 8: t.texturiza(20,pierna,i);
                     break;
-            case 12: t.texturiza(filename[21],21,pierna,i);
+            case 12: t.texturiza(21,pierna,i);
                      break;
-            case 16: t.texturiza(filename[22],22,pierna,i);
+            case 16: t.texturiza(22,pierna,i);
                      break;
-            case 20: t.texturiza(filename[23],23,pierna,i);
+            case 20: t.texturiza(23,pierna,i);
                      break;
         }
         i+=4;
@@ -273,17 +269,17 @@ void Zombie::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[18],18,pierna,i);
+            case 0: t.texturiza(18,pierna,i);
                     break;
-            case 4: t.texturiza(filename[19],19,pierna,i);
+            case 4: t.texturiza(19,pierna,i);
                     break;
-            case 8: t.texturiza(filename[20],20,pierna,i);
+            case 8: t.texturiza(20,pierna,i);
                     break;
-            case 12: t.texturiza(filename[21],21,pierna,i);
+            case 12: t.texturiza(21,pierna,i);
                      break;
-            case 16: t.texturiza(filename[22],22,pierna,i);
+            case 16: t.texturiza(22,pierna,i);
                      break;
-            case 20: t.texturiza(filename[23],23,pierna,i);
+            case 20: t.texturiza(23,pierna,i);
                      break;
         }
         i+=4;

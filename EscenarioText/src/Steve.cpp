@@ -128,7 +128,7 @@ Steve::~Steve()
     //dtor
 }
 void Steve::draw()
-{
+{/*
     int i;
     glColor3f(1.0f, 1.0f, 1.0f);
     glPushMatrix();
@@ -282,5 +282,6 @@ void Steve::draw()
     glPopMatrix();
 
     glPopMatrix();
+    */
 }
 

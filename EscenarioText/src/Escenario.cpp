@@ -44,15 +44,18 @@ void Escenario::draw()
     //t.texturiza(filename,0,pasto,0);
     //Dibuja los ejes
     drawAxis();
-    arb.draw();
-
     glPushMatrix();
-    glTranslated(150,0,0);
-    glScaled(30,30,30);
-    fuente.draw();
+    glScalef(4,4,4);
+    glRotatef(180,0,1,0);
+    arb.draw();
     glPopMatrix();
     //personaje.draw();
-    //zombie.draw();
+    glPushMatrix();
+    glTranslatef(5,0,0);
+    zombie.draw();
+    glPopMatrix();
+    //fuente.draw();
+    //cerd.draw();
 }
 
 void Escenario::update()

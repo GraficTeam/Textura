@@ -10,6 +10,7 @@ class arbol
     private:
         float cubo[24][3];
         char* filename[2];
+        int band=0;
         Textur t;
     public:
         arbol();

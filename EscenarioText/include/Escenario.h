@@ -3,25 +3,25 @@
 #include <GL/glut.h>
 #include <stdlib.h>
 #include "Textur.h"
-#include "Steve.h"
+
 #include "arbol.h"
 #include "Zombie.h"
+/*
 #include "Cerdo.h"
 #include "Fuente.h"
-#include "Casa.h"
-
+#include "Steve.h"
+*/
 class Escenario
 {
     private:
         char* filename = "pasto.bmp";
         float pasto[4][3];
         Textur t;
-        Steve personaje;
+        //Steve personaje;
         Zombie zombie;
-        Cerdo cerdo;
+        //Cerdo cerd;
         arbol arb;
-        Fuente fuente;
-        Casa casa;
+        //Fuente fuente;
     public:
         Escenario();
         virtual ~Escenario();
