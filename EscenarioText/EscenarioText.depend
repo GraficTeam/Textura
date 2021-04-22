@@ -242,7 +242,7 @@
 1619062920 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\arbol.cpp
 	"arbol.h"
 
-1619065788 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\main.cpp
+1619105429 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\main.cpp
 	<GLUT/glut.h>
 	<GL/glut.h>
 	<stdlib.h>
@@ -293,7 +293,7 @@
 1619065825 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\escenario.cpp
 	"Escenario.h"
 
-1619066916 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\fuente.cpp
+1619105405 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\fuente.cpp
 	"Fuente.h"
 
 1619065693 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\fuente.h

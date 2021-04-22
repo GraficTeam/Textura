@@ -15,16 +15,16 @@ Fuente::Fuente()
     base[7][0]=0; base[7][1]=1; base[7][2]=-5;
 
     //Cara izquierda
-    base[8][0]=0; base[8][1]=0; base[8][2]=0;
-    base[9][0]=0; base[9][1]=1; base[9][2]=0;
-    base[10][0]=0; base[10][1]=1; base[10][2]=-5;
-    base[11][0]=0; base[11][1]=0; base[11][2]=-5;
+    base[8][0]=0; base[8][1]=1; base[8][2]=0;
+    base[9][0]=0; base[9][1]=1; base[9][2]=-5;
+    base[10][0]=0; base[10][1]=0; base[10][2]=-5;
+    base[11][0]=0; base[11][1]=0; base[11][2]=0;
 
     //Cara derecha
-    base[12][0]=5; base[12][1]=0; base[12][2]=0;
-    base[13][0]=5; base[13][1]=1; base[13][2]=0;
-    base[14][0]=5; base[14][1]=1; base[14][2]=-5;
-    base[15][0]=5; base[15][1]=0; base[15][2]=-5;
+    base[12][0]=5; base[12][1]=1; base[12][2]=0;
+    base[13][0]=5; base[13][1]=1; base[13][2]=-5;
+    base[14][0]=5; base[14][1]=0; base[14][2]=-5;
+    base[15][0]=5; base[15][1]=0; base[15][2]=0;
 
     //Cara de arriba
     base[16][0]=0; base[16][1]=1; base[16][2]=0;
@@ -32,9 +32,9 @@ Fuente::Fuente()
     base[18][0]=5; base[18][1]=1; base[18][2]=-5;
     base[19][0]=0; base[19][1]=1; base[19][2]=-5;
     //Cara de abajo
-    base[20][0]=0; base[20][1]=0; base[20][2]=0;
+   base[20][0]=0; base[20][1]=0; base[20][2]=0;
     base[21][0]=5; base[21][1]=0; base[21][2]=0;
-    base[22][0]=5; base[22][1]=0; base[21][2]=-5;
+    base[22][0]=5; base[22][1]=0; base[22][2]=-5;
     base[23][0]=0; base[23][1]=0; base[23][2]=-5;
 
 
@@ -76,7 +76,8 @@ Fuente::Fuente()
 
     filename[0]="piedra.bmp";
     filename[1]="fuente.bmp";
-    filename[2]="madera.bmp";
+    filename[2]="fuente_borde.bmp";
+    filename[3]="madera.bmp";
 }
 
 Fuente::~Fuente()
@@ -91,98 +92,123 @@ void Fuente::draw()
      i=0;
     while(i<24)
     {
-        t.texturiza(filename[0],0,base,i);
 
+        switch(i)
+        {
+            case 0: t.texturiza(filename[2],2,base,i);
+                    break;
+            case 4: t.texturiza(filename[2],2,base,i);
+                    break;
+            case 8: t.texturiza(filename[2],2,base,i);
+                    break;
+            case 12: t.texturiza(filename[2],2,base,i);
+                    break;
+            case 16: t.texturiza(filename[0],0,base,i);
+                     break;
+             case 20: t.texturiza(filename[0],0,base,i);
+                     break;
+        }
         i+=4;
+
     }
 
 
-    //Cabeza
+
     glPushMatrix();
-    glTranslated(1,1,0);
+    glTranslated(0.5,1,-0.5);
+
     glScaled(0.8,1,0.8);
     i=0;
     while(i<24)
     {
-        if(i!=16)
-        t.texturiza(filename[0],0,base,i);
-        else
-        t.texturiza(filename[1],1,base,i);
+        switch(i)
+        {
+            case 0: t.texturiza(filename[2],2,base,i);
+                    break;
+            case 4: t.texturiza(filename[2],2,base,i);
+                    break;
+            case 8: t.texturiza(filename[2],2,base,i);
+                    break;
+            case 12: t.texturiza(filename[2],2,base,i);
+                    break;
+            case 16: t.texturiza(filename[1],1,base,i);
+                     break;
+             case 20: t.texturiza(filename[0],0,base,i);
+                     break;
+        }
         i+=4;
+
     }
     glPopMatrix();
 
     glPushMatrix();
-    glTranslated(1,7,0);
+    glTranslated(0.5,7,-0.5);
     glScaled(0.8,1,0.8);
 
     i=0;
     while(i<24)
     {
-        t.texturiza(filename[0],0,base,i);
+       switch(i)
+        {
+            case 0: t.texturiza(filename[2],2,base,i);
+                    break;
+            case 4: t.texturiza(filename[2],2,base,i);
+                    break;
+            case 8: t.texturiza(filename[2],2,base,i);
+                    break;
+            case 12: t.texturiza(filename[2],2,base,i);
+                    break;
+            case 16: t.texturiza(filename[0],0,base,i);
+                     break;
+             case 20: t.texturiza(filename[0],0,base,i);
+                     break;
+        }
         i+=4;
     }
     glPopMatrix();
 
-/*
-    glPushMatrix();
-    //glScaled(1,1,1);
-    glTranslated(0,7,0);
-    glColor3f(1.0f, 1.0f, 1.0f);
-    i=0;
-    while(i<24)
-    {
-        glBegin(GL_QUADS);
-            glVertex3fv(base[i]);
-            glVertex3fv(base[i+1]);
-            glVertex3fv(base[i+2]);
-            glVertex3fv(base[i+3]);
-        glEnd();
-        i+=4;
-    }
-    glPopMatrix();
-    */
 
     glPushMatrix();
-    glTranslatef(1.2,2.0,0);
+    glTranslated(0.5,2,-0.5);
 
     i=0;
     while(i<24)
     {
-        t.texturiza(filename[2],2,columna,i);
+        t.texturiza(filename[3],3,columna,i);
         i+=4;
     }
     glPopMatrix();
 
 
     glPushMatrix();
-    glTranslatef(1.2,2.0,-3.5);
+    glTranslatef(0.5,2.0,-4.25);
     i  =0;
     while(i<24)
     {
-        t.texturiza(filename[2],2,columna,i);
+        t.texturiza(filename[3],3,columna,i);
         i+=4;
     }
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(4.8,2.0,0);
+
+    glTranslatef(4.25,2.0,-0.5);
 
     i=0;
     while(i<24)
     {
-        t.texturiza(filename[2],2,columna,i);
+        t.texturiza(filename[3],3,columna,i);
         i+=4;
     }
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(4.8,2.0,-3.5);
+    glTranslatef(4.25,2.0,-4.25);
 
    i=0;
     while(i<24)
     {
-        t.texturiza(filename[2],2,columna,i);
+        t.texturiza(filename[3],3,columna,i);
         i+=4;
     }
     glPopMatrix();
