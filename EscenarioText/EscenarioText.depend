@@ -125,10 +125,10 @@
 	<stdlib.h>
 	"RgbImage.h"
 
-1618985133 c:\users\victor\desktop\proyectos\textura\escenariotext\include\zombie.h
+1619061201 c:\users\victor\desktop\proyectos\textura\escenariotext\include\zombie.h
 	<GL/glut.h>
 	<stdlib.h>
-	"RgbImage.h"
+	"Textur.h"
 
 1618985134 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\cerdo.cpp
 	"Cerdo.h"
@@ -144,7 +144,7 @@
 1619055842 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\steve.cpp
 	"Steve.h"
 
-1618985134 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\zombie.cpp
+1619063051 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\zombie.cpp
 	"Zombie.h"
 
 1618985134 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\zomibe.cpp
@@ -223,22 +223,23 @@
 1619055842 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\textur.cpp
 	"Textur.h"
 
-1619056028 c:\users\victor\desktop\proyectos\textura\escenariotext\include\escenario.h
+1619061201 c:\users\victor\desktop\proyectos\textura\escenariotext\include\escenario.h
 	<GL/glut.h>
 	<stdlib.h>
 	"Textur.h"
 	"Steve.h"
 	"arbol.h"
+	"Zombie.h"
 
-1619054543 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\escenario.cpp
+1619061582 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\escenario.cpp
 	"Escenario.h"
 
-1619055842 c:\users\victor\desktop\proyectos\textura\escenariotext\include\arbol.h
+1619061457 c:\users\victor\desktop\proyectos\textura\escenariotext\include\arbol.h
 	<GL/glut.h>
 	<stdlib.h>
 	"Textur.h"
 
-1619055842 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\arbol.cpp
+1619062920 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\arbol.cpp
 	"arbol.h"
 
 1619056038 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\main.cpp

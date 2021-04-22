@@ -143,12 +143,6 @@ void Zombie::draw()
     int i;
     glColor3f(1.0f, 1.0f, 1.0f);
     glPushMatrix();
-
-    //
-    glRotatef(180,0,1,0);
-
-    glScalef(25,25,25);
-
     //Cabeza
     glPushMatrix();
     glTranslatef(0,0,0.5);

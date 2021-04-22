@@ -14,6 +14,7 @@ class arbol
     public:
         arbol();
         virtual ~arbol();
+        void tronco();
         void hoja();
         void draw();
 };

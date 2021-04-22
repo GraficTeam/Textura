@@ -41,10 +41,28 @@ arbol::~arbol()
     //dtor
 }
 
+void arbol::tronco()
+{
+    int i;
+    i=0;
+    while(i<24)
+    {
+        t.texturiza(filename[0],0,cubo,i);
+        i+=4;
+        if(i==8)
+            i=16;
+    }
+}
 
 void arbol::hoja()
 {
-
+    int i;
+    i=0;
+    while(i<24)
+    {
+        t.texturiza(filename[1],1,cubo,i);
+        i+=4;
+    }
 }
 
 void arbol::draw()
@@ -52,13 +70,69 @@ void arbol::draw()
     int i;
     glColor3f(1.0f, 1.0f, 1.0f);
     glPushMatrix();
-    glRotatef(180,0,1,0);
     glScalef(40,40,40);
-    i=0;
-    while(i<24)
-    {
-        t.texturiza(filename[0],0,cubo,i);
-        i+=4;
-    }
+    glPushMatrix();
+    tronco();
+    glTranslated(0,1,0);
+    tronco();
+    glTranslated(0,1,0);
+    tronco();
+
+    glTranslated(-1,1,2);
+    hoja();
+    glTranslated(0,0,-1);
+    hoja();
+    glTranslated(1,0,1);
+    hoja();
+    glTranslated(1,0,0);
+    hoja();
+    glTranslated(1,0,0);
+    hoja();
+    glTranslated(0,0,-1);
+    hoja();
+    glTranslated(0,0,-1);
+    hoja();
+    glTranslated(0,0,-1);
+    hoja();
+    glTranslated(-1,0,-1);
+    hoja();
+    glTranslated(-1,0,0);
+    hoja();
+    glTranslated(-1,0,0);
+    hoja();
+    glTranslated(0,0,1);
+    hoja();
+    glTranslated(-1,0,-1);
+    hoja();
+    glTranslated(0,0,1);
+    hoja();
+    glTranslated(0,0,1);
+    hoja();
+    glTranslated(0,0,1);
+    hoja();
+    glTranslated(2,1,0);
+    hoja();
+    glTranslated(1,0,0);
+    hoja();
+    glTranslated(0,0,-1);
+    hoja();
+    glTranslated(0,0,-1);
+    hoja();
+    glTranslated(-1,0,0);
+    hoja();
+    glTranslated(-1,0,1);
+    hoja();
+    glTranslated(0,1,0);
+    hoja();
+    glTranslated(1,0,1);
+    hoja();
+    glTranslated(0,0,-1);
+    hoja();
+    glTranslated(0,0,-1);
+    hoja();
+    glTranslated(1,0,1);
+    hoja();
+
+    glPopMatrix();
     glPopMatrix();
 }

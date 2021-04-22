@@ -41,12 +41,12 @@ void Escenario::drawAxis()
 void Escenario::draw()
 {
     //Dibuja pasto
-    t.texturiza(filename,0,pasto,0);
+    //t.texturiza(filename,0,pasto,0);
     //Dibuja los ejes
     drawAxis();
-    //arb.draw();
+    arb.draw();
     //personaje.draw();
-    zombie.draw();
+    //zombie.draw();
 }
 
 void Escenario::update()
