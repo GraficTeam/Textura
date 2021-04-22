@@ -241,3 +241,87 @@
 1619055842 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\arbol.cpp
 	"arbol.h"
 
+1619056038 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\main.cpp
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<stdlib.h>
+	"Escenario.h"
+
+1619056952 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\escenario.h
+	<GL/glut.h>
+	<stdlib.h>
+	"Textur.h"
+	"Steve.h"
+	"arbol.h"
+	"Zombie.h"
+
+1619056316 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\textur.h
+	<GL/glut.h>
+	<stdlib.h>
+	"RgbImage.h"
+
+1619042301 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\rgbimage.h
+	<stdio.h>
+	<assert.h>
+
+1619042301 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\steve.h
+	<GL/glut.h>
+	<stdlib.h>
+	"Textur.h"
+
+1619056316 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\arbol.h
+	<GL/glut.h>
+	<stdlib.h>
+	"Textur.h"
+
+1619056316 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\arbol.cpp
+	"arbol.h"
+
+1619055986 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\cerdo.cpp
+	"Cerdo.h"
+
+1619042301 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\cerdo.h
+	<GL/glut.h>
+	<stdlib.h>
+	"RgbImage.h"
+
+1619056920 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\escenario.cpp
+	"Escenario.h"
+
+1619042301 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\fuente.cpp
+	"Fuente.h"
+
+1619042301 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\fuente.h
+	<GL/glut.h>
+	<stdlib.h>
+	"RgbImage.h"
+
+1619042301 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\rgbimage.cpp
+	"RgbImage.h"
+	<windows.h>
+	"GL/gl.h"
+
+1619056316 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\steve.cpp
+	"Steve.h"
+
+1619056316 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\textur.cpp
+	"Textur.h"
+
+1619055986 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\zombie.cpp
+	"Zombie.h"
+
+1619056977 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\zombie.h
+	<GL/glut.h>
+	<stdlib.h>
+	"Textur.h"
+
+1619042301 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\zomibe.cpp
+	"Zomibe.h"
+
+1619042301 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\zomibe.h
+	<GL/glut.h>
+	<stdlib.h>
+	"RgbImage.h"
+
