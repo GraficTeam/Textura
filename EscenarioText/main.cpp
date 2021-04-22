@@ -7,14 +7,11 @@
 
 #include <stdlib.h>
 
-
 #include <GL/glut.h>
 #include <stdlib.h>
-#include "Steve.h"
-#include "Fuente.h"
-#include "Cerdo.h"
-#include "Zombie.h"
+#include "Escenario.h"
 
+Escenario esc;
 GLint ancho,alto;
 int hazPerspectiva = 0;
 
@@ -27,10 +24,6 @@ float CENTER_Z = 0;
 float UP_X = 0;
 float UP_Y = 1;
 float UP_Z = 0;
-
-Steve obj;
-Fuente fuen;
-Cerdo cochi;
 
 //Variables para dibujar los ejes del sistema
 float X_MIN=-50;
@@ -48,7 +41,7 @@ void reshape(int width, int height)
     if(hazPerspectiva)
         gluPerspective(60.0f,(GLfloat)width/(GLfloat)height,1.0f,80.0f);
     else
-        glOrtho(-600, 600, -325, 325, -900, 900);
+        glOrtho(-600, 600, -325, 325, -600, 600);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z);
@@ -56,38 +49,10 @@ void reshape(int width, int height)
     alto = height;
 }
 
-void drawAxis()
-{
-     //X axis in red
-     glBegin(GL_LINES);
-       glColor3f(1.0f,0.0f,0.0f);
-       glVertex3f(-600,0.0,0.0);
-       glColor3f(1.0f,0.0f,0.0f);
-       glVertex3f(600,0.0,0.0);
-     glEnd();
-     //Y axis in green
-     glBegin(GL_LINES);
-       glColor3f(0.0f,1.0f,0.0f);
-       glVertex3f(0.0,-325,0.0);
-       glColor3f(0.0f,1.0f,0.0f);
-       glVertex3f(0.0,325,0.0);
-     glEnd();
-     //Z axis in blue
-     glBegin(GL_LINES);
-       glColor3f(0.0f,0.0f,1.0f);
-       glVertex3f(0.0,0.0,-900);
-       glColor3f(0.0f,0.0f,1.0f);
-       glVertex3f(0.0,0.0,900);
-     glEnd();
- }
-
 void display()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    drawAxis();
-    //fuen.draw();
-    obj.draw();
-    //cochi.draw();
+    esc.draw();
     glutSwapBuffers();
 }
 

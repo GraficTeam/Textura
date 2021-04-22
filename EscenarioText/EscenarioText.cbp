@@ -45,6 +45,7 @@
 			<Add directory="C:/Program Files/CodeBlocks/MinGW/lib" />
 		</Linker>
 		<Unit filename="include/Cerdo.h" />
+		<Unit filename="include/Escenario.h" />
 		<Unit filename="include/Fuente.h" />
 		<Unit filename="include/RgbImage.h" />
 		<Unit filename="include/Steve.h" />
@@ -54,6 +55,7 @@
 		<Unit filename="include/steve.bmp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Cerdo.cpp" />
+		<Unit filename="src/Escenario.cpp" />
 		<Unit filename="src/Fuente.cpp" />
 		<Unit filename="src/RgbImage.cpp" />
 		<Unit filename="src/Steve.cpp" />

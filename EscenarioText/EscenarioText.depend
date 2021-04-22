@@ -98,16 +98,13 @@
 	<stdlib.h>
 	"RgbImage.h"
 
-1618990011 source:c:\users\victor\desktop\proyectos\textura\escenariotext\main.cpp
+1619051314 source:c:\users\victor\desktop\proyectos\textura\escenariotext\main.cpp
 	<GLUT/glut.h>
 	<GL/glut.h>
 	<stdlib.h>
 	<GL/glut.h>
 	<stdlib.h>
-	"Steve.h"
-	"Fuente.h"
-	"Cerdo.h"
-	"Zombie.h"
+	"Escenario.h"
 
 1619039283 c:\users\victor\desktop\proyectos\textura\escenariotext\include\steve.h
 	<GL/glut.h>
@@ -144,7 +141,7 @@
 	<windows.h>
 	"GL/gl.h"
 
-1619039363 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\steve.cpp
+1619040919 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\steve.cpp
 	"Steve.h"
 
 1618985134 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\zombie.cpp
@@ -218,11 +215,20 @@
 	<stdlib.h>
 	"RgbImage.h"
 
-1619039283 c:\users\victor\desktop\proyectos\textura\escenariotext\include\textur.h
+1619051510 c:\users\victor\desktop\proyectos\textura\escenariotext\include\textur.h
 	<GL/glut.h>
 	<stdlib.h>
 	"RgbImage.h"
 
-1619028690 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\textur.cpp
+1619051510 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\textur.cpp
 	"Textur.h"
+
+1619050710 c:\users\victor\desktop\proyectos\textura\escenariotext\include\escenario.h
+	<GL/glut.h>
+	<stdlib.h>
+	"Textur.h"
+	"Steve.h"
+
+1619051747 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\escenario.cpp
+	"Escenario.h"
 
