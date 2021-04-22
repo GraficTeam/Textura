@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "Textur.h"
 #include "Steve.h"
+#include "arbol.h"
 
 class Escenario
 {
@@ -12,6 +13,7 @@ class Escenario
         float pasto[4][3];
         Textur t;
         Steve personaje;
+        arbol arb;
     public:
         Escenario();
         virtual ~Escenario();

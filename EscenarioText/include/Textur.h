@@ -7,14 +7,13 @@
 class Textur
 {
     private:
-        float auxT[12][3];
         GLuint texture[24];
     public:
         Textur();
         virtual ~Textur();
         void loadTextureFromFile(char*,int);
-        void texturiza(char *,int ,float (*)[3] ,int ,int);
-         void texturiza(char *,int ,float (*)[3] ,int);
+        void texturiza(char *,int ,float (*)[3] ,int);
+         void texturiza2(char *,int ,float (*)[3] ,int);
 };
 
 #endif // TEXTUR_H

@@ -52,6 +52,7 @@
 		<Unit filename="include/Textur.h" />
 		<Unit filename="include/Zombie.h" />
 		<Unit filename="include/Zomibe.h" />
+		<Unit filename="include/arbol.h" />
 		<Unit filename="include/steve.bmp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Cerdo.cpp" />
@@ -62,6 +63,7 @@
 		<Unit filename="src/Textur.cpp" />
 		<Unit filename="src/Zombie.cpp" />
 		<Unit filename="src/Zomibe.cpp" />
+		<Unit filename="src/arbol.cpp" />
 		<Unit filename="src/steve.bmp" />
 		<Unit filename="steve.bmp" />
 		<Extensions />

@@ -44,6 +44,7 @@ void Escenario::draw()
     t.texturiza(filename,0,pasto,0);
     //Dibuja los ejes
     drawAxis();
+    //arb.draw();
     personaje.draw();
 }
 

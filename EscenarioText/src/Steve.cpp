@@ -145,17 +145,17 @@ void Steve::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[0],0,cabeza,i,1);
+            case 0: t.texturiza(filename[0],0,cabeza,i);
                     break;
-            case 4: t.texturiza(filename[1],1,cabeza,i,1);
+            case 4: t.texturiza(filename[1],1,cabeza,i);
                     break;
-            case 8: t.texturiza(filename[2],2,cabeza,i,2);
+            case 8: t.texturiza(filename[2],2,cabeza,i);
                     break;
-            case 12: t.texturiza(filename[3],3,cabeza,i,2);
+            case 12: t.texturiza(filename[3],3,cabeza,i);
                      break;
-            case 16: t.texturiza(filename[4],4,cabeza,i,3);
+            case 16: t.texturiza(filename[4],4,cabeza,i);
                      break;
-            case 20: t.texturiza(filename[5],5,cabeza,i,3);
+            case 20: t.texturiza(filename[5],5,cabeza,i);
                      break;
         }
         i+=4;
@@ -168,17 +168,17 @@ void Steve::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[6],6,torso,i,1);
+            case 0: t.texturiza(filename[6],6,torso,i);
                     break;
-            case 4: t.texturiza(filename[7],7,torso,i,1);
+            case 4: t.texturiza(filename[7],7,torso,i);
                     break;
-            case 8: t.texturiza(filename[8],8,torso,i,2);
+            case 8: t.texturiza(filename[8],8,torso,i);
                     break;
-            case 12: t.texturiza(filename[9],9,torso,i,2);
+            case 12: t.texturiza(filename[9],9,torso,i);
                      break;
-            case 16: t.texturiza(filename[10],10,torso,i,3);
+            case 16: t.texturiza(filename[10],10,torso,i);
                      break;
-            case 20: t.texturiza(filename[11],11,torso,i,3);
+            case 20: t.texturiza(filename[11],11,torso,i);
                      break;
         }
         i+=4;
@@ -192,17 +192,17 @@ void Steve::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[12],12,pierna,i,1);
+            case 0: t.texturiza(filename[12],12,pierna,i);
                     break;
-            case 4: t.texturiza(filename[13],13,pierna,i,1);
+            case 4: t.texturiza(filename[13],13,pierna,i);
                     break;
-            case 8: t.texturiza(filename[14],14,pierna,i,2);
+            case 8: t.texturiza(filename[14],14,pierna,i);
                     break;
-            case 12: t.texturiza(filename[15],15,pierna,i,2);
+            case 12: t.texturiza(filename[15],15,pierna,i);
                      break;
-            case 16: t.texturiza(filename[16],16,pierna,i,3);
+            case 16: t.texturiza(filename[16],16,pierna,i);
                      break;
-            case 20: t.texturiza(filename[17],17,pierna,i,3);
+            case 20: t.texturiza(filename[17],17,pierna,i);
                      break;
         }
         i+=4;
@@ -217,17 +217,17 @@ void Steve::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[12],12,pierna,i,1);
+            case 0: t.texturiza(filename[12],12,pierna,i);
                     break;
-            case 4: t.texturiza(filename[13],13,pierna,i,1);
+            case 4: t.texturiza(filename[13],13,pierna,i);
                     break;
-            case 8: t.texturiza(filename[14],14,pierna,i,2);
+            case 8: t.texturiza(filename[14],14,pierna,i);
                     break;
-            case 12: t.texturiza(filename[15],15,pierna,i,2);
+            case 12: t.texturiza(filename[15],15,pierna,i);
                      break;
-            case 16: t.texturiza(filename[17],17,pierna,i,3);
+            case 16: t.texturiza(filename[17],17,pierna,i);
                      break;
-            case 20: t.texturiza(filename[16],16,pierna,i,3);
+            case 20: t.texturiza(filename[16],16,pierna,i);
                      break;
         }
         i+=4;
@@ -240,17 +240,17 @@ void Steve::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[18],18,pierna,i,1);
+            case 0: t.texturiza(filename[18],18,pierna,i);
                     break;
-            case 4: t.texturiza(filename[19],19,pierna,i,1);
+            case 4: t.texturiza(filename[19],19,pierna,i);
                     break;
-            case 8: t.texturiza(filename[20],20,pierna,i,2);
+            case 8: t.texturiza(filename[20],20,pierna,i);
                     break;
-            case 12: t.texturiza(filename[21],21,pierna,i,2);
+            case 12: t.texturiza(filename[21],21,pierna,i);
                      break;
-            case 16: t.texturiza(filename[22],22,pierna,i,3);
+            case 16: t.texturiza(filename[22],22,pierna,i);
                      break;
-            case 20: t.texturiza(filename[23],23,pierna,i,3);
+            case 20: t.texturiza(filename[23],23,pierna,i);
                      break;
         }
         i+=4;
@@ -264,17 +264,17 @@ void Steve::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[18],18,pierna,i,1);
+            case 0: t.texturiza(filename[18],18,pierna,i);
                     break;
-            case 4: t.texturiza(filename[19],19,pierna,i,1);
+            case 4: t.texturiza(filename[19],19,pierna,i);
                     break;
-            case 8: t.texturiza(filename[20],20,pierna,i,2);
+            case 8: t.texturiza(filename[20],20,pierna,i);
                     break;
-            case 12: t.texturiza(filename[21],21,pierna,i,2);
+            case 12: t.texturiza(filename[21],21,pierna,i);
                      break;
-            case 16: t.texturiza(filename[22],22,pierna,i,3);
+            case 16: t.texturiza(filename[22],22,pierna,i);
                      break;
-            case 20: t.texturiza(filename[23],23,pierna,i,3);
+            case 20: t.texturiza(filename[23],23,pierna,i);
                      break;
         }
         i+=4;
