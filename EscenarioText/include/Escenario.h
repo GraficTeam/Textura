@@ -11,6 +11,7 @@
 #include "Fuente.h"
 #include "Steve.h"
 */
+#include "Casa.h"
 class Escenario
 {
     private:
@@ -22,6 +23,7 @@ class Escenario
         //Cerdo cerd;
         arbol arb;
         //Fuente fuente;
+        Casa casa;
     public:
         Escenario();
         virtual ~Escenario();

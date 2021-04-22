@@ -156,12 +156,13 @@
 	<stdlib.h>
 	"RgbImage.h"
 
-1619120696 source:c:\users\btpas\documents\github\textura\escenariotext\main.cpp
+1619128808 source:c:\users\btpas\documents\github\textura\escenariotext\main.cpp
 	<GLUT/glut.h>
 	<GL/glut.h>
 	<stdlib.h>
 	<GL/glut.h>
 	<stdlib.h>
+	<math.h>
 	"Escenario.h"
 
 1619120696 c:\users\btpas\documents\github\textura\escenariotext\include\steve.h
@@ -183,15 +184,15 @@
 	<stdlib.h>
 	"Textur.h"
 
-1619120696 c:\users\btpas\documents\github\textura\escenariotext\include\zombie.h
+1619128174 c:\users\btpas\documents\github\textura\escenariotext\include\zombie.h
 	<GL/glut.h>
 	<stdlib.h>
 	"Textur.h"
 
-1619120696 source:c:\users\btpas\documents\github\textura\escenariotext\src\cerdo.cpp
+1619128174 source:c:\users\btpas\documents\github\textura\escenariotext\src\cerdo.cpp
 	"Cerdo.h"
 
-1619120696 source:c:\users\btpas\documents\github\textura\escenariotext\src\fuente.cpp
+1619128174 source:c:\users\btpas\documents\github\textura\escenariotext\src\fuente.cpp
 	"Fuente.h"
 
 1618985229 source:c:\users\btpas\documents\github\textura\escenariotext\src\rgbimage.cpp
@@ -199,10 +200,10 @@
 	<windows.h>
 	"GL/gl.h"
 
-1619121952 source:c:\users\btpas\documents\github\textura\escenariotext\src\steve.cpp
+1619128174 source:c:\users\btpas\documents\github\textura\escenariotext\src\steve.cpp
 	"Steve.h"
 
-1619120696 source:c:\users\btpas\documents\github\textura\escenariotext\src\zombie.cpp
+1619128174 source:c:\users\btpas\documents\github\textura\escenariotext\src\zombie.cpp
 	"Zombie.h"
 
 1618985229 source:c:\users\btpas\documents\github\textura\escenariotext\src\zomibe.cpp
@@ -328,34 +329,34 @@
 	<stdlib.h>
 	"RgbImage.h"
 
-1619121702 c:\users\btpas\documents\github\textura\escenariotext\include\escenario.h
+1619128544 c:\users\btpas\documents\github\textura\escenariotext\include\escenario.h
 	<GL/glut.h>
 	<stdlib.h>
 	"Textur.h"
-	"Steve.h"
 	"arbol.h"
 	"Zombie.h"
 	"Cerdo.h"
 	"Fuente.h"
+	"Steve.h"
 	"Casa.h"
 
-1619120696 c:\users\btpas\documents\github\textura\escenariotext\include\textur.h
+1619128174 c:\users\btpas\documents\github\textura\escenariotext\include\textur.h
 	<GL/glut.h>
 	<stdlib.h>
 	"RgbImage.h"
 
-1619120696 c:\users\btpas\documents\github\textura\escenariotext\include\arbol.h
+1619128174 c:\users\btpas\documents\github\textura\escenariotext\include\arbol.h
 	<GL/glut.h>
 	<stdlib.h>
 	"Textur.h"
 
-1619120696 source:c:\users\btpas\documents\github\textura\escenariotext\src\arbol.cpp
+1619128175 source:c:\users\btpas\documents\github\textura\escenariotext\src\arbol.cpp
 	"arbol.h"
 
-1619126744 source:c:\users\btpas\documents\github\textura\escenariotext\src\escenario.cpp
+1619129107 source:c:\users\btpas\documents\github\textura\escenariotext\src\escenario.cpp
 	"Escenario.h"
 
-1619120696 source:c:\users\btpas\documents\github\textura\escenariotext\src\textur.cpp
+1619128174 source:c:\users\btpas\documents\github\textura\escenariotext\src\textur.cpp
 	"Textur.h"
 
 1619121192 c:\users\btpas\documents\github\textura\escenariotext\include\casa.h
@@ -363,7 +364,7 @@
 	<stdlib.h>
 	"Textur.h"
 
-1619121783 source:c:\users\btpas\documents\github\textura\escenariotext\src\casa.cpp
+1619128617 source:c:\users\btpas\documents\github\textura\escenariotext\src\casa.cpp
 	"Casa.h"
 
 1619127790 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\casa.cpp

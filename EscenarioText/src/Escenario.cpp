@@ -54,6 +54,13 @@ void Escenario::draw()
     glTranslatef(5,0,0);
     zombie.draw();
     glPopMatrix();
+
+    glPushMatrix();
+    glScalef(6,6,6);
+    glTranslated(3,1,-3);
+    casa.draw();
+    glPopMatrix();
+
     //fuente.draw();
     //cerd.draw();
 }
