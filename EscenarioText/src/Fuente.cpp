@@ -74,7 +74,9 @@ Fuente::Fuente()
     columna[22][0]=0.2; columna[22][1]=5; columna[22][2]=-0.2;
     columna[23][0]=0; columna[23][1]=5; columna[23][2]=-0.2;
 
-
+    filename[0]="piedra.bmp";
+    filename[1]="fuente.bmp";
+    filename[2]="madera.bmp";
 }
 
 Fuente::~Fuente()
@@ -86,37 +88,43 @@ void Fuente::draw()
 
     int i;
     glColor3f(1.0f, 1.0f, 1.0f);
-    i=0;
+     i=0;
     while(i<24)
     {
-        glBegin(GL_QUADS);
-            glVertex3fv(base[i]);
-            glVertex3fv(base[i+1]);
-            glVertex3fv(base[i+2]);
-            glVertex3fv(base[i+3]);
-        glEnd();
+        t.texturiza(filename[0],0,base,i);
+
         i+=4;
     }
 
-     glPushMatrix();
 
+    //Cabeza
+    glPushMatrix();
     glTranslated(1,1,0);
     glScaled(0.8,1,0.8);
-    glColor3f(0.0f, 0.0f, 1.0f);
     i=0;
     while(i<24)
     {
-        glBegin(GL_QUADS);
-            glVertex3fv(base[i]);
-            glVertex3fv(base[i+1]);
-            glVertex3fv(base[i+2]);
-            glVertex3fv(base[i+3]);
-        glEnd();
+        if(i!=16)
+        t.texturiza(filename[0],0,base,i);
+        else
+        t.texturiza(filename[1],1,base,i);
         i+=4;
     }
     glPopMatrix();
 
+    glPushMatrix();
+    glTranslated(1,7,0);
+    glScaled(0.8,1,0.8);
 
+    i=0;
+    while(i<24)
+    {
+        t.texturiza(filename[0],0,base,i);
+        i+=4;
+    }
+    glPopMatrix();
+
+/*
     glPushMatrix();
     //glScaled(1,1,1);
     glTranslated(0,7,0);
@@ -133,19 +141,15 @@ void Fuente::draw()
         i+=4;
     }
     glPopMatrix();
+    */
 
     glPushMatrix();
     glTranslatef(1.2,2.0,0);
-    glColor3f(1.2f, 0.0f, 0.0f);
+
     i=0;
     while(i<24)
     {
-        glBegin(GL_QUADS);
-            glVertex3fv(columna[i]);
-            glVertex3fv(columna[i+1]);
-            glVertex3fv(columna[i+2]);
-            glVertex3fv(columna[i+3]);
-        glEnd();
+        t.texturiza(filename[2],2,columna,i);
         i+=4;
     }
     glPopMatrix();
@@ -153,99 +157,35 @@ void Fuente::draw()
 
     glPushMatrix();
     glTranslatef(1.2,2.0,-3.5);
-    glColor3f(1.2f, 0.0f, 0.0f);
-    i=0;
+    i  =0;
     while(i<24)
     {
-        glBegin(GL_QUADS);
-            glVertex3fv(columna[i]);
-            glVertex3fv(columna[i+1]);
-            glVertex3fv(columna[i+2]);
-            glVertex3fv(columna[i+3]);
-        glEnd();
+        t.texturiza(filename[2],2,columna,i);
         i+=4;
     }
     glPopMatrix();
 
     glPushMatrix();
     glTranslatef(4.8,2.0,0);
-    glColor3f(1.2f, 0.0f, 0.0f);
+
     i=0;
     while(i<24)
     {
-        glBegin(GL_QUADS);
-            glVertex3fv(columna[i]);
-            glVertex3fv(columna[i+1]);
-            glVertex3fv(columna[i+2]);
-            glVertex3fv(columna[i+3]);
-        glEnd();
+        t.texturiza(filename[2],2,columna,i);
         i+=4;
     }
     glPopMatrix();
 
     glPushMatrix();
     glTranslatef(4.8,2.0,-3.5);
-    glColor3f(1.2f, 0.0f, 0.0f);
-    i=0;
+
+   i=0;
     while(i<24)
     {
-        glBegin(GL_QUADS);
-            glVertex3fv(columna[i]);
-            glVertex3fv(columna[i+1]);
-            glVertex3fv(columna[i+2]);
-            glVertex3fv(columna[i+3]);
-        glEnd();
+        t.texturiza(filename[2],2,columna,i);
         i+=4;
     }
     glPopMatrix();
 
-    /*
-    glPushMatrix();
-    glScaled(5,1,5);
-    glColor3f(1.0,0.0,1.0);
-    glutSolidCube(1);
-    glPopMatrix();
 
-    glPushMatrix();
-    glTranslated(0,1,0);
-    glScaled(4,1,4);
-    glColor3f(1.0,0.0,0.0);
-    glutSolidCube(1);
-    glPopMatrix();
-
-
-    glPushMatrix();
-    glTranslated(0,7,0);
-    glScaled(4,1,4);
-    glColor3f(1.0,0.0,0.0);
-    glutSolidCube(1);
-    glPopMatrix();
-
-    glPushMatrix();
-    glTranslated(1.7,3,1.7);
-    glScaled(0.1,7,0.1);
-    glColor3f(1.0,0.0,0.0);
-    glutSolidCube(1);
-    glPopMatrix();
-
-    glPushMatrix();
-    glTranslated(-1.7,3,-1.7);
-    glScaled(0.1,7,0.1);
-    glColor3f(1.0,0.0,0.0);
-    glutSolidCube(1);
-    glPopMatrix();
-
-    glPushMatrix();
-    glTranslated(1.7,3,-1.7);
-    glScaled(0.1,7,0.1);
-    glColor3f(1.0,0.0,0.0);
-    glutSolidCube(1);
-    glPopMatrix();
-
-    glPushMatrix();
-    glTranslated(-1.7,3,1.7);
-    glScaled(0.1,7,0.1);
-    glColor3f(1.0,0.0,0.0);
-    glutSolidCube(1);
-    glPopMatrix();*/
 }

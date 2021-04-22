@@ -16,8 +16,8 @@ GLint ancho,alto;
 int hazPerspectiva = 0;
 
 float EYE_X = 3.0;
-float EYE_Y = 6.0;
-float EYE_Z = 4.5;
+float EYE_Y = 3.0;
+float EYE_Z = 2.5;
 float CENTER_X = 0;
 float CENTER_Y = 0;
 float CENTER_Z = 0;

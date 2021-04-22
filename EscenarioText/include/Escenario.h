@@ -7,6 +7,7 @@
 #include "arbol.h"
 #include "Zombie.h"
 #include "Cerdo.h"
+#include "Fuente.h"
 
 class Escenario
 {
@@ -18,6 +19,7 @@ class Escenario
         Zombie zombie;
         Cerdo cerdo;
         arbol arb;
+        Fuente fuente;
     public:
         Escenario();
         virtual ~Escenario();

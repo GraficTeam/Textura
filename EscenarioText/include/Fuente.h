@@ -3,8 +3,8 @@
 
 #include <GL/glut.h>
 #include <stdlib.h>
-#include "RgbImage.h"
-#define NTextures 2
+#include "Textur.h"
+
 
 class Fuente
 {
@@ -12,6 +12,8 @@ class Fuente
     private:
         float base[24][3];
         float columna[24][3];
+        char* filename[24];
+        Textur t;
 
 
     public:

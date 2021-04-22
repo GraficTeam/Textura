@@ -45,10 +45,11 @@ void Escenario::draw()
     //Dibuja los ejes
     drawAxis();
     arb.draw();
+
     glPushMatrix();
     glTranslated(150,0,0);
-    //glScaled(20,20,20);
-    cerdo.draw();
+    glScaled(30,30,30);
+    fuente.draw();
     glPopMatrix();
     //personaje.draw();
     //zombie.draw();

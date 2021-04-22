@@ -242,7 +242,7 @@
 1619062920 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\arbol.cpp
 	"arbol.h"
 
-1619063179 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\main.cpp
+1619065788 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\main.cpp
 	<GLUT/glut.h>
 	<GL/glut.h>
 	<stdlib.h>
@@ -250,7 +250,7 @@
 	<stdlib.h>
 	"Escenario.h"
 
-1619064006 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\escenario.h
+1619065693 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\escenario.h
 	<GL/glut.h>
 	<stdlib.h>
 	"Textur.h"
@@ -258,6 +258,7 @@
 	"arbol.h"
 	"Zombie.h"
 	"Cerdo.h"
+	"Fuente.h"
 
 1619056316 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\textur.h
 	<GL/glut.h>
@@ -289,16 +290,16 @@
 	<stdlib.h>
 	"Textur.h"
 
-1619063292 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\escenario.cpp
+1619065825 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\escenario.cpp
 	"Escenario.h"
 
-1619042301 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\fuente.cpp
+1619066916 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\fuente.cpp
 	"Fuente.h"
 
-1619042301 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\fuente.h
+1619065693 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\fuente.h
 	<GL/glut.h>
 	<stdlib.h>
-	"RgbImage.h"
+	"Textur.h"
 
 1619042301 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\rgbimage.cpp
 	"RgbImage.h"
