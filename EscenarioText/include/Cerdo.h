@@ -11,7 +11,8 @@ class Cerdo
         float pata[24][3];
         float torso[24][3];
         float cabeza[24][3];
-        char* filename[24];
+        char* filename[18];
+        int band=0;
         Textur t;
 
     public:

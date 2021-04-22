@@ -137,13 +137,6 @@ Cerdo::Cerdo()
     filename[16]="cerdo_pata_lado.bmp";
     filename[17]="cerdo_pata_lado.bmp";
 
-    filename[18]="steve_pierna.bmp";
-    filename[19]="steve_piernaAtra.bmp";
-    filename[20]="steve_pierArri.bmp";
-    filename[21]="steve_pierAba.bmp";
-    filename[22]="steve_pierDer.bmp";
-    filename[23]="steve_pierIzq.bmp";
-
 }
 
 Cerdo::~Cerdo()
@@ -152,11 +145,17 @@ Cerdo::~Cerdo()
 }
 
 void Cerdo::draw()
-{/*
+{
     int i;
+    if(band==0)
+    {
+        for(i=0;i<18;i++)
+            t.loadTextureFromFile(filename[i],i);
+        band=1;
+    }
     glPushMatrix();
     //glRotatef(180,0,1,0);
-    glScalef(20,20,20);
+    glScalef(0.8,0.8,0.8);
 
     //Cabeza
 
@@ -165,38 +164,17 @@ void Cerdo::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[0],0,cabeza,i);
+            case 0: t.texturiza(0,cabeza,i);
                     break;
-            case 4: t.texturiza(filename[1],1,cabeza,i);
+            case 4: t.texturiza(1,cabeza,i);
                     break;
-            case 8: t.texturiza(filename[2],2,cabeza,i);
+            case 8: t.texturiza(2,cabeza,i);
                     break;
-            case 12: t.texturiza(filename[3],3,cabeza,i);
+            case 12: t.texturiza(3,cabeza,i);
                      break;
-            case 16: t.texturiza(filename[4],4,cabeza,i);
+            case 16: t.texturiza(4,cabeza,i);
                      break;
-            case 20: t.texturiza(filename[5],5,cabeza,i);
-                     break;
-        }
-        i+=4;
-    }
-
-    i=0;
-    while(i<24)
-    {
-        switch(i)
-        {
-            case 0: t.texturiza(filename[6],6,torso,i);
-                    break;
-            case 4: t.texturiza(filename[7],7,torso,i);
-                    break;
-            case 8: t.texturiza(filename[8],8,torso,i);
-                    break;
-            case 12: t.texturiza(filename[9],9,torso,i);
-                     break;
-            case 16: t.texturiza(filename[10],10,torso,i);
-                     break;
-            case 20: t.texturiza(filename[11],11,torso,i);
+            case 20: t.texturiza(5,cabeza,i);
                      break;
         }
         i+=4;
@@ -207,17 +185,38 @@ void Cerdo::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[12],12,pata,i);
+            case 0: t.texturiza(6,torso,i);
                     break;
-            case 4: t.texturiza(filename[13],13,pata,i);
+            case 4: t.texturiza(7,torso,i);
                     break;
-            case 8: t.texturiza(filename[14],14,pata,i);
+            case 8: t.texturiza(8,torso,i);
                     break;
-            case 12: t.texturiza(filename[15],15,pata,i);
+            case 12: t.texturiza(9,torso,i);
                      break;
-            case 16: t.texturiza(filename[16],16,pata,i);
+            case 16: t.texturiza(10,torso,i);
                      break;
-            case 20: t.texturiza(filename[17],17,pata,i);
+            case 20: t.texturiza(11,torso,i);
+                     break;
+        }
+        i+=4;
+    }
+
+    i=0;
+    while(i<24)
+    {
+        switch(i)
+        {
+            case 0: t.texturiza(12,pata,i);
+                    break;
+            case 4: t.texturiza(13,pata,i);
+                    break;
+            case 8: t.texturiza(14,pata,i);
+                    break;
+            case 12: t.texturiza(15,pata,i);
+                     break;
+            case 16: t.texturiza(16,pata,i);
+                     break;
+            case 20: t.texturiza(17,pata,i);
                      break;
         }
         i+=4;
@@ -231,17 +230,17 @@ void Cerdo::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[13],13,pata,i);
+            case 0: t.texturiza(13,pata,i);
                     break;
-            case 4: t.texturiza(filename[12],12,pata,i);
+            case 4: t.texturiza(12,pata,i);
                     break;
-            case 8: t.texturiza(filename[14],14,pata,i);
+            case 8: t.texturiza(14,pata,i);
                     break;
-            case 12: t.texturiza(filename[15],15,pata,i);
+            case 12: t.texturiza(15,pata,i);
                      break;
-            case 16: t.texturiza(filename[16],16,pata,i);
+            case 16: t.texturiza(16,pata,i);
                      break;
-            case 20: t.texturiza(filename[17],17,pata,i);
+            case 20: t.texturiza(17,pata,i);
                      break;
         }
         i+=4;
@@ -256,17 +255,17 @@ void Cerdo::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[13],13,pata,i);
+            case 0: t.texturiza(13,pata,i);
                     break;
-            case 4: t.texturiza(filename[12],12,pata,i);
+            case 4: t.texturiza(12,pata,i);
                     break;
-            case 8: t.texturiza(filename[14],14,pata,i);
+            case 8: t.texturiza(14,pata,i);
                     break;
-            case 12: t.texturiza(filename[15],15,pata,i);
+            case 12: t.texturiza(15,pata,i);
                      break;
-            case 16: t.texturiza(filename[16],16,pata,i);
+            case 16: t.texturiza(16,pata,i);
                      break;
-            case 20: t.texturiza(filename[17],17,pata,i);
+            case 20: t.texturiza(17,pata,i);
                      break;
         }
         i+=4;
@@ -280,17 +279,17 @@ void Cerdo::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[12],12,pata,i);
+            case 0: t.texturiza(12,pata,i);
                     break;
-            case 4: t.texturiza(filename[13],13,pata,i);
+            case 4: t.texturiza(13,pata,i);
                     break;
-            case 8: t.texturiza(filename[14],14,pata,i);
+            case 8: t.texturiza(14,pata,i);
                     break;
-            case 12: t.texturiza(filename[15],15,pata,i);
+            case 12: t.texturiza(15,pata,i);
                      break;
-            case 16: t.texturiza(filename[16],16,pata,i);
+            case 16: t.texturiza(16,pata,i);
                      break;
-            case 20: t.texturiza(filename[17],17,pata,i);
+            case 20: t.texturiza(17,pata,i);
                      break;
         }
         i+=4;
@@ -298,5 +297,5 @@ void Cerdo::draw()
     glPopMatrix();
 
     glPopMatrix();
-*/
+
 }

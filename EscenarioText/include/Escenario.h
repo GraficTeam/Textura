@@ -6,11 +6,10 @@
 
 #include "arbol.h"
 #include "Zombie.h"
-/*
 #include "Cerdo.h"
 #include "Fuente.h"
 #include "Steve.h"
-*/
+
 #include "Casa.h"
 class Escenario
 {
@@ -18,11 +17,11 @@ class Escenario
         char* filename = "pasto.bmp";
         float pasto[4][3];
         Textur t;
-        //Steve personaje;
+        Steve personaje;
         Zombie zombie;
-        //Cerdo cerd;
+        Cerdo cerd;
         arbol arb;
-        //Fuente fuente;
+        Fuente fuente;
         Casa casa;
     public:
         Escenario();

@@ -12,7 +12,8 @@ class Fuente
     private:
         float base[24][3];
         float columna[24][3];
-        char* filename[24];
+        char* filename[4];
+        int band=0;
         Textur t;
 
 

@@ -11,6 +11,7 @@ class Casa
         float puntosFachaV1[4][3];
         float puntosFachaV2[4][3];
         float puntosFachaFr[4][3];
+        int band=0;
     public:
         Casa();
         virtual ~Casa();

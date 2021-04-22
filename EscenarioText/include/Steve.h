@@ -12,6 +12,7 @@ class Steve
         float torso[24][3];
         float cabeza[24][3];
         char* filename[24];
+        int band=0;
         Textur t;
 
     public:

@@ -85,9 +85,15 @@ Fuente::~Fuente()
     //dtor
 }
 void Fuente::draw()
-{/*
+{
 
     int i;
+    if(band==0)
+    {
+        for(i=0;i<4;i++)
+            t.loadTextureFromFile(filename[i],i);
+        band=1;
+    }
     glColor3f(1.0f, 1.0f, 1.0f);
      i=0;
     while(i<24)
@@ -95,17 +101,17 @@ void Fuente::draw()
 
         switch(i)
         {
-            case 0: t.texturiza(filename[2],2,base,i);
+            case 0: t.texturiza(2,base,i);
                     break;
-            case 4: t.texturiza(filename[2],2,base,i);
+            case 4: t.texturiza(2,base,i);
                     break;
-            case 8: t.texturiza(filename[2],2,base,i);
+            case 8: t.texturiza(2,base,i);
                     break;
-            case 12: t.texturiza(filename[2],2,base,i);
+            case 12: t.texturiza(2,base,i);
                     break;
-            case 16: t.texturiza(filename[0],0,base,i);
+            case 16: t.texturiza(0,base,i);
                      break;
-             case 20: t.texturiza(filename[0],0,base,i);
+             case 20: t.texturiza(0,base,i);
                      break;
         }
         i+=4;
@@ -123,17 +129,17 @@ void Fuente::draw()
     {
         switch(i)
         {
-            case 0: t.texturiza(filename[2],2,base,i);
+            case 0: t.texturiza(2,base,i);
                     break;
-            case 4: t.texturiza(filename[2],2,base,i);
+            case 4: t.texturiza(2,base,i);
                     break;
-            case 8: t.texturiza(filename[2],2,base,i);
+            case 8: t.texturiza(2,base,i);
                     break;
-            case 12: t.texturiza(filename[2],2,base,i);
+            case 12: t.texturiza(2,base,i);
                     break;
-            case 16: t.texturiza(filename[1],1,base,i);
+            case 16: t.texturiza(1,base,i);
                      break;
-             case 20: t.texturiza(filename[0],0,base,i);
+             case 20: t.texturiza(0,base,i);
                      break;
         }
         i+=4;
@@ -150,17 +156,17 @@ void Fuente::draw()
     {
        switch(i)
         {
-            case 0: t.texturiza(filename[2],2,base,i);
+            case 0: t.texturiza(2,base,i);
                     break;
-            case 4: t.texturiza(filename[2],2,base,i);
+            case 4: t.texturiza(2,base,i);
                     break;
-            case 8: t.texturiza(filename[2],2,base,i);
+            case 8: t.texturiza(2,base,i);
                     break;
-            case 12: t.texturiza(filename[2],2,base,i);
+            case 12: t.texturiza(2,base,i);
                     break;
-            case 16: t.texturiza(filename[0],0,base,i);
+            case 16: t.texturiza(0,base,i);
                      break;
-             case 20: t.texturiza(filename[0],0,base,i);
+             case 20: t.texturiza(0,base,i);
                      break;
         }
         i+=4;
@@ -174,7 +180,7 @@ void Fuente::draw()
     i=0;
     while(i<24)
     {
-        t.texturiza(filename[3],3,columna,i);
+        t.texturiza(3,columna,i);
         i+=4;
     }
     glPopMatrix();
@@ -185,7 +191,7 @@ void Fuente::draw()
     i  =0;
     while(i<24)
     {
-        t.texturiza(filename[3],3,columna,i);
+        t.texturiza(3,columna,i);
         i+=4;
     }
     glPopMatrix();
@@ -197,7 +203,7 @@ void Fuente::draw()
     i=0;
     while(i<24)
     {
-        t.texturiza(filename[3],3,columna,i);
+        t.texturiza(3,columna,i);
         i+=4;
     }
     glPopMatrix();
@@ -208,10 +214,10 @@ void Fuente::draw()
    i=0;
     while(i<24)
     {
-        t.texturiza(filename[3],3,columna,i);
+        t.texturiza(3,columna,i);
         i+=4;
     }
     glPopMatrix();
 
-*/
+
 }

@@ -49,14 +49,32 @@ void Escenario::draw()
     glRotatef(180,0,1,0);
     arb.draw();
     glPopMatrix();
-    //personaje.draw();
+
+    glPushMatrix();
+    glTranslatef(-10,0,0);
+    personaje.draw();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(12,0,8);
+    glScaled(2,2,2);
+    fuente.draw();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0,0,5);
+    cerd.draw();
+    glPopMatrix();
+
+
+
     glPushMatrix();
     glTranslatef(5,0,0);
     zombie.draw();
     glPopMatrix();
 
     glPushMatrix();
-    glScalef(6,6,6);
+    glScalef(8,8,8);
     glTranslated(3,1,-3);
     casa.draw();
     glPopMatrix();
