@@ -4,23 +4,23 @@
 Casa::Casa()
 {
     //FRENTE
-    puntosFachaFr[0][0]=0; puntosFachaFr[0][1]=3; puntosFachaFr[0][2]=0;
-    puntosFachaFr[1][0]=0; puntosFachaFr[1][1]=3; puntosFachaFr[1][2]=0;
-    puntosFachaFr[2][0]=0; puntosFachaFr[2][1]=3; puntosFachaFr[2][2]=0;
-    puntosFachaFr[3][0]=0; puntosFachaFr[3][1]=3; puntosFachaFr[3][2]=0;
-    //IZQUIERDA
-    puntosFachaV1[0][0]=0; puntosFachaV1[0][1]=3; puntosFachaV1[0][2]=0;
-    puntosFachaV1[1][0]=0; puntosFachaV1[1][1]=3; puntosFachaV1[1][2]=0;
-    puntosFachaV1[2][0]=0; puntosFachaV1[2][1]=3; puntosFachaV1[2][2]=0;
-    puntosFachaV1[3][0]=0; puntosFachaV1[3][1]=3; puntosFachaV1[3][2]=0;
-    //DERECHA
-    puntosFachaV2[0][0]=0; puntosFachaV2[0][1]=3; puntosFachaV2[0][2]=0;
-    puntosFachaV2[1][0]=0; puntosFachaV2[1][1]=3; puntosFachaV2[1][2]=0;
-    puntosFachaV2[2][0]=0; puntosFachaV2[2][1]=3; puntosFachaV2[2][2]=0;
-    puntosFachaV2[3][0]=0; puntosFachaV2[3][1]=3; puntosFachaV2[3][2]=0;
-    puntosFachaV2[0][0]=0; puntosFachaV2[0][1]=3; puntosFachaV2[0][2]=0;
+    puntosFachaFr[0][0]=-0.65f; puntosFachaFr[0][1]=-1.0f; puntosFachaFr[0][2]=1.0f;
+    puntosFachaFr[1][0]=0.65f; puntosFachaFr[1][1]=-1.0f; puntosFachaFr[1][2]=1.0f;
+    puntosFachaFr[2][0]=0.65f; puntosFachaFr[2][1]=1.0f; puntosFachaFr[2][2]=1.0f;
+    puntosFachaFr[3][0]=-0.65f; puntosFachaFr[3][1]=1.0f; puntosFachaFr[3][2]=1.0f;
 
-    ;
+    //IZQUIERDA
+    puntosFachaV1[0][0]=-1.0f; puntosFachaV1[0][1]=-1.0f; puntosFachaV1[0][2]=-0.6f;
+    puntosFachaV1[1][0]=-1.0f; puntosFachaV1[1][1]=-1.0f; puntosFachaV1[1][2]=0.6f;
+    puntosFachaV1[2][0]=-1.0f; puntosFachaV1[2][1]=-0.1f; puntosFachaV1[2][2]=0.6f;
+    puntosFachaV1[3][0]=-1.0f; puntosFachaV1[3][1]=-0.1f; puntosFachaV1[3][2]=-0.6f;
+
+    //DERECHA
+    puntosFachaV2[0][0]=1.0f; puntosFachaV2[0][1]=-1.0f; puntosFachaV2[0][2]=-0.6f;
+    puntosFachaV2[1][0]=1.0f; puntosFachaV2[1][1]=-1.0f; puntosFachaV2[1][2]=0.6f;
+    puntosFachaV2[2][0]=1.0f; puntosFachaV2[2][1]=-0.1f; puntosFachaV2[2][2]=0.6f;
+    puntosFachaV2[3][0]=1.0f; puntosFachaV2[3][1]=-0.1f; puntosFachaV2[3][2]=-0.6f;
+
 }
 
 Casa::~Casa()
@@ -41,26 +41,26 @@ void Casa::draw()
     //ACABADO GRIS
     glColor3f(0.43f, 0.43f, 0.43f);
     glBegin(GL_QUADS);  //cara frontal
-    glVertex3f(-0.65f, -1.0f,  1.0f);
-    glVertex3f(0.65f, -1.0f,  1.0f);
-    glVertex3f(0.65f, 1.0f,  1.0f);
-    glVertex3f(-0.65f, 1.0f,  1.0f);
+    glVertex3f(puntosFachaFr[0][0], puntosFachaFr[0][1],  puntosFachaFr[0][2]);
+    glVertex3f(puntosFachaFr[1][0], puntosFachaFr[1][1],  puntosFachaFr[1][2]);
+    glVertex3f(puntosFachaFr[2][0], puntosFachaFr[2][1],  puntosFachaFr[2][2]);
+    glVertex3f(puntosFachaFr[3][0], puntosFachaFr[3][1],  puntosFachaFr[3][2]);
     glEnd();
 
     //Cara izquierda
     glBegin(GL_QUADS);
-    glVertex3f(-1.0f, -1.0f,  -0.6f);
-    glVertex3f(-1.0f, -1.0f,  0.60f);
-    glVertex3f(-1.0f, -0.1f,  0.6f);
-    glVertex3f(-1.0f, -0.1f,  -0.60f);
+    glVertex3f(puntosFachaV1[0][0], puntosFachaV1[0][1],  puntosFachaV1[0][2]);
+    glVertex3f(puntosFachaV1[1][0], puntosFachaV1[1][1],  puntosFachaV1[1][2]);
+    glVertex3f(puntosFachaV1[2][0], puntosFachaV1[2][1],  puntosFachaV1[2][2]);
+    glVertex3f(puntosFachaV1[3][0], puntosFachaV1[3][1],  puntosFachaV1[3][2]);
     glEnd();
 
     //Cara derecha
     glBegin(GL_QUADS);
-    glVertex3f(1.0f, -1.0f,  -0.6f);
-    glVertex3f(1.0f, -1.0f,  0.60f);
-    glVertex3f(1.0f, -0.1f,  0.6f);
-    glVertex3f(1.0f, -0.1f,  -0.60f);
+    glVertex3f(puntosFachaV2[0][0], puntosFachaV2[0][1],  puntosFachaV2[0][2]);
+    glVertex3f(puntosFachaV2[1][0], puntosFachaV2[1][1],  puntosFachaV2[1][2]);
+    glVertex3f(puntosFachaV2[2][0], puntosFachaV2[2][1],  puntosFachaV2[2][2]);
+    glVertex3f(puntosFachaV2[3][0], puntosFachaV2[3][1],  puntosFachaV2[3][2]);
     glEnd();
 
     //TECHO
