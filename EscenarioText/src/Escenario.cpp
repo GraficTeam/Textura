@@ -45,7 +45,8 @@ void Escenario::draw()
     //Dibuja los ejes
     drawAxis();
     //arb.draw();
-    personaje.draw();
+    //personaje.draw();
+    zombie.draw();
 }
 
 void Escenario::update()
