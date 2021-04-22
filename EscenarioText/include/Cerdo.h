@@ -3,8 +3,7 @@
 
 #include <GL/glut.h>
 #include <stdlib.h>
-#include "RgbImage.h"
-#define NTextures 2
+#include "Textur.h"
 
 class Cerdo
 {
@@ -12,13 +11,15 @@ class Cerdo
         float pata[24][3];
         float torso[24][3];
         float cabeza[24][3];
+        char* filename[24];
+        Textur t;
 
     public:
         Cerdo();
         virtual ~Cerdo();
-         void draw();
+        void draw();
 
-    protected:
+
 
 
 };

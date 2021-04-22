@@ -6,6 +6,7 @@
 #include "Steve.h"
 #include "arbol.h"
 #include "Zombie.h"
+#include "Cerdo.h"
 
 class Escenario
 {
@@ -15,6 +16,7 @@ class Escenario
         Textur t;
         Steve personaje;
         Zombie zombie;
+        Cerdo cerdo;
         arbol arb;
     public:
         Escenario();
