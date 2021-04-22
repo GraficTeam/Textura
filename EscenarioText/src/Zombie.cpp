@@ -69,232 +69,166 @@ Zombie::Zombie()
     cabeza[1][0]=2; cabeza[1][1]=8; cabeza[1][2]=0;
     cabeza[2][0]=2; cabeza[2][1]=6; cabeza[2][2]=0;
     cabeza[3][0]=0; cabeza[3][1]=6; cabeza[3][2]=0;
+    cabeza[4][0]=0; cabeza[4][1]=8; cabeza[4][2]=-1;
+    cabeza[5][0]=2; cabeza[5][1]=8; cabeza[5][2]=-1;
+    cabeza[6][0]=2; cabeza[6][1]=6; cabeza[6][2]=-1;
+    cabeza[7][0]=0; cabeza[7][1]=6; cabeza[7][2]=-1;
 
-    cabeza[4][0]=0; cabeza[4][1]=8; cabeza[4][2]=-2;
-    cabeza[5][0]=2; cabeza[5][1]=8; cabeza[5][2]=-2;
-    cabeza[6][0]=2; cabeza[6][1]=6; cabeza[6][2]=-2;
-    cabeza[7][0]=0; cabeza[7][1]=6; cabeza[7][2]=-2;
-
-    //abajo
     cabeza[8][0]=0; cabeza[8][1]=6; cabeza[8][2]=0;
     cabeza[9][0]=2; cabeza[9][1]=6; cabeza[9][2]=0;
-    cabeza[10][0]=2; cabeza[10][1]=6; cabeza[10][2]=-2;
-    cabeza[11][0]=0; cabeza[11][1]=6; cabeza[11][2]=-2;
-    //arriba
+    cabeza[10][0]=2; cabeza[10][1]=6; cabeza[10][2]=-1;
+    cabeza[11][0]=0; cabeza[11][1]=6; cabeza[11][2]=-1;
     cabeza[12][0]=0; cabeza[12][1]=8; cabeza[12][2]=0;
     cabeza[13][0]=2; cabeza[13][1]=8; cabeza[13][2]=0;
-    cabeza[14][0]=2; cabeza[14][1]=8; cabeza[14][2]=-2;
-    cabeza[15][0]=0; cabeza[15][1]=8; cabeza[15][2]=-2;
+    cabeza[14][0]=2; cabeza[14][1]=8; cabeza[14][2]=-1;
+    cabeza[15][0]=0; cabeza[15][1]=8; cabeza[15][2]=-1;
 
     cabeza[16][0]=2; cabeza[16][1]=8; cabeza[16][2]=0;
-    cabeza[17][0]=2; cabeza[17][1]=8; cabeza[17][2]=-2;
-    cabeza[18][0]=2; cabeza[18][1]=6; cabeza[18][2]=-2;
+    cabeza[17][0]=2; cabeza[17][1]=8; cabeza[17][2]=-1;
+    cabeza[18][0]=2; cabeza[18][1]=6; cabeza[18][2]=-1;
     cabeza[19][0]=2; cabeza[19][1]=6; cabeza[19][2]=0;
     cabeza[20][0]=0; cabeza[20][1]=8; cabeza[20][2]=0;
-    cabeza[21][0]=0; cabeza[21][1]=8; cabeza[21][2]=-2;
-    cabeza[22][0]=0; cabeza[22][1]=6; cabeza[22][2]=-2;
+    cabeza[21][0]=0; cabeza[21][1]=8; cabeza[21][2]=-1;
+    cabeza[22][0]=0; cabeza[22][1]=6; cabeza[22][2]=-1;
     cabeza[23][0]=0; cabeza[23][1]=6; cabeza[23][2]=0;
-
-    filename[0]="Zombie_cara.bmp";
-    filename[1]="Zombie_ladocabeza.bmp";
-    filename[2]="Zombie_ladocabeza.bmp";
-    filename[3]="Zombie_ladocabeza.bmp";
-    filename[4]="Zombie_ladocabeza.bmp";
-    filename[5]="Zombie_ladocabeza.bmp";
-
-    filename[6]="Zombie_torso_enfrente.bmp";
-    filename[7]="Zombie_torso_atras.bmp";
-    filename[8]="steve_cintura.bmp";
-    filename[9]="steve_cuello.bmp";
-    filename[10]="steve_costDer.bmp";
-    filename[11]="steve_costIzq.bmp";
-
-    filename[12]="Zombie_brazo.bmp";
-    filename[13]="Zombie_brazo.bmp";
-    filename[14]="steve_brazoArri.bmp";
-    filename[15]="Zombie_brazo_abajo.bmp";
-    filename[16]="Zombie_brazo.bmp";
-    filename[17]="Zombie_brazo.bmp";
-
-   /*
-    filename[12]="steve_brazo.bmp";
-    filename[13]="steve_brazoAtr.bmp";
-    filename[14]="steve_brazoArri.bmp";
-    filename[15]="steve_brazoAba.bmp";
-    filename[16]="steve_brazoDer.bmp";
-    filename[17]="steve_brazoIzq.bmp";*/
-
-    filename[18]="steve_pierna.bmp";
-    filename[19]="steve_piernaAtra.bmp";
-    filename[20]="steve_pierArri.bmp";
-    filename[21]="steve_pierAba.bmp";
-    filename[22]="steve_pierDer.bmp";
-    filename[23]="steve_pierIzq.bmp";
 }
 
 Zombie::~Zombie()
 {
     //dtor
 }
+void Zombie::loadTextureFromFile(char *filename)
+{
+	glClearColor (0.0, 0.0, 0.0, 0.0);
+	glShadeModel(GL_FLAT);
+	glEnable(GL_DEPTH_TEST);
 
+	RgbImage theTexMap( filename );
+
+    //generate an OpenGL texture ID for this texture
+    glGenTextures(1, &texture[0]);
+    //bind to the new texture ID
+    glBindTexture(GL_TEXTURE_2D, texture[0]);
+
+
+    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexImage2D(GL_TEXTURE_2D, 0, 3, theTexMap.GetNumCols(), theTexMap.GetNumRows(), 0,
+                     GL_RGB, GL_UNSIGNED_BYTE, theTexMap.ImageData());
+    theTexMap.Reset();
+}
 
 void Zombie::draw()
 {
     int i;
     glColor3f(1.0f, 1.0f, 1.0f);
-    glPushMatrix();
-
-    //
-    glRotatef(180,0,1,0);
-
-    glScalef(25,25,25);
-
-    //Cabeza
-    glPushMatrix();
-    glTranslatef(0,0,0.5);
     i=0;
     while(i<24)
     {
-        switch(i)
-        {
-            case 0: t.texturiza(filename[0],0,cabeza,i);
-                    break;
-            case 4: t.texturiza(filename[1],1,cabeza,i);
-                    break;
-            case 8: t.texturiza(filename[2],2,cabeza,i);
-                    break;
-            case 12: t.texturiza(filename[3],3,cabeza,i);
-                     break;
-            case 16: t.texturiza(filename[4],4,cabeza,i);
-                     break;
-            case 20: t.texturiza(filename[5],5,cabeza,i);
-                     break;
-        }
-        i+=4;
-    }
-    glPopMatrix();
-
-    //torso
-    i=0;
-    while(i<24)
-    {
-        switch(i)
-        {
-            case 0: t.texturiza(filename[6],6,torso,i);
-                    break;
-            case 4: t.texturiza(filename[7],7,torso,i);
-                    break;
-            case 8: t.texturiza(filename[8],8,torso,i);
-                    break;
-            case 12: t.texturiza(filename[9],9,torso,i);
-                     break;
-            case 16: t.texturiza(filename[10],10,torso,i);
-                     break;
-            case 20: t.texturiza(filename[11],11,torso,i);
-                     break;
-        }
+        glBegin(GL_QUADS);
+            glVertex3fv(pierna[i]);
+            glVertex3fv(pierna[i+1]);
+            glVertex3fv(pierna[i+2]);
+            glVertex3fv(pierna[i+3]);
+        glEnd();
         i+=4;
     }
 
-    //Brazo izquierdo
-    glPushMatrix();
-    glTranslatef(-1,6,2);
-    glRotated(90,-1,0,0);
-    i=0;
-    while(i<24)
-    {
-        switch(i)
-        {
-            case 0: t.texturiza(filename[12],12,pierna,i);
-                    break;
-            case 4: t.texturiza(filename[13],13,pierna,i);
-                    break;
-            case 8: t.texturiza(filename[14],14,pierna,i);
-                    break;
-            case 12: t.texturiza(filename[15],15,pierna,i);
-                     break;
-            case 16: t.texturiza(filename[16],16,pierna,i);
-                     break;
-            case 20: t.texturiza(filename[17],17,pierna,i);
-                     break;
-        }
-        i+=4;
-    }
-    glPopMatrix();
-
-    //Brazo derecho
-    glPushMatrix();
-
-    glTranslatef(2,6,2);
-    glRotated(90,-1,0,0);
-    i=0;
-    while(i<24)
-    {
-        switch(i)
-        {
-            case 0: t.texturiza(filename[12],12,pierna,i);
-                    break;
-            case 4: t.texturiza(filename[13],13,pierna,i);
-                    break;
-            case 8: t.texturiza(filename[14],14,pierna,i);
-                    break;
-            case 12: t.texturiza(filename[15],15,pierna,i);
-                     break;
-            case 16: t.texturiza(filename[17],17,pierna,i);
-                     break;
-            case 20: t.texturiza(filename[16],16,pierna,i);
-                     break;
-        }
-        i+=4;
-    }
-    glPopMatrix();
-
-    //Pierna izquiera
-    i=0;
-    while(i<24)
-    {
-        switch(i)
-        {
-            case 0: t.texturiza(filename[18],18,pierna,i);
-                    break;
-            case 4: t.texturiza(filename[19],19,pierna,i);
-                    break;
-            case 8: t.texturiza(filename[20],20,pierna,i);
-                    break;
-            case 12: t.texturiza(filename[21],21,pierna,i);
-                     break;
-            case 16: t.texturiza(filename[22],22,pierna,i);
-                     break;
-            case 20: t.texturiza(filename[23],23,pierna,i);
-                     break;
-        }
-        i+=4;
-    }
-
-    //Pierna derecha
     glPushMatrix();
     glTranslatef(1,0,0);
+    glColor3f(1.0f, 0.0f, 0.0f);
     i=0;
-    while(i<24)
+    while(i<4)
     {
-        switch(i)
-        {
-            case 0: t.texturiza(filename[18],18,pierna,i);
-                    break;
-            case 4: t.texturiza(filename[19],19,pierna,i);
-                    break;
-            case 8: t.texturiza(filename[20],20,pierna,i);
-                    break;
-            case 12: t.texturiza(filename[21],21,pierna,i);
-                     break;
-            case 16: t.texturiza(filename[22],22,pierna,i);
-                     break;
-            case 20: t.texturiza(filename[23],23,pierna,i);
-                     break;
-        }
+        glBegin(GL_QUADS);
+            glVertex3fv(pierna[i]);
+            glVertex3fv(pierna[i+1]);
+            glVertex3fv(pierna[i+2]);
+            glVertex3fv(pierna[i+3]);
+        glEnd();
         i+=4;
     }
     glPopMatrix();
 
+    glPushMatrix();
+    glTranslatef(-1,4.5,-1);
+    glScaled(1,1.5,1);
+    glRotated(90,1,0,0);
+    glColor3f(0.0f, 1.0f, 0.0f);
+    i=0;
+    while(i<24)
+    {
+        glBegin(GL_QUADS);
+            glVertex3fv(pierna[i]);
+            glVertex3fv(pierna[i+1]);
+            glVertex3fv(pierna[i+2]);
+            glVertex3fv(pierna[i+3]);
+        glEnd();
+        i+=4;
+    }
     glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(2,4.5,-1);
+    glScaled(1,1.5,1);
+    glRotated(90,1,0,0);
+
+    glColor3f(0.0f, 0.0f, 1.0f);
+    i=0;
+    while(i<24)
+    {
+        glBegin(GL_QUADS);
+            glVertex3fv(pierna[i]);
+            glVertex3fv(pierna[i+1]);
+            glVertex3fv(pierna[i+2]);
+            glVertex3fv(pierna[i+3]);
+        glEnd();
+        i+=4;
+    }
+    glPopMatrix();
+    glColor3f(1.0f, 1.0f, 0.0f);
+    i=0;
+    while(i<24)
+    {
+        glBegin(GL_QUADS);
+            glVertex3fv(torso[i]);
+            glVertex3fv(torso[i+1]);
+            glVertex3fv(torso[i+2]);
+            glVertex3fv(torso[i+3]);
+        glEnd();
+        i+=4;
+    }
+    glColor3f(0.0f, 1.0f, 1.0f);
+    i=0;
+    while(i<24)
+    {
+        if(i==0)
+        {
+            loadTextureFromFile(filename);
+            glEnable(GL_TEXTURE_2D);
+            glBindTexture(GL_TEXTURE_2D, texture[0]);
+            glBegin(GL_QUADS);
+                glTexCoord2f(cabeza[i][0], cabeza[i][1]);
+                glVertex3fv(cabeza[i]);
+                glTexCoord2f(cabeza[i+1][0], cabeza[i+1][1]);
+                glVertex3fv(cabeza[i+1]);
+                glTexCoord2f(cabeza[i+2][0], cabeza[i+2][1]);
+                glVertex3fv(cabeza[i+2]);
+                glTexCoord2f(cabeza[i+3][0], cabeza[i+3][1]);
+                glVertex3fv(cabeza[i+3]);
+            glEnd();
+        }
+        else
+        {
+            glBegin(GL_QUADS);
+                glVertex3fv(cabeza[i]);
+                glVertex3fv(cabeza[i+1]);
+                glVertex3fv(cabeza[i+2]);
+                glVertex3fv(cabeza[i+3]);
+            glEnd();
+        }
+        i+=4;
+    }
 }

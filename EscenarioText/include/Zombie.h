@@ -3,23 +3,26 @@
 
 #include <GL/glut.h>
 #include <stdlib.h>
-#include "Textur.h"
+#include "RgbImage.h"
+#define NTextures 2
+
 
 class Zombie
 {
-     private:
-        float pierna[24][3];
-        float torso[24][3];
-        float cabeza[24][3];
-        char* filename[24];
-        Textur t;
-
     public:
         Zombie();
         virtual ~Zombie();
         void draw();
+        void loadTextureFromFile(char*);
 
+    protected:
 
+    private:
+        float pierna[24][3];
+        float torso[24][3];
+        float cabeza[24][3];
+        GLuint	texture[NTextures];
+        char* filename = "steve.bmp";
 };
 
 #endif // ZOMBIE_H
