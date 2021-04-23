@@ -44,43 +44,115 @@ void Escenario::draw()
     //t.texturiza(filename,0,pasto,0);
     //Dibuja los ejes
     drawAxis();
+
+    glPushMatrix();
+    glScalef(9,9,9);
+    glTranslated(3,1,-3);
+    casa.draw();
+    glPopMatrix();
+
+    glPushMatrix();
+    glScalef(9,9,9);
+    glTranslated(-3,1,-3);
+    casa.draw();
+    glPopMatrix();
+
+    glPushMatrix();
+    glScalef(9,9,9);
+    glTranslated(3,1,3);
+    glRotatef(180,0,1,0);
+    casa.draw();
+    glPopMatrix();
+
+    glPushMatrix();
+    glScalef(9,9,9);
+    glTranslated(-3,1,3);
+    glRotatef(180,0,1,0);
+    casa.draw();
+    glPopMatrix();
+    //----
+    glPushMatrix();
+    glScalef(9,9,9);
+    glTranslated(3.5,1,-9);
+    glRotatef(270,0,1,0);
+    casa.draw();
+    glPopMatrix();
+
+    glPushMatrix();
+    glScalef(9,9,9);
+    glTranslated(-3.5,1,-9);
+    glRotatef(90,0,1,0);
+    casa.draw();
+    glPopMatrix();
+
+    glPushMatrix();
+    glScalef(9,9,9);
+    glTranslated(3.5,1,9);
+    glRotatef(270,0,1,0);
+    casa.draw();
+    glPopMatrix();
+
+    glPushMatrix();
+    glScalef(9,9,9);
+    glTranslated(-3.5,1,9);
+    glRotatef(90,0,1,0);
+    casa.draw();
+    glPopMatrix();
+
+    //----
+
     glPushMatrix();
     glScalef(4,4,4);
     glRotatef(180,0,1,0);
+    glTranslated(-13,0,-6);
     arb.draw();
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(-10,0,0);
-    personaje.draw();
+    glScalef(4,4,4);
+    glRotatef(180,0,1,0);
+    glTranslated(-13,0,6);
+    arb.draw();
+    glPopMatrix();
+
+    glPushMatrix();
+    glScalef(4,4,4);
+    glRotatef(180,0,1,0);
+    glTranslated(13,0,-6);
+    arb.draw();
+    glPopMatrix();
+
+    glPushMatrix();
+    glScalef(4,4,4);
+    glRotatef(180,0,1,0);
+    glTranslated(13,0,6);
+    arb.draw();
     glPopMatrix();
 
     glPushMatrix();
     glTranslatef(12,0,8);
     glScaled(2,2,2);
+    glTranslated(13,0,-1.5);
     fuente.draw();
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(0,0,5);
+    glTranslatef(25,0,-1.5);
+    glRotated(270,0,1,0);
     cerd.draw();
     glPopMatrix();
 
-
+    glPushMatrix();
+    glTranslatef(40,0,-8);
+    glRotated(270,0,1,0);
+    personaje.draw();
+    glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(5,0,0);
+    glTranslatef(40,0,8);
+    glRotated(270,0,1,0);
     zombie.draw();
     glPopMatrix();
-
-    glPushMatrix();
-    glScalef(8,8,8);
-    glTranslated(3,1,-3);
-    casa.draw();
-    glPopMatrix();
-
-    //fuente.draw();
-    //cerd.draw();
 }
 
 void Escenario::update()
