@@ -252,7 +252,7 @@
 	<math.h>
 	"Escenario.h"
 
-1619132237 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\escenario.h
+1619195037 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\escenario.h
 	<GL/glut.h>
 	<stdlib.h>
 	"Textur.h"
@@ -293,7 +293,7 @@
 	<stdlib.h>
 	"Textur.h"
 
-1619132237 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\escenario.cpp
+1619195037 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\escenario.cpp
 	"Escenario.h"
 
 1619132088 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\fuente.cpp
@@ -377,11 +377,11 @@
 	<stdlib.h>
 	"Textur.h"
 
-1619132088 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\casa.h
+1619195266 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\casa.h
 	<GL/glut.h>
 	<stdlib.h>
 	"Textur.h"
 
-1619127853 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\casa.cpp
+1619195364 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\casa.cpp
 	"Casa.h"
 

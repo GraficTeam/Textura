@@ -47,54 +47,54 @@ void Escenario::draw()
 
     glPushMatrix();
     glScalef(9,9,9);
-    glTranslated(3,1,-3);
+    glTranslated(3,0,-3);
     casa[0].draw();
     glPopMatrix();
 
     glPushMatrix();
     glScalef(9,9,9);
-    glTranslated(-3,1,-3);
+    glTranslated(-3,0,-3);
     casa[1].draw();
     glPopMatrix();
 
     glPushMatrix();
     glScalef(9,9,9);
-    glTranslated(3,1,3);
+    glTranslated(3,0,3);
     glRotatef(180,0,1,0);
     casa[2].draw();
     glPopMatrix();
 
     glPushMatrix();
     glScalef(9,9,9);
-    glTranslated(-3,1,3);
+    glTranslated(-3,0,3);
     glRotatef(180,0,1,0);
     casa[3].draw();
     glPopMatrix();
     //----
     glPushMatrix();
     glScalef(9,9,9);
-    glTranslated(3.5,1,-9);
+    glTranslated(3.5,0,-9);
     glRotatef(270,0,1,0);
     casa[4].draw();
     glPopMatrix();
 
     glPushMatrix();
     glScalef(9,9,9);
-    glTranslated(-3.5,1,-9);
+    glTranslated(-3.5,0,-9);
     glRotatef(90,0,1,0);
     casa[5].draw();
     glPopMatrix();
 
     glPushMatrix();
     glScalef(9,9,9);
-    glTranslated(3.5,1,9);
+    glTranslated(3.5,0,9);
     glRotatef(270,0,1,0);
     casa[6].draw();
     glPopMatrix();
 
     glPushMatrix();
     glScalef(9,9,9);
-    glTranslated(-3.5,1,9);
+    glTranslated(-3.5,0,9);
     glRotatef(90,0,1,0);
     casa[7].draw();
     glPopMatrix();
