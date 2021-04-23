@@ -22,7 +22,7 @@ class Escenario
         Cerdo cerd;
         arbol arb[10];
         Fuente fuente;
-        Casa casa[10];
+        Casa casa[12];
     public:
         Escenario();
         virtual ~Escenario();
