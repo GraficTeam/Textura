@@ -331,7 +331,7 @@
 	<stdlib.h>
 	"RgbImage.h"
 
-1619150909 c:\users\btpas\documents\github\textura\escenariotext\include\escenario.h
+1619190933 c:\users\btpas\documents\github\textura\escenariotext\include\escenario.h
 	<GL/glut.h>
 	<stdlib.h>
 	"Textur.h"
@@ -355,7 +355,7 @@
 1619128175 source:c:\users\btpas\documents\github\textura\escenariotext\src\arbol.cpp
 	"arbol.h"
 
-1619163426 source:c:\users\btpas\documents\github\textura\escenariotext\src\escenario.cpp
+1619191887 source:c:\users\btpas\documents\github\textura\escenariotext\src\escenario.cpp
 	"Escenario.h"
 
 1619128174 source:c:\users\btpas\documents\github\textura\escenariotext\src\textur.cpp

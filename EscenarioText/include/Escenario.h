@@ -20,9 +20,9 @@ class Escenario
         Steve personaje;
         Zombie zombie;
         Cerdo cerd;
-        arbol arb;
+        arbol arb[10];
         Fuente fuente;
-        Casa casa;
+        Casa casa[10];
     public:
         Escenario();
         virtual ~Escenario();
