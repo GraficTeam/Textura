@@ -13,6 +13,7 @@ class Textur
         virtual ~Textur();
         void loadTextureFromFile(char*,int);
         void texturiza(int,float (*)[3] ,int);
+        void texturizaM(int,float (*)[3] ,int);
 };
 
 #endif // TEXTUR_H

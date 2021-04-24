@@ -2,6 +2,7 @@
 #define ESCENARIO_H
 #include <GL/glut.h>
 #include <stdlib.h>
+#include <math.h>
 #include "Textur.h"
 
 #include "arbol.h"
@@ -14,6 +15,7 @@
 class Escenario
 {
     private:
+        bool bond=false;
         char* filename = "pasto.bmp";
         float pasto[4][3];
         Textur t;
@@ -23,12 +25,13 @@ class Escenario
         arbol arb[10];
         Fuente fuente;
         Casa casa[12];
+        float tras[3]={40,0,-8};
     public:
         Escenario();
         virtual ~Escenario();
         void drawAxis();
         void draw();
-        void update();
+        bool update(float,float);
 };
 
 #endif // ESCENARIO_H

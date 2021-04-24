@@ -28,7 +28,7 @@ float EYE_X=0.0;
 float EYE_Y=6.5;
 float EYE_Z=0.0;
 float CENTER_X=1;
-float CENTER_Y=6;
+float CENTER_Y=6.5;
 float CENTER_Z=0;
 float UP_X=0;
 float UP_Y=1;
@@ -39,12 +39,14 @@ float X_MAX=50;
 float Y_MIN=-50;
 float Y_MAX=50;
 float Z_MIN=-50;
-float Z_MAX=50;
+float Z_MAX=80;
 //Variables para matrices de rotacion y traslación
 float Theta=0;
+bool band=false;
 //float Radio=1.0;
 float PI = 3.14159265359;
 float Direction[3] = {1.0,0.0,0.0};
+float Derecha[3] = {0.0,0.0,1.0};
 
 //Recordar que (pi/180 = r/g) donde "r" son radianes y "g" grados
 //Se aplica la formula r
@@ -58,31 +60,6 @@ float DegToRad(float g)
       return ((g*PI)/180.0);
 }
 
-void drawAxis()
-{
-     //X axis in red
-     glBegin(GL_LINES);
-       glColor3f(1.0f,0.0f,0.0f);
-       glVertex3f(X_MIN,0.0,0.0);
-       glColor3f(1.0f,0.0f,0.0f);
-       glVertex3f(X_MAX,0.0,0.0);
-     glEnd();
-     //Y axis in green
-     glBegin(GL_LINES);
-       glColor3f(0.0f,1.0f,0.0f);
-       glVertex3f(0.0,Y_MIN,0.0);
-       glColor3f(0.0f,1.0f,0.0f);
-       glVertex3f(0.0,Y_MAX,0.0);
-     glEnd();
-     //Z axis in blue
-     glBegin(GL_LINES);
-       glColor3f(0.0f,0.0f,1.0f);
-       glVertex3f(0.0,0.0,Z_MIN);
-       glColor3f(0.0f,0.0f,1.0f);
-       glVertex3f(0.0,0.0,Z_MAX);
-     glEnd();
- }
-
 void init()
 {
     glMatrixMode(GL_PROJECTION);
@@ -91,7 +68,6 @@ void init()
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z);
-    glClearColor(0,0,0,0);
     glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
     glShadeModel(GL_FLAT);
 }
@@ -100,123 +76,119 @@ void LookAt()
 {
     Direction[0] = cos(DegToRad(Theta));
     Direction[2] = sin(DegToRad(Theta));
+    Derecha[0] = cos(DegToRad(Theta+90));
+    Derecha[2] = sin(DegToRad(Theta+90));
     CENTER_X = EYE_X + Direction[0];
     CENTER_Z = EYE_Z + Direction[2];
+}
+
+void keyboard(unsigned char key, int x, int y)
+{
+    switch (key)
+    {
+        case 'A':
+        case 'a':
+            Theta -= 1.0f;
+            Theta = (Theta < 0.0) ? 359.0 : Theta;
+            LookAt();
+            break;
+
+        case 'D':
+        case 'd':
+            Theta += 1.0f;
+            Theta = (Theta > 359.0) ? 0.0 : Theta;
+            LookAt();
+            break;
+
+        case ' ':
+            band=true;
+            break;
+    }
+    glLoadIdentity();
+    gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z);
+    glutPostRedisplay();
 }
 
 void SpecialInput(int key, int x, int y)
 {
     switch(key){
                 case GLUT_KEY_UP:
-                     EYE_X += Direction[0];
-                     EYE_Y += Direction[1];
-                     EYE_Z += Direction[2];
-                     CENTER_X = EYE_X + Direction[0];
-                     CENTER_Y = EYE_Y + Direction[1];
-                     CENTER_Z = EYE_Z + Direction[2];
+                     if(esc.update(EYE_X + Direction[0],EYE_Z + Direction[2])==false)
+                     {
+                         EYE_X += Direction[0];
+                        EYE_Y += Direction[1];
+                        EYE_Z += Direction[2];
+                        CENTER_X = EYE_X + Direction[0];
+                        CENTER_Y = EYE_Y + Direction[1];
+                        CENTER_Z = EYE_Z + Direction[2];
+                     }
                      break;
                 case GLUT_KEY_DOWN:
-                     EYE_X -= Direction[0];
-                     EYE_Y -= Direction[1];
-                     EYE_Z -= Direction[2];
-                     CENTER_X = EYE_X + Direction[0];
-                     CENTER_Y = EYE_Y + Direction[1];
-                     CENTER_Z = EYE_Z + Direction[2];
+                    if(esc.update(EYE_X - Direction[0],EYE_Z - Direction[2])==false)
+                    {
+                        EYE_X -= Direction[0];
+                        EYE_Y -= Direction[1];
+                        EYE_Z -= Direction[2];
+                        CENTER_X = EYE_X + Direction[0];
+                        CENTER_Y = EYE_Y + Direction[1];
+                        CENTER_Z = EYE_Z + Direction[2];
+                    }
                      break;
                 case GLUT_KEY_LEFT:
-                     Theta -= 1.0f;
-                     Theta = (Theta < 0.0) ? 359.0 : Theta;
-                     LookAt();
-                      break;
-                case GLUT_KEY_RIGHT:
-                     Theta += 1.0f;
-                     Theta = (Theta > 359.0) ? 0.0 : Theta;
-                     LookAt();
+                     if(esc.update(EYE_X - Derecha[0],EYE_Z - Derecha[2])==false)
+                     {
+                        EYE_X -= Derecha[0];
+                        EYE_Y -= Derecha[1];
+                        EYE_Z -= Derecha[2];
+                        CENTER_X -=  Derecha[0];
+                        CENTER_Y -=  Derecha[1];
+                        CENTER_Z -=  Derecha[2];
+                     }
                      break;
+                case GLUT_KEY_RIGHT:
+                     if(esc.update(EYE_X - Derecha[0],EYE_Z - Derecha[2])==false)
+                     {
+                        EYE_X += Derecha[0];
+                        EYE_Y += Derecha[1];
+                        EYE_Z += Derecha[2];
+                        CENTER_X += Derecha[0];
+                        CENTER_Y += Derecha[1];
+                        CENTER_Z += Derecha[2];
+                     }
+                     break;
+
     }
 
     glLoadIdentity();
     gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z);
     glutPostRedisplay();
 }
-/*
-GLint ancho,alto;
-int hazPerspectiva = 0;
 
-float EYE_X = 3.0;
-float EYE_Y = 3.0;
-float EYE_Z = 2.5;
-float CENTER_X = 0;
-float CENTER_Y = 0;
-float CENTER_Z = 0;
-float UP_X = 0;
-float UP_Y = 1;
-float UP_Z = 0;
-
-//Variables para dibujar los ejes del sistema
-float X_MIN=-50;
-float X_MAX=50;
-float Y_MIN=-50;
-float Y_MAX=50;
-float Z_MIN=-50;
-float Z_MAX=50;
-
-void reshape(int width, int height)
-{
-    glViewport(0, 0, width, height);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    if(hazPerspectiva)
-        gluPerspective(60.0f,(GLfloat)width/(GLfloat)height,1.0f,80.0f);
-    else
-        glOrtho(-600, 600, -325, 325, -600, 600);
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-    gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z);
-    ancho = width;
-    alto = height;
-}
-
-
-void keyboard(unsigned char key, int x, int y)
-{
-    switch (key)
-    {
-        case 'p':
-        case 'P':
-            hazPerspectiva=1;
-            reshape(ancho,alto);
-            break;
-
-        case 'o':
-        case 'O':
-            hazPerspectiva=0;
-            reshape(ancho,alto);
-            break;
-
-        case '27':
-            exit(0);
-            break;
-    }
-}
-
-void init()
-{
-    glClearColor(0,0,0,0);
-    glEnable(GL_DEPTH_TEST);
-    ancho = 400;
-    alto = 400;
-}
-
-void idle()
-{
-    display();
-}
-
-*/
 void display()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClearColor(0.482,0.682,0.992,0);
+    if(band==true)
+    {
+        if(EYE_Y<=8.5 && CENTER_Y<=8.5)
+        {
+            EYE_Y+=0.1;
+            CENTER_Y+=0.1;
+        }
+        else
+            band=false;
+    }
+    else
+    {
+        if(EYE_Y>6.5 && CENTER_Y>6.5)
+        {
+            EYE_Y-=0.1;
+            CENTER_Y-=0.1;
+        }
+    }
+    glLoadIdentity();
+    gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z);
+    glutPostRedisplay();
     esc.draw();
     glutSwapBuffers();
 }
@@ -237,10 +209,9 @@ int main(int argc, char *argv[])
       init();
       //se envian los graficos a pantalla
       glutDisplayFunc(display);
-      //glutReshapeFunc(reshape);
-      //glutIdleFunc(idle);
       glutIdleFunc(display);
       glutSpecialFunc(SpecialInput);
+      glutKeyboardFunc(keyboard);
       glutMainLoop();
       return 0;
 }

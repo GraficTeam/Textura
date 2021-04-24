@@ -41,7 +41,12 @@ void Escenario::drawAxis()
 void Escenario::draw()
 {
     //Dibuja pasto
-    //t.texturiza(filename,0,pasto,0);
+    if(bond==false)
+    {
+        t.loadTextureFromFile(filename,0);
+        bond=true;
+    }
+    t.texturizaM(0,pasto,0);
     //Dibuja los ejes
     drawAxis();
 
@@ -195,7 +200,7 @@ void Escenario::draw()
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(40,0,-8);
+    glTranslatef(tras[0],tras[1],tras[2]);
     glRotated(270,0,1,0);
     personaje.draw();
     glPopMatrix();
@@ -207,7 +212,19 @@ void Escenario::draw()
     glPopMatrix();
 }
 
-void Escenario::update()
+bool Escenario::update(float x,float z)
 {
-
+    float cX,cZ,cR,R;
+    cX=*(personaje.getCentro());
+    //printf("%f\n",cX);
+    cZ=*(personaje.getCentro()+2);
+    //printf("%f\n",cZ);
+    cR=sqrt((cX)*(cX)+(cZ)*(cZ));
+    cX+=tras[0];
+    cZ+=tras[2];
+    R=((cX-x)*(cX-x)+(cZ-z)*(cZ-z));
+    if(R<=cR)
+        return true;
+    else
+        return false;
 }

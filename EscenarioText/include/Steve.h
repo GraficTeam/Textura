@@ -12,12 +12,14 @@ class Steve
         float torso[24][3];
         float cabeza[24][3];
         char* filename[24];
+        float centro[3]={1,0,-0.5};
         int band=0;
         Textur t;
 
     public:
         Steve();
         virtual ~Steve();
+        float* getCentro();
         void draw();
 };
 

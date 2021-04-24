@@ -50,3 +50,20 @@ void Textur::texturiza(int nText,float aux[][3],int i)
     glDisable(GL_TEXTURE_2D);
 }
 
+void Textur::texturizaM(int nText,float aux[][3],int i)
+{
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, texture[nText]);
+    glBegin(GL_QUADS);
+        glTexCoord3fv(aux[i]);
+        glVertex3fv(aux[i]);
+        glTexCoord3fv(aux[i+1]);
+        glVertex3fv(aux[i+1]);
+        glTexCoord3fv(aux[i+2]);
+        glVertex3fv(aux[i+2]);
+        glTexCoord3fv(aux[i+3]);
+        glVertex3fv(aux[i+3]);
+    glEnd();
+    glDisable(GL_TEXTURE_2D);
+}
+

@@ -89,10 +89,11 @@ Steve::Steve()
     cabeza[17][0]=2; cabeza[17][1]=8; cabeza[17][2]=-2;
     cabeza[18][0]=2; cabeza[18][1]=6; cabeza[18][2]=-2;
     cabeza[19][0]=2; cabeza[19][1]=6; cabeza[19][2]=0;
-    cabeza[20][0]=0; cabeza[20][1]=8; cabeza[20][2]=0;
-    cabeza[21][0]=0; cabeza[21][1]=8; cabeza[21][2]=-2;
-    cabeza[22][0]=0; cabeza[22][1]=6; cabeza[22][2]=-2;
-    cabeza[23][0]=0; cabeza[23][1]=6; cabeza[23][2]=0;
+
+    cabeza[20][0]=0; cabeza[20][1]=8; cabeza[20][2]=-2;
+    cabeza[21][0]=0; cabeza[21][1]=8; cabeza[21][2]=0;
+    cabeza[22][0]=0; cabeza[22][1]=6; cabeza[22][2]=0;
+    cabeza[23][0]=0; cabeza[23][1]=6; cabeza[23][2]=-2;
 
     filename[0]="steve.bmp";
     filename[1]="steve_caraTras.bmp";
@@ -127,6 +128,12 @@ Steve::~Steve()
 {
     //dtor
 }
+
+float* Steve::getCentro()
+{
+    return centro;
+}
+
 void Steve::draw()
 {
     int i;

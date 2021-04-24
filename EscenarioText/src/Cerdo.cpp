@@ -91,10 +91,10 @@ Cerdo::Cerdo()
     cabeza[7][0]=0.5; cabeza[7][1]=3.5; cabeza[7][2]=-2;
 
     //Cara izquierda
-    cabeza[8][0]=0.5; cabeza[8][1]=6.5; cabeza[8][2]=1.5;
-    cabeza[9][0]=0.5; cabeza[9][1]=6.5; cabeza[9][2]=-2;
-    cabeza[10][0]=0.5; cabeza[10][1]=3.5; cabeza[10][2]=-2;
-    cabeza[11][0]=0.5; cabeza[11][1]=3.5; cabeza[11][2]=1.5;
+    cabeza[8][0]=0.5; cabeza[8][1]=6.5; cabeza[8][2]=-2;
+    cabeza[9][0]=0.5; cabeza[9][1]=6.5; cabeza[9][2]=1.5;
+    cabeza[10][0]=0.5; cabeza[10][1]=3.5; cabeza[10][2]=1.5;
+    cabeza[11][0]=0.5; cabeza[11][1]=3.5; cabeza[11][2]=-2;
 
     //Cara derecha
     cabeza[12][0]=3.5; cabeza[12][1]=6.5; cabeza[12][2]=1.5;
