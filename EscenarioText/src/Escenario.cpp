@@ -200,8 +200,8 @@ void Escenario::draw()
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(tras[0],tras[1],tras[2]);
-    glRotated(270,0,1,0);
+    personaje.Rotar(180,0,1,0);
+    personaje.Trasladar(5,0,-2);
     personaje.draw();
     glPopMatrix();
 
@@ -214,17 +214,5 @@ void Escenario::draw()
 
 bool Escenario::update(float x,float z)
 {
-    float cX,cZ,cR,R;
-    cX=*(personaje.getCentro());
-    //printf("%f\n",cX);
-    cZ=*(personaje.getCentro()+2);
-    //printf("%f\n",cZ);
-    cR=sqrt((cX)*(cX)+(cZ)*(cZ));
-    cX+=tras[0];
-    cZ+=tras[2];
-    R=((cX-x)*(cX-x)+(cZ-z)*(cZ-z));
-    if(R<=cR)
-        return true;
-    else
-        return false;
+    return coli.Choque(personaje.getCentro(),personaje.getRadio(),x,z);
 }

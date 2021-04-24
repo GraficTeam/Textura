@@ -46,6 +46,7 @@
 		</Linker>
 		<Unit filename="include/Casa.h" />
 		<Unit filename="include/Cerdo.h" />
+		<Unit filename="include/Colision.h" />
 		<Unit filename="include/Escenario.h" />
 		<Unit filename="include/Fuente.h" />
 		<Unit filename="include/RgbImage.h" />
@@ -57,6 +58,7 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Casa.cpp" />
 		<Unit filename="src/Cerdo.cpp" />
+		<Unit filename="src/Colision.cpp" />
 		<Unit filename="src/Escenario.cpp" />
 		<Unit filename="src/Fuente.cpp" />
 		<Unit filename="src/RgbImage.cpp" />

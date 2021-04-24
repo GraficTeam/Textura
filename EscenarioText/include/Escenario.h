@@ -10,6 +10,7 @@
 #include "Cerdo.h"
 #include "Fuente.h"
 #include "Steve.h"
+#include "Colision.h"
 
 #include "Casa.h"
 class Escenario
@@ -25,7 +26,8 @@ class Escenario
         arbol arb[10];
         Fuente fuente;
         Casa casa[12];
-        float tras[3]={40,0,-8};
+        Colision coli;
+        float tras[3]={0,0,0};
     public:
         Escenario();
         virtual ~Escenario();

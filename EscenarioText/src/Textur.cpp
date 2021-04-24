@@ -67,3 +67,49 @@ void Textur::texturizaM(int nText,float aux[][3],int i)
     glDisable(GL_TEXTURE_2D);
 }
 
+void Textur::multiplicar(float A[][4],float aux[])
+{
+    int bond,i,j,k;//variable bandera
+    float auxi[3];//Punto auxiliar
+    float arreAux[4],suma;//Arreglo auxiliar para multiplicar y variable suma
+    arreAux[3]=1;//El 1 nos ayuda a multiplicar porque necesitamos (x,y,z,1)
+    //Se guarda el punto en el arreglo auxiliar
+    arreAux[0]=aux[0];
+    arreAux[1]=aux[1];
+    arreAux[2]=aux[2];
+    //Bond nos ayuda a asignar el nuevo objeto punto
+    bond=0;
+    //El ciclo se hace 3 veces k se mueve en las filas
+    for (k=0;k<3;k++)
+    {
+        //Suma guarda la suma de fila por columna
+        suma=0;
+        //j apunta a las columnas de la matriz y a la coordenada
+        for (j=0;j<4;j++)
+        {
+            suma=suma+A[k][j]*arreAux[j];
+        }
+        //Si bond=0 suma es la componete x
+        if(bond==0)
+        {
+            auxi[0]=suma;
+            bond=1;
+        }
+        //Sino, la suma es la componente y
+        else
+        {
+            if(bond==1)
+            {
+                auxi[1]=suma;
+                bond=2;
+            }
+            else
+                auxi[2]=suma;
+        }
+    }
+    //Se guarda el nuevo punto
+    aux[0]=auxi[0];
+    aux[1]=auxi[1];
+    aux[2]=auxi[2];
+}
+
