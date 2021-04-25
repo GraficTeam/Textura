@@ -131,8 +131,44 @@ Zombie::~Zombie()
     //dtor
 }
 
+float* Zombie::getCentro()
+{
+    return centro;
+}
+
+float Zombie::getRadio()
+{
+    return radio;
+}
+
+void Zombie::Rotate(float ang,float x,float y,float z)
+{
+    col.Rotate(ang,x,y,z);
+}
+
+void Zombie::Translate(float x,float y,float z)
+{
+    col.Translate(x,y,z);
+}
+
+void Zombie::Scale(float s)
+{
+    col.Scale(s);
+}
+
+bool Zombie::Choque(float x,float z,float rad)
+{
+    return col.Choque(centro,radio,x,z,rad);
+}
+
+
 void Zombie::draw()
 {
+    float p1[3]={0,0,0};
+    float p2[3]={2,0,-1};
+    float pivote[3]={-1,0,0};
+    col.setCentro(p1,p2,pivote,centro,&radio);
+
     int i;
     if(band==0)
     {
@@ -328,6 +364,4 @@ void Zombie::update(int bandera)
         mov=0;
         grado=0;
     }
-
-
 }

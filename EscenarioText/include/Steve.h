@@ -16,10 +16,6 @@ class Steve
         char* filename[24];
         float centro[3]={0,0,0};
         float radio;
-        /*float A[4][4]={{1,0,0,0},
-                       {0,1,0,0},
-                       {0,0,1,0},
-                       {0,0,0,1},};*/
         int band=0;
         Textur t;
         Colision col;

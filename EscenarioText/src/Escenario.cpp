@@ -52,89 +52,122 @@ void Escenario::draw()
     drawAxis();
 
     glPushMatrix();
-    glScalef(9,9,9);
-    glTranslated(1.5,0,-2.0);
+    casa[0].Scale(9);
+    casa[0].Translate(1.5,0,-2);
+    //glScalef(9,9,9);
+    //glTranslated(1.5,0,-2.0);
     casa[0].draw();
     glPopMatrix();
 
     glPushMatrix();
-    glScalef(9,9,9);
-    glTranslated(-3.5,0,-2.0);
+    casa[1].Scale(9);
+    casa[1].Translate(-3.5,0,-2);
+    //glScalef(9,9,9);
+    //glTranslated(-3.5,0,-2.0);
     casa[1].draw();
     glPopMatrix();
 
     glPushMatrix();
-    glScalef(9,9,9);
-    glTranslated(3.5,0,2);
-    glRotated(180,0,1,0);
+    casa[2].Scale(9);
+    casa[2].Translate(3.5,0,2);
+    casa[2].Rotate(180,0,1,0);
+    //glScalef(9,9,9);
+    //glTranslated(3.5,0,2);
+    //glRotated(180,0,1,0);
     casa[2].draw();
     glPopMatrix();
 
     glPushMatrix();
-    glScalef(9,9,9);
-    glTranslated(-1.5,0,2);
-    glRotated(180,0,1,0);
+    casa[3].Scale(9);
+    casa[3].Translate(-1.5,0,2);
+    casa[3].Rotate(180,0,1,0);
+    //glScalef(9,9,9);
+    //glTranslated(-1.5,0,2);
+    //glRotated(180,0,1,0);
     casa[3].draw();
     glPopMatrix();
 
     glPushMatrix();
-    glScalef(9,9,9);
-    glRotated(270,0,1,0);
-    glTranslated(-10,0,-1.5);
+    casa[4].Scale(9);
+    casa[4].Rotate(270,0,1,0);
+    casa[4].Translate(-10,0,-1.5);
+    //glScalef(9,9,9);
+    //glRotated(270,0,1,0);
+    //glTranslated(-10,0,-1.5);
     casa[4].draw();
     glPopMatrix();
 
     glPushMatrix();
-    glScalef(9,9,9);
-    glTranslated(-1.5,0,-7);
-    glRotated(90,0,1,0);
+    casa[5].Scale(9);
+    casa[5].Translate(-1.5,0,-7);
+    casa[5].Rotate(90,0,1,0);
+    //glScalef(9,9,9);
+    //glTranslated(-1.5,0,-7);
+    //glRotated(90,0,1,0);
     casa[5].draw();
     glPopMatrix();
 
     glPushMatrix();
-    glScalef(9,9,9);
-    glRotated(270,0,1,0);
-    glTranslated(7,0,-1.5);
+    casa[6].Scale(9);
+    casa[6].Rotate(270,0,1,0);
+    casa[6].Translate(7,0,-1.5);
+    //glScalef(9,9,9);
+    //glRotated(270,0,1,0);
+    //glTranslated(7,0,-1.5);
     casa[6].draw();
     glPopMatrix();
 
     glPushMatrix();
-    glScalef(9,9,9);
-    glRotated(90,0,1,0);
-    glTranslated(-9,0,-1.5);
+    casa[7].Scale(9);
+    casa[7].Rotate(90,0,1,0);
+    casa[7].Translate(-9,0,-1.5);
+    //glScalef(9,9,9);
+    //glRotated(90,0,1,0);
+    //glTranslated(-9,0,-1.5);
     casa[7].draw();
     glPopMatrix();
 
     glPushMatrix();
-    glScalef(9,9,9);
-    glTranslated(-6.5,0,2);
-    glRotated(180,0,1,0);
+    casa[8].Scale(9);
+    casa[8].Translate(-6.5,0,2);
+    casa[8].Rotate(180,0,1,0);
+    //glScalef(9,9,9);
+    //glTranslated(-6.5,0,2);
+    //glRotated(180,0,1,0);
     casa[8].draw();
     glPopMatrix();
 
     glPushMatrix();
-    glScalef(9,9,9);
-    glTranslated(-8.5,0,-2.0);
+    casa[9].Scale(9);
+    casa[9].Translate(-8.5,0,-2);
+    //glScalef(9,9,9);
+    //glTranslated(-8.5,0,-2.0);
     casa[9].draw();
     glPopMatrix();
 
     glPushMatrix();
-    glScalef(9,9,9);
-    glTranslated(9,0,1.5);
-    glRotated(225,0,1,0);
+    casa[10].Scale(9);
+    casa[10].Translate(9,0,1.5);
+    casa[10].Rotate(255,0,1,0);
+    //glScalef(9,9,9);
+    //glTranslated(9,0,1.5);
+    //glRotated(225,0,1,0);
     casa[10].draw();
     glPopMatrix();
 
     glPushMatrix();
-    glScalef(9,9,9);
-    glTranslated(7.5,0,-3);
-    glRotated(315,0,1,0);
+    casa[11].Scale(9);
+    casa[11].Translate(7.5,0,-3);
+    casa[11].Rotate(315,0,1,0);
+    //glScalef(9,9,9);
+    //glTranslated(7.5,0,-3);
+    //glRotated(315,0,1,0);
     casa[11].draw();
     glPopMatrix();
 
     glPushMatrix();
-    glScaled(2,2,2);
-    glTranslated(23,0,2.5);
+    fuente.Scale(2);
+    fuente.Translate(23,0,2.5);
     fuente.draw();
     glPopMatrix();
 
@@ -151,8 +184,8 @@ void Escenario::draw()
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(25-velocidad1,0,-1.5);
-    glRotated(270,0,1,0);
+    cerd.Translate(25-velocidad1,0,-1.5);
+    cerd.Rotate(270,0,1,0);
     cerd.draw();
     glPopMatrix();
 
@@ -163,8 +196,9 @@ void Escenario::draw()
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(40-velocidad1,0,6);
-    glRotated(270,0,1,0);
+    zombie.Translate(40-velocidad1,0,6);
+    zombie.Rotate(270,0,1,0);
+
     zombie.draw();
     glPopMatrix();
 
@@ -196,7 +230,42 @@ void Escenario::draw()
 
 bool Escenario::Choque(float x,float z)
 {
-    return personaje.Choque(x,z,1.0);
+    int i=0;
+    int bandera=0;
+    if(personaje.Choque(x,z,1.0)==true)
+         return personaje.Choque(x,z,1.0);
+    else
+    {
+        if(zombie.Choque(x,z,1.0)==true)
+            return zombie.Choque(x,z,1.0);
+        else
+            if(fuente.Choque(x,z,1.0)==true)
+            return fuente.Choque(x,z,1.0);
+
+            else
+                if(cerd.Choque(x,z,1.0)==true)
+                    return cerd.Choque(x,z,1.0);
+                else{
+                   while(i<12&&bandera!=1)
+                   {
+                       if(casa[i].Choque(x,z,1.0)==true)
+                       {
+                           bandera=1;
+                           return true;
+                       }
+
+                       i++;
+
+                   }
+                }
+    }
+
+
+
+       /* ;*/
+
+
+
 }
 void Escenario::update()
 {

@@ -2,34 +2,7 @@
 
 
 Casa::Casa()
-
-
 {
-    /*
-    //Frente
-    base[0][0]=0; base[0][1]=10; base[0][2]=0;
-    base[1][0]=10; base[1][1]=10; base[1][2]=0;
-    base[2][0]=10; base[2][1]=0; base[2][2]=0;
-    base[3][0]=0; base[2][1]=0; base[3][2]=0;
-
-    //Atras
-    base[4][0]=0; base[4][1]=10; base[4][2]=-10;
-    base[5][0]=10; base[5][1]=10; base[5][2]=-10;
-    base[6][0]=10; base[6][1]=0; base[6][2]=-10;
-    base[7][0]=0; base[7][1]=0; base[7][2]=-10;
-
-    //Izquierda
-    base[8][0]=0; base[8][1]=10; base[8][2]=-10;
-    base[9][0]=0; base[9][1]=10; base[9][2]=0;
-    base[10][0]=0; base[10][1]=0; base[10][2]=0;
-    base[11][0]=0; base[11][1]=0; base[11][2]=-10;
-
-    //Derecha
-    base[8][0]=0; base[8][1]=10; base[8][2]=0;
-    base[9][0]=0; base[9][1]=10; base[9][2]=-10;
-    base[10][0]=0; base[10][1]=0; base[10][2]=-10;
-    base[11][0]=0; base[11][1]=0; base[11][2]=0;*/
-
      //Frente
     base[0][0]=0; base[0][1]=2; base[0][2]=0;
     base[1][0]=2; base[1][1]=2; base[1][2]=0;
@@ -123,17 +96,43 @@ Casa::~Casa()
 {
     //dtor
 }
+float* Casa::getCentro()
+{
+    return centro;
+}
+
+float Casa::getRadio()
+{
+    return radio;
+}
+
+void Casa::Rotate(float ang,float x,float y,float z)
+{
+    col.Rotate(ang,x,y,z);
+}
+
+void Casa::Translate(float x,float y,float z)
+{
+    col.Translate(x,y,z);
+}
+
+void Casa::Scale(float s)
+{
+    col.Scale(s);
+}
+
+bool Casa::Choque(float x,float z,float rad)
+{
+    return col.Choque(centro,radio,x,z,rad);
+}
 
 void Casa::draw()
 {
-    /*
-    //BASE
-    glPushMatrix();
-    glTranslated(0,0,0);
-    glScaled(2,2,2);
-    glColor3f(0.3,0.23,0.29);
-    glutSolidCube(1);
-    glPopMatrix();*/
+
+    float p1[3]={0,0,0};
+    float p2[3]={2,0,-2};
+    float pivote[3]={2,0,0};
+    col.setCentro(p1,p2,pivote,centro,&radio);
     glColor3f(1,1,1);
     int i;
     if(band==0)

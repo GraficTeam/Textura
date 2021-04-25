@@ -84,9 +84,41 @@ Fuente::~Fuente()
 {
     //dtor
 }
+float* Fuente::getCentro()
+{
+    return centro;
+}
+
+float Fuente::getRadio()
+{
+    return radio;
+}
+
+void Fuente::Rotate(float ang,float x,float y,float z)
+{
+    col.Rotate(ang,x,y,z);
+}
+
+void Fuente::Translate(float x,float y,float z)
+{
+    col.Translate(x,y,z);
+}
+
+void Fuente::Scale(float s)
+{
+    col.Scale(s);
+}
+
+bool Fuente::Choque(float x,float z,float rad)
+{
+    return col.Choque(centro,radio,x,z,rad);
+}
 void Fuente::draw()
 {
-
+    float p1[3]={0,0,0};
+    float p2[3]={5,0,-5};
+    float pivote[3]={5,0,0};
+    col.setCentro(p1,p2,pivote,centro,&radio);
     int i;
     if(band==0)
     {

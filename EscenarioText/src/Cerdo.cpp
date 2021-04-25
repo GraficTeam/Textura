@@ -144,8 +144,44 @@ Cerdo::~Cerdo()
     //dtor
 }
 
+
+float* Cerdo::getCentro()
+{
+    return centro;
+}
+
+float Cerdo::getRadio()
+{
+    return radio;
+}
+
+void Cerdo::Rotate(float ang,float x,float y,float z)
+{
+    col.Rotate(ang,x,y,z);
+}
+
+void Cerdo::Translate(float x,float y,float z)
+{
+    col.Translate(x,y,z);
+}
+
+void Cerdo::Scale(float s)
+{
+    col.Scale(s);
+}
+
+bool Cerdo::Choque(float x,float z,float rad)
+{
+    return col.Choque(centro,radio,x,z,rad);
+}
+
+
 void Cerdo::draw()
 {
+    float p1[3]={0,0,0};
+    float p2[3]={4,0,-4};
+    float pivote[3]={4,0,0};
+    col.setCentro(p1,p2,pivote,centro,&radio);
     int i;
     if(band==0)
     {
