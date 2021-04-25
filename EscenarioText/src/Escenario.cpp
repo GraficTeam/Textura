@@ -38,7 +38,7 @@ void Escenario::drawAxis()
      glEnd();
  }
 
-void Escenario::draw()
+void Escenario::draw(float x,float y,float z)
 {
     int i;
     //Dibuja pasto
@@ -191,7 +191,7 @@ void Escenario::draw()
 
     glPushMatrix();
     personaje.Rotate(180,0,1,0);
-    personaje.Translate(5,0,-2);
+    personaje.Translate(-x,y-6.5,-z);
     personaje.draw();
     glPopMatrix();
 
@@ -256,10 +256,10 @@ bool Escenario::Choque(float x,float z)
 {
     int i=0;
     int bandera=0;
-    if(personaje.Choque(x,z,1.0)==true)
+    /*if(personaje.Choque(x,z,1.0)==true)
          return personaje.Choque(x,z,1.0);
     else
-    {
+    {*/
         if(zombie.Choque(x,z,1.0)==true)
             return zombie.Choque(x,z,1.0);
         else
@@ -281,7 +281,7 @@ bool Escenario::Choque(float x,float z)
                        i++;
 
                    }
-                }
+               // }
     }
 
 

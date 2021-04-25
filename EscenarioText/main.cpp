@@ -42,7 +42,7 @@ float Z_MIN=-50;
 float Z_MAX=80;
 //Variables para matrices de rotacion y traslación
 float Theta=0;
-bool band=false;
+bool band=false,vision=false;
 //float Radio=1.0;
 float PI = 3.14159265359;
 float Direction[3] = {1.0,0.0,0.0};
@@ -84,6 +84,7 @@ void LookAt()
 
 void keyboard(unsigned char key, int x, int y)
 {
+    float aux_X,aux_Y,aux_Z;
     switch (key)
     {
         case 'A':
@@ -103,9 +104,18 @@ void keyboard(unsigned char key, int x, int y)
         case ' ':
             band=true;
             break;
+        case 'v':
+        case 'V':
+            if(vision==false)
+                vision=true;
+            else
+                vision=false;
     }
     glLoadIdentity();
-    gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z);
+    if(vision==false)
+        gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z);
+    else
+        gluLookAt(CENTER_X,CENTER_Y,CENTER_Z,EYE_X,EYE_Y,EYE_Z,UP_X,UP_Y,UP_Z);
     glutPostRedisplay();
 }
 
@@ -113,27 +123,28 @@ void SpecialInput(int key, int x, int y)
 {
     switch(key){
                 case GLUT_KEY_UP:
-                     if(esc.Choque(EYE_X + Direction[0],EYE_Z + Direction[2])==false)
-                     {
-                         EYE_X += Direction[0];
-                        EYE_Y += Direction[1];
-                        EYE_Z += Direction[2];
-                        CENTER_X = EYE_X + Direction[0];
-                        CENTER_Y = EYE_Y + Direction[1];
-                        CENTER_Z = EYE_Z + Direction[2];
-                     }
+                        if(esc.Choque(EYE_X + Direction[0],EYE_Z + Direction[2])==false)
+                        {
+                            EYE_X += Direction[0];
+                            EYE_Y += Direction[1];
+                            EYE_Z += Direction[2];
+                            CENTER_X = EYE_X + Direction[0];
+                            CENTER_Y = EYE_Y + Direction[1];
+                            CENTER_Z = EYE_Z + Direction[2];
+                        }
                      break;
                 case GLUT_KEY_DOWN:
-                    if(esc.Choque(EYE_X - Direction[0],EYE_Z - Direction[2])==false)
-                    {
-                        EYE_X -= Direction[0];
-                        EYE_Y -= Direction[1];
-                        EYE_Z -= Direction[2];
-                        CENTER_X = EYE_X + Direction[0];
-                        CENTER_Y = EYE_Y + Direction[1];
-                        CENTER_Z = EYE_Z + Direction[2];
-                    }
-                     break;
+                        if(esc.Choque(EYE_X - Direction[0],EYE_Z - Direction[2])==false)
+                        {
+                            EYE_X -= Direction[0];
+                            EYE_Y -= Direction[1];
+                            EYE_Z -= Direction[2];
+                            CENTER_X = EYE_X + Direction[0];
+                            CENTER_Y = EYE_Y + Direction[1];
+                            CENTER_Z = EYE_Z + Direction[2];
+                        }
+                    break;
+
                 case GLUT_KEY_LEFT:
                      if(esc.Choque(EYE_X - Derecha[0],EYE_Z - Derecha[2])==false)
                      {
@@ -159,7 +170,10 @@ void SpecialInput(int key, int x, int y)
     }
 
     glLoadIdentity();
-    gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z);
+    if(vision==false)
+        gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z);
+    else
+        gluLookAt(CENTER_X,CENTER_Y,CENTER_Z,EYE_X,EYE_Y,EYE_Z,UP_X,UP_Y,UP_Z);
     glutPostRedisplay();
 }
 
@@ -186,9 +200,12 @@ void display()
         }
     }
     glLoadIdentity();
-    gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z);
+    if(vision==false)
+        gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z);
+    else
+        gluLookAt(CENTER_X,CENTER_Y,CENTER_Z,EYE_X,EYE_Y,EYE_Z,UP_X,UP_Y,UP_Z);
     glutPostRedisplay();
-    esc.draw();
+    esc.draw(EYE_X,EYE_Y,EYE_Z);
     esc.update();
     glutSwapBuffers();
 }

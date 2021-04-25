@@ -67,7 +67,7 @@ class Escenario
         Escenario();
         virtual ~Escenario();
         void drawAxis();
-        void draw();
+        void draw(float,float,float);
         bool Choque(float,float);
         void update();
 };
