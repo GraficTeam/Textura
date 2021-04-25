@@ -40,9 +40,41 @@ arbol::~arbol()
 {
     //dtor
 }
+float* arbol::getCentro()
+{
+    return centro;
+}
+
+float arbol::getRadio()
+{
+    return radio;
+}
+
+void arbol::Rotate(float ang,float x,float y,float z)
+{
+    col.Rotate(ang,x,y,z);
+}
+
+void arbol::Translate(float x,float y,float z)
+{
+    col.Translate(x,y,z);
+}
+
+void arbol::Scale(float s)
+{
+    col.Scale(s);
+}
+
+bool arbol::Choque(float x,float z,float rad)
+{
+    return col.Choque(centro,radio,x,z,rad);
+}
+
+
 
 void arbol::tronco()
 {
+
     int i;
     i=0;
     while(i<24)
@@ -67,6 +99,10 @@ void arbol::hoja()
 
 void arbol::draw()
 {
+    float p1[3]={0,0,0};
+    float p2[3]={0,0,-1};
+    float pivote[3]={1,0,0};
+    col.setCentro(p1,p2,pivote,centro,&radio);
     int i;
     if(band==0)
     {

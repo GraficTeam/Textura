@@ -255,7 +255,7 @@
 1619335212 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\arbol.cpp
 	"arbol.h"
 
-1619325389 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\main.cpp
+1619360078 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\main.cpp
 	<GLUT/glut.h>
 	<GL/glut.h>
 	<stdlib.h>
@@ -264,7 +264,7 @@
 	<math.h>
 	"Escenario.h"
 
-1619325389 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\escenario.h
+1619360321 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\escenario.h
 	<GL/glut.h>
 	<stdlib.h>
 	<math.h>
@@ -293,12 +293,13 @@
 	"Textur.h"
 	"Colision.h"
 
-1619128375 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\arbol.h
+1619360340 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\arbol.h
 	<GL/glut.h>
 	<stdlib.h>
 	"Textur.h"
+	"Colision.h"
 
-1619128381 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\arbol.cpp
+1619360321 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\arbol.cpp
 	"arbol.h"
 
 1619328087 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\cerdo.cpp
@@ -310,7 +311,7 @@
 	"Textur.h"
 	"Colision.h"
 
-1619330142 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\escenario.cpp
+1619368139 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\escenario.cpp
 	"Escenario.h"
 
 1619327744 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\fuente.cpp

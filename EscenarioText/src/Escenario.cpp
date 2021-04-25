@@ -165,19 +165,32 @@ void Escenario::draw(float x,float y,float z)
     casa[11].draw();
     glPopMatrix();
 
+    /*
     glPushMatrix();
     fuente.Scale(2);
     fuente.Translate(23,0,2.5);
     fuente.draw();
     glPopMatrix();
+    */
 
     glPushMatrix();
-    glScalef(4,4,4);
-    glRotatef(180,0,1,0);
+    fuent.Scale(2);
+    fuent.Translate(23,0,2.5);
+    fuent.draw();
+    glPopMatrix();
+
+    glPushMatrix();
+    //arb[i].Scale(4);
+    //arb[i].Rotate(180,0,1,0);
+    //glScalef(4,4,4);
+    //glRotatef(180,0,1,0);
     for(i=0;i<8;i++)
     {
         glPushMatrix();
-        glTranslated(Tarb[i][0],Tarb[i][1],Tarb[i][2]);
+        arb[i].Scale(4);
+        arb[i].Rotate(180,0,1,0);
+        arb[i].Translate(Tarb[i][0],Tarb[i][1],Tarb[i][2]);
+        //glTranslated(Tarb[i][0],Tarb[i][1],Tarb[i][2]);
         arb[i].draw();
         glPopMatrix();
     }
@@ -254,6 +267,8 @@ void Escenario::draw(float x,float y,float z)
 
 bool Escenario::Choque(float x,float z)
 {
+    //return false;
+
     int i=0;
     int bandera=0;
     /*if(personaje.Choque(x,z,1.0)==true)
@@ -263,8 +278,8 @@ bool Escenario::Choque(float x,float z)
         if(zombie.Choque(x,z,1.0)==true)
             return zombie.Choque(x,z,1.0);
         else
-            if(fuente.Choque(x,z,1.0)==true)
-            return fuente.Choque(x,z,1.0);
+            if(fuent.Choque(x,z,1.0)==true)
+            return fuent.Choque(x,z,1.0);
 
             else
                 if(cerd.Choque(x,z,1.0)==true)
@@ -281,13 +296,29 @@ bool Escenario::Choque(float x,float z)
                        i++;
 
                    }
-               // }
-    }
 
+                   if(bandera==1)
+                        return true;
+                   else
+                   {
+                        i=0;
+                       while(i<8&&bandera!=1)
+                        {
+                       if(arb[i].Choque(x,z,1.0)==true)
+                       {
+                           bandera=1;
+                           //return true;
+                       }
 
+                       i++;
 
-       /* ;*/
-
+                    }
+                    if(bandera==1)
+                        return true;
+                    else
+                        return false;
+                        }
+                   }
 
 
 }

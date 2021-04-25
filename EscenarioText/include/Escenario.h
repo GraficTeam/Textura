@@ -25,6 +25,7 @@ class Escenario
         Cerdo cerd;
         arbol arb[8];
         Fuente fuente;
+        Fuente fuent;
         Casa casa[12];
         nube nub;
         Colision coli;
