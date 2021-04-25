@@ -40,6 +40,7 @@ void Escenario::drawAxis()
 
 void Escenario::draw()
 {
+    int i;
     //Dibuja pasto
     if(bond==false)
     {
@@ -140,57 +141,13 @@ void Escenario::draw()
     glPushMatrix();
     glScalef(4,4,4);
     glRotatef(180,0,1,0);
-    glTranslated(-13,0,-7);
-    arb[0].draw();
-    glPopMatrix();
-
-    glPushMatrix();
-    glScalef(4,4,4);
-    glRotatef(180,0,1,0);
-    glTranslated(-13,0,8);
-    arb[1].draw();
-    glPopMatrix();
-
-    glPushMatrix();
-    glScalef(4,4,4);
-    glRotatef(180,0,1,0);
-    glTranslated(10.5,0,-6);
-    arb[2].draw();
-    glPopMatrix();
-
-    glPushMatrix();
-    glScalef(4,4,4);
-    glRotatef(180,0,1,0);
-    glTranslated(10.5,0,6.5);
-    arb[3].draw();
-    glPopMatrix();
-
-    glPushMatrix();
-    glScalef(4,4,4);
-    glRotatef(180,0,1,0);
-    glTranslated(-7,0,14);
-    arb[4].draw();
-    glPopMatrix();
-
-    glPushMatrix();
-    glScalef(4,4,4);
-    glRotatef(180,0,1,0);
-    glTranslated(6,0,13);
-    arb[5].draw();
-    glPopMatrix();
-
-    glPushMatrix();
-    glScalef(4,4,4);
-    glRotatef(180,0,1,0);
-    glTranslated(-6,0,-12);
-    arb[6].draw();
-    glPopMatrix();
-
-    glPushMatrix();
-    glScalef(4,4,4);
-    glRotatef(180,0,1,0);
-    glTranslated(6,0,-12);
-    arb[7].draw();
+    for(i=0;i<8;i++)
+    {
+        glPushMatrix();
+        glTranslated(Tarb[i][0],Tarb[i][1],Tarb[i][2]);
+        arb[i].draw();
+        glPopMatrix();
+    }
     glPopMatrix();
 
     glPushMatrix();

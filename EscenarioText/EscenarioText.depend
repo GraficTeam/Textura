@@ -143,7 +143,7 @@
 	<windows.h>
 	"GL/gl.h"
 
-1619288121 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\steve.cpp
+1619288507 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\steve.cpp
 	"Steve.h"
 
 1619270293 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\zombie.cpp
@@ -223,7 +223,7 @@
 1619288001 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\textur.cpp
 	"Textur.h"
 
-1619280152 c:\users\victor\desktop\proyectos\textura\escenariotext\include\escenario.h
+1619320344 c:\users\victor\desktop\proyectos\textura\escenariotext\include\escenario.h
 	<GL/glut.h>
 	<stdlib.h>
 	<math.h>
@@ -236,7 +236,7 @@
 	"Colision.h"
 	"Casa.h"
 
-1619288331 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\escenario.cpp
+1619320344 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\escenario.cpp
 	"Escenario.h"
 
 1619126555 c:\users\victor\desktop\proyectos\textura\escenariotext\include\arbol.h

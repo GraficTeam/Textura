@@ -23,11 +23,18 @@ class Escenario
         Steve personaje;
         Zombie zombie;
         Cerdo cerd;
-        arbol arb[10];
+        arbol arb[8];
         Fuente fuente;
         Casa casa[12];
         Colision coli;
-        float tras[3]={0,0,0};
+        float Tarb[8][3]={{-13,0,-7},
+                           {-13,0,8},
+                           {10.5,0,-6},
+                           {10.5,0,6.5},
+                           {-7,0,14},
+                           {6,0,13},
+                           {-6,0,-12},
+                           {6,0,-12}};
     public:
         Escenario();
         virtual ~Escenario();
