@@ -3,8 +3,9 @@
 
 #include <GL/glut.h>
 #include <stdlib.h>
-#include <math.h>
+
 #include "Textur.h"
+#include "Colision.h"
 
 class Steve
 {
@@ -15,22 +16,24 @@ class Steve
         char* filename[24];
         float centro[3]={0,0,0};
         float radio;
-        float A[4][4]={{1,0,0,0},
+        /*float A[4][4]={{1,0,0,0},
                        {0,1,0,0},
                        {0,0,1,0},
-                       {0,0,0,1},};
+                       {0,0,0,1},};*/
         int band=0;
         Textur t;
+        Colision col;
 
     public:
         Steve();
         virtual ~Steve();
         float* getCentro();
         float getRadio();
-        void setCentro(float p1[],float p2[],float x,float y,float z);
-        void Rotar(float,float ,float ,float );
-        void Trasladar(float,float,float);
-        void Escalar(float s);
+        //void setCentro(float p1[],float p2[],float x,float y,float z);
+        void Rotate(float,float ,float ,float );
+        void Translate(float,float,float);
+        void Scale(float s);
+        bool Choque(float,float,float);
         void draw();
 };
 

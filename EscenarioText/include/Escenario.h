@@ -44,8 +44,8 @@ class Escenario
         virtual ~Escenario();
         void drawAxis();
         void draw();
-        bool update(float,float);
-        void update2();
+        bool Choque(float,float);
+        void update();
 };
 
 #endif // ESCENARIO_H

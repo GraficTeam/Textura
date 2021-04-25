@@ -113,7 +113,7 @@ void SpecialInput(int key, int x, int y)
 {
     switch(key){
                 case GLUT_KEY_UP:
-                     if(esc.update(EYE_X + Direction[0],EYE_Z + Direction[2])==false)
+                     if(esc.Choque(EYE_X + Direction[0],EYE_Z + Direction[2])==false)
                      {
                          EYE_X += Direction[0];
                         EYE_Y += Direction[1];
@@ -124,7 +124,7 @@ void SpecialInput(int key, int x, int y)
                      }
                      break;
                 case GLUT_KEY_DOWN:
-                    if(esc.update(EYE_X - Direction[0],EYE_Z - Direction[2])==false)
+                    if(esc.Choque(EYE_X - Direction[0],EYE_Z - Direction[2])==false)
                     {
                         EYE_X -= Direction[0];
                         EYE_Y -= Direction[1];
@@ -135,7 +135,7 @@ void SpecialInput(int key, int x, int y)
                     }
                      break;
                 case GLUT_KEY_LEFT:
-                     if(esc.update(EYE_X - Derecha[0],EYE_Z - Derecha[2])==false)
+                     if(esc.Choque(EYE_X - Derecha[0],EYE_Z - Derecha[2])==false)
                      {
                         EYE_X -= Derecha[0];
                         EYE_Y -= Derecha[1];
@@ -146,7 +146,7 @@ void SpecialInput(int key, int x, int y)
                      }
                      break;
                 case GLUT_KEY_RIGHT:
-                     if(esc.update(EYE_X - Derecha[0],EYE_Z - Derecha[2])==false)
+                     if(esc.Choque(EYE_X - Derecha[0],EYE_Z - Derecha[2])==false)
                      {
                         EYE_X += Derecha[0];
                         EYE_Y += Derecha[1];
@@ -156,7 +156,6 @@ void SpecialInput(int key, int x, int y)
                         CENTER_Z += Derecha[2];
                      }
                      break;
-
     }
 
     glLoadIdentity();
@@ -190,7 +189,7 @@ void display()
     gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z);
     glutPostRedisplay();
     esc.draw();
-    esc.update2();
+    esc.update();
     glutSwapBuffers();
 }
 

@@ -138,84 +138,25 @@ float Steve::getRadio()
 {
     return radio;
 }
-void Steve::setCentro(float p1[],float p2[],float x,float y,float z)
+
+void Steve::Rotate(float ang,float x,float y,float z)
 {
-    int i,j;
-    float pivote[3],auxp1[3],auxp2[3];
-    pivote[0]=x;
-    pivote[1]=y;
-    pivote[2]=z;
-    for(i=0;i<3;i++)
-    {
-        auxp1[i]=p1[i];
-        auxp2[i]=p2[i];
-    }
-    t.multiplicar(A,pivote);
-    t.multiplicar(A,auxp1);
-    t.multiplicar(A,auxp2);
-    centro[0]=(auxp2[0]+auxp1[0])/2;
-    centro[2]=(auxp2[2]+auxp1[2])/2;
-    radio=sqrt((centro[0]-pivote[0])*(centro[0]-pivote[0])+(centro[2]-pivote[2])*(centro[2]-pivote[2]));
-    for(i=0;i<4;i++)
-    {
-        for(j=0;j<4;j++)
-        {
-            if(i==j)
-                A[i][j]=1;
-            else
-                A[i][j]=0;
-        }
-    }
+    col.Rotate(ang,x,y,z);
 }
 
-void Steve::Rotar(float ang,float x,float y,float z)
+void Steve::Translate(float x,float y,float z)
 {
-    float rad=ang*0.0174533;//Convierte los grados a radianes
-    float aux[4][4]={{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
-    int i,j,k;
-    //Se multiplica la matriz global por la matriz de rotacion Y, se guarda el resultado en la matriz auxiliar
-    float rotate_y[4][4]={{cos(rad),0,sin(rad),0},{0,1,0,0},{-1*sin(rad),0,cos(rad),0},{0,0,0,1}}; //Se inicializa la matriz de rotacion Y
-    for (i=0;i<4;i++)
-        for (j=0;j<4;j++)
-            for (k=0;k<4;k++)
-                aux[i][j]=aux[i][j]+rotate_y[k][j]*A[i][k];
-    for (i=0;i<4;i++)
-            for (j=0;j<4;j++)
-                A[i][j]=aux[i][j];
-    glRotatef(ang,x,y,z);
+    col.Translate(x,y,z);
 }
 
-void Steve::Trasladar(float tx,float ty,float tz)
+void Steve::Scale(float s)
 {
-    float trans[4][4]={{1,0,0,tx},{0,1,0,ty},{0,0,1,tz},{0,0,0,1}};//Se inicializa la matriz de translacion
-    float aux[4][4]={{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}}; //matriz auxiliar
-    int i,j,k;
-    //Se multiplica la matriz global por la matriz de translacion, se guarda el resultado en la matriz auxiliar
-    for (i=0;i<4;i++)
-        for (j=0;j<4;j++)
-            for (k=0;k<4;k++)
-                aux[i][j]=aux[i][j]+trans[k][j]*A[i][k];
-    //Actualizacion de la matriz global
-    for (i=0;i<4;i++)
-            for (j=0;j<4;j++)
-                A[i][j]=aux[i][j];
-    glTranslatef(tx,ty,tz);
+    col.Scale(s);
 }
-void Steve::Escalar(float s)
+
+bool Steve::Choque(float x,float z,float rad)
 {
-    float scale[4][4]={{s,0,0,0},{0,s,0,0},{0,0,s,0},{0,0,0,1}};//Se inicializa la matriz de escalamiento
-    float aux[4][4]={{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
-    int i,j,k;
-    //Se multiplica la matriz global por la matriz de tescalamiento, se guarda el resultado en la matriz auxiliar
-    for (i=0;i<4;i++)
-        for (j=0;j<4;j++)
-            for (k=0;k<4;k++)
-                aux[i][j]=aux[i][j]+scale[k][j]*A[i][k];
-    //Actualizacion de la matriz global
-    for (i=0;i<4;i++)
-            for (j=0;j<4;j++)
-                A[i][j]=aux[i][j];
-    glScalef(s,s,s);
+    return col.Choque(centro,radio,x,z,rad);
 }
 
 void Steve::draw()
@@ -223,8 +164,8 @@ void Steve::draw()
     int i;
     float p1[3]={0,0,0};
     float p2[3]={2,0,-1};
-    //float pivote[3]={};
-    setCentro(p1,p2,-1,0,0);
+    float pivote[3]={-1,0,0};
+    col.setCentro(p1,p2,pivote,centro,&radio);
     if(band==0)
     {
         for(i=0;i<24;i++)

@@ -157,8 +157,8 @@ void Escenario::draw()
     glPopMatrix();
 
     glPushMatrix();
-    personaje.Rotar(180,0,1,0);
-    personaje.Trasladar(5,0,-2);
+    personaje.Rotate(180,0,1,0);
+    personaje.Translate(5,0,-2);
     personaje.draw();
     glPopMatrix();
 
@@ -194,13 +194,11 @@ void Escenario::draw()
 
 }
 
-bool Escenario::update(float x,float z)
+bool Escenario::Choque(float x,float z)
 {
-
-
-    return coli.Choque(personaje.getCentro(),personaje.getRadio(),x,z);
+    return personaje.Choque(x,z,1.0);
 }
-void Escenario::update2()
+void Escenario::update()
 {
     if(velocidad1<30)
     {
@@ -213,5 +211,4 @@ void Escenario::update2()
         cerd.update(1);
         zombie.update(1);
     }
-
 }
