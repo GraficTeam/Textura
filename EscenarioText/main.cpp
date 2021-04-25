@@ -20,7 +20,7 @@ int HEIGTH=500;
 //Variables para establecer los valores de gluPerspective
 float FOVY=60.0;
 float ZNEAR=0.001;
-float ZFAR=100.0;
+float ZFAR=500.0;
 //Variables para definir la posicion del observador
 //Por default se inicializa en (0,0,0) y mirando hacia x positivo
 //gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z)

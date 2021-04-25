@@ -204,27 +204,51 @@ void Escenario::draw()
 
 
     //Nubes
+
+        //Nubes
     glPushMatrix();
-    glTranslatef(15,40,0);
-    nub.draw(4);
+    for (i=0; i<7;i++)
+    {
+        glPushMatrix();
+        glTranslated(Tnub1[i][0],Tnub1[i][1],Tnub1[i][2]);
+        glScaled(1,2,1);
+        nub.draw(1);
+        glPopMatrix();
+    }
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(-30,40,2);
-    nub.draw(2);
+    for (i=0; i<6;i++)
+    {
+        glPushMatrix();
+        glTranslated(Tnub2[i][0],Tnub2[i][1],Tnub2[i][2]);
+        glScaled(1,2,1);
+        nub.draw(2);
+        glPopMatrix();
+    }
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(10,40,-35);
-    nub.draw(3);
+    for (i=0; i<6;i++)
+    {
+        glPushMatrix();
+        glTranslated(Tnub3[i][0],Tnub3[i][1],Tnub3[i][2]);
+        glScaled(1,2,1);
+        nub.draw(3);
+        glPopMatrix();
+    }
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(50,40,-35);
-    nub.draw(1);
+    for (i=0; i<5;i++)
+    {
+        glPushMatrix();
+        glTranslated(Tnub4[i][0],Tnub4[i][1],Tnub4[i][2]);
+        glScaled(1,2,1);
+        nub.draw(3);
+        glPopMatrix();
+    }
     glPopMatrix();
-
-
 
 }
 
