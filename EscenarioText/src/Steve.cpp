@@ -174,6 +174,7 @@ void Steve::draw()
     }
     glColor3f(1.0f, 1.0f, 1.0f);
     glPushMatrix();
+    glRotatef(90,0,1,0);
     //Cabeza
     glPushMatrix();
     glTranslatef(0,0,0.5);

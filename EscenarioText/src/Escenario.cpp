@@ -203,8 +203,8 @@ void Escenario::draw(float x,float y,float z)
     glPopMatrix();
 
     glPushMatrix();
-    personaje.Rotate(180,0,1,0);
-    personaje.Translate(-x,y-6.5,-z);
+    //personaje.Rotate(180,0,1,0);
+    personaje.Translate(x-1,y-6.5,z+0.5);
     personaje.draw();
     glPopMatrix();
 
