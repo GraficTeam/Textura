@@ -11,7 +11,7 @@
 #include "Fuente.h"
 #include "Steve.h"
 #include "Colision.h"
-
+#include "nube.h"
 #include "Casa.h"
 class Escenario
 {
@@ -26,7 +26,11 @@ class Escenario
         arbol arb[8];
         Fuente fuente;
         Casa casa[12];
+        nube nub;
         Colision coli;
+        //Variable de control
+         float velocidad1=0;
+
         float Tarb[8][3]={{-13,0,-7},
                            {-13,0,8},
                            {10.5,0,-6},
@@ -41,6 +45,7 @@ class Escenario
         void drawAxis();
         void draw();
         bool update(float,float);
+        void update2();
 };
 
 #endif // ESCENARIO_H

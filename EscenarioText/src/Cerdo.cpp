@@ -91,10 +91,10 @@ Cerdo::Cerdo()
     cabeza[7][0]=0.5; cabeza[7][1]=3.5; cabeza[7][2]=-2;
 
     //Cara izquierda
-    cabeza[8][0]=0.5; cabeza[8][1]=6.5; cabeza[8][2]=-2;
-    cabeza[9][0]=0.5; cabeza[9][1]=6.5; cabeza[9][2]=1.5;
-    cabeza[10][0]=0.5; cabeza[10][1]=3.5; cabeza[10][2]=1.5;
-    cabeza[11][0]=0.5; cabeza[11][1]=3.5; cabeza[11][2]=-2;
+    cabeza[8][0]=0.5; cabeza[8][1]=6.5; cabeza[8][2]=1.5;
+    cabeza[9][0]=0.5; cabeza[9][1]=6.5; cabeza[9][2]=-2;
+    cabeza[10][0]=0.5; cabeza[10][1]=3.5; cabeza[10][2]=-2;
+    cabeza[11][0]=0.5; cabeza[11][1]=3.5; cabeza[11][2]=1.5;
 
     //Cara derecha
     cabeza[12][0]=3.5; cabeza[12][1]=6.5; cabeza[12][2]=1.5;
@@ -201,6 +201,11 @@ void Cerdo::draw()
         i+=4;
     }
 
+    //Pata izquierda enfrente
+
+    glPushMatrix();
+    glTranslatef(0,0.3,-mov);
+    glRotated(grado,1,0,0);
     i=0;
     while(i<24)
     {
@@ -221,10 +226,14 @@ void Cerdo::draw()
         }
         i+=4;
     }
-
+    glPopMatrix();
+//pata izquierda atras
 
     glPushMatrix();
     glTranslatef(0,0,-3);
+     glPushMatrix();
+    glTranslatef(0,0.3,mov);
+    glRotated(grado,1,0,0);
      i=0;
     while(i<24)
     {
@@ -245,11 +254,16 @@ void Cerdo::draw()
         }
         i+=4;
     }
+     glPopMatrix();
     glPopMatrix();
 
 
+//Pata derecha enfrente
     glPushMatrix();
     glTranslated(3,0,0);
+    glPushMatrix();
+    glTranslatef(0,0.3,-mov);
+    glRotated(grado,-1,0,0);
      i=0;
     while(i<24)
     {
@@ -271,9 +285,14 @@ void Cerdo::draw()
         i+=4;
     }
     glPopMatrix();
+     glPopMatrix();
 
+    //Pata derecha atras
     glPushMatrix();
     glTranslated(3,0,-3);
+    glPushMatrix();
+    glTranslatef(0,0.3,-mov);
+    glRotated(grado,-1,0,0);
     i=0;
     while(i<24)
     {
@@ -295,7 +314,37 @@ void Cerdo::draw()
         i+=4;
     }
     glPopMatrix();
-
+    glPopMatrix();
     glPopMatrix();
 
 }
+void Cerdo::update(int bandera)
+{
+  if(bandera==0)
+    {
+           if(grado<=30 and band2==0)
+        {
+            if(grado==30)
+                band2=1;
+            grado+=1;
+            mov+=0.05;
+        }
+        else
+        {
+            if(grado>=-30)
+        {
+                if(grado==-30)
+                    band2=0;
+            grado=grado-1;
+            mov=mov-0.05;
+        }
+        }
+    }
+    else
+    {
+        mov=0;
+        grado=0;
+    }
+
+}
+

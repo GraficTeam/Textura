@@ -151,7 +151,7 @@ void Escenario::draw()
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(25,0,-1.5);
+    glTranslatef(25-velocidad1,0,-1.5);
     glRotated(270,0,1,0);
     cerd.draw();
     glPopMatrix();
@@ -163,13 +163,55 @@ void Escenario::draw()
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(40,0,6);
+    glTranslatef(40-velocidad1,0,6);
     glRotated(270,0,1,0);
     zombie.draw();
     glPopMatrix();
+
+
+    //Nubes
+    glPushMatrix();
+    glTranslatef(15,40,0);
+    nub.draw(4);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-30,40,2);
+    nub.draw(2);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(10,40,-35);
+    nub.draw(3);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(50,40,-35);
+    nub.draw(1);
+    glPopMatrix();
+
+
+
 }
 
 bool Escenario::update(float x,float z)
 {
+
+
     return coli.Choque(personaje.getCentro(),personaje.getRadio(),x,z);
+}
+void Escenario::update2()
+{
+    if(velocidad1<30)
+    {
+        velocidad1=velocidad1+0.1;
+        cerd.update(0);
+        zombie.update(0);
+    }
+    else
+    {
+        cerd.update(1);
+        zombie.update(1);
+    }
+
 }

@@ -13,12 +13,17 @@ class Cerdo
         float cabeza[24][3];
         char* filename[18];
         int band=0;
+        int band2=0;
         Textur t;
+        float grado=0;
+        float mov=0;
+
 
     public:
         Cerdo();
         virtual ~Cerdo();
         void draw();
+        void update(int bandera);
 
 
 

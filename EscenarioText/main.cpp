@@ -88,14 +88,14 @@ void keyboard(unsigned char key, int x, int y)
     {
         case 'A':
         case 'a':
-            Theta -= 1.0f;
+            Theta -= 2.0f;
             Theta = (Theta < 0.0) ? 359.0 : Theta;
             LookAt();
             break;
 
         case 'D':
         case 'd':
-            Theta += 1.0f;
+            Theta += 2.0f;
             Theta = (Theta > 359.0) ? 0.0 : Theta;
             LookAt();
             break;
@@ -190,6 +190,7 @@ void display()
     gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z);
     glutPostRedisplay();
     esc.draw();
+    esc.update2();
     glutSwapBuffers();
 }
 

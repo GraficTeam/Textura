@@ -15,12 +15,16 @@ class Zombie
         float cabeza[24][3];
         char* filename[24];
         int band=0;
+        int band2=0;
         Textur t;
+        float grado=0;
+        float mov=0;
 
     public:
         Zombie();
         virtual ~Zombie();
         void draw();
+        void update(int bandera);
 
 
 };

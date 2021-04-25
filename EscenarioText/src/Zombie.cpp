@@ -89,11 +89,10 @@ Zombie::Zombie()
     cabeza[17][0]=2; cabeza[17][1]=8; cabeza[17][2]=-2;
     cabeza[18][0]=2; cabeza[18][1]=6; cabeza[18][2]=-2;
     cabeza[19][0]=2; cabeza[19][1]=6; cabeza[19][2]=0;
-
-    cabeza[20][0]=0; cabeza[20][1]=8; cabeza[20][2]=-2;
-    cabeza[21][0]=0; cabeza[21][1]=8; cabeza[21][2]=0;
-    cabeza[22][0]=0; cabeza[22][1]=6; cabeza[22][2]=0;
-    cabeza[23][0]=0; cabeza[23][1]=6; cabeza[23][2]=-2;
+    cabeza[20][0]=0; cabeza[20][1]=8; cabeza[20][2]=0;
+    cabeza[21][0]=0; cabeza[21][1]=8; cabeza[21][2]=-2;
+    cabeza[22][0]=0; cabeza[22][1]=6; cabeza[22][2]=-2;
+    cabeza[23][0]=0; cabeza[23][1]=6; cabeza[23][2]=0;
 
     filename[0]="Zombie_cara.bmp";
     filename[1]="Zombie_ladocabeza.bmp";
@@ -122,6 +121,9 @@ Zombie::Zombie()
     filename[21]="steve_pierAba.bmp";
     filename[22]="steve_pierDer.bmp";
     filename[23]="steve_pierIzq.bmp";
+
+
+
 }
 
 Zombie::~Zombie()
@@ -240,6 +242,10 @@ void Zombie::draw()
     }
     glPopMatrix();
 
+glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0,0.5,-mov);
+    glRotated(grado,1,0,0);
     //Pierna izquiera
     i=0;
     while(i<24)
@@ -261,10 +267,14 @@ void Zombie::draw()
         }
         i+=4;
     }
+    glPopMatrix();
 
     //Pierna derecha
     glPushMatrix();
     glTranslatef(1,0,0);
+    glPushMatrix();
+    glTranslatef(0,0.5,mov);
+    glRotated(grado,-1,0,0);
     i=0;
     while(i<24)
     {
@@ -286,6 +296,38 @@ void Zombie::draw()
         i+=4;
     }
     glPopMatrix();
+    glPopMatrix();
 
     glPopMatrix();
+}
+
+void Zombie::update(int bandera)
+{
+    if(bandera==0)
+    {
+           if(grado<=30 and band2==0)
+        {
+            if(grado==30)
+                band2=1;
+            grado+=1;
+            mov+=0.05;
+        }
+        else
+        {
+            if(grado>=-30)
+        {
+                if(grado==-30)
+                    band2=0;
+            grado=grado-1;
+            mov=mov-0.05;
+        }
+        }
+    }
+    else
+    {
+        mov=0;
+        grado=0;
+    }
+
+
 }
