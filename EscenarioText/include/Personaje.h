@@ -34,7 +34,7 @@ class Personaje
         void Translate(float,float,float);
         void Scale(float s);
         bool Choque(float,float,float);
-        void draw();
+        void draw(float,bool);
         void update(int bandera);
 };
 

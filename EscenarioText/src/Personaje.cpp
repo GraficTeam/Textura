@@ -159,7 +159,7 @@ bool Personaje::Choque(float x,float z,float rad)
     return col.Choque(centro,radio,x,z,rad);
 }
 
-void Personaje::draw()
+void Personaje::draw(float angu,bool b)
 {
     int i;
     float p1[3]={0,0,0};
@@ -174,7 +174,10 @@ void Personaje::draw()
     }
     glColor3f(1.0f, 1.0f, 1.0f);
     glPushMatrix();
-    glRotatef(90,0,1,0);
+    if(b==false)
+        glRotatef(90-angu,0,1,0);
+    else
+        glRotatef(90-angu,0,1,0);
     //Cabeza
     glPushMatrix();
     glTranslatef(0,0,0.5);
@@ -279,7 +282,7 @@ void Personaje::draw()
     }
     glPopMatrix();
 
-glPopMatrix();
+    glPopMatrix();
     glPushMatrix();
     glTranslatef(0,0.5,-mov);
     glRotated(grado,1,0,0);

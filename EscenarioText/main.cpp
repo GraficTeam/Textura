@@ -205,7 +205,7 @@ void display()
     else
         gluLookAt(CENTER_X,CENTER_Y,CENTER_Z,EYE_X,EYE_Y,EYE_Z,UP_X,UP_Y,UP_Z);
     glutPostRedisplay();
-    esc.draw(EYE_X,EYE_Y,EYE_Z);
+    esc.draw(EYE_X,EYE_Y,EYE_Z,Theta,vision);
     esc.update();
     glutSwapBuffers();
 }
