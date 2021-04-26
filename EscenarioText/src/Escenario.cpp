@@ -262,6 +262,29 @@ void Escenario::draw(float x,float y,float z)
         glPopMatrix();
     }
     glPopMatrix();
+
+    //Steves
+    glPushMatrix();
+    for (i=0; i<3;i++)
+    {
+        glPushMatrix();
+        steves[i].Rotate(270,0,1,0);
+        glTranslated(Tsteve[i][0],Tsteve[i][1],Tsteve[i][2]);
+        steves[i].draw();
+        glPopMatrix();
+    }
+    glPopMatrix();
+
+    glPushMatrix();
+    for (i=3; i<6;i++)
+    {
+        glPushMatrix();
+        steves[i].Rotate(90,0,1,0);
+        glTranslated(Tsteve[i][0],Tsteve[i][1],Tsteve[i][2]);
+        steves[i].draw();
+        glPopMatrix();
+    }
+    glPopMatrix();
 /*
     glPushMatrix();
     casita.Translate(0,0,10);

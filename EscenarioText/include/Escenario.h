@@ -20,7 +20,7 @@ class Escenario
         char* filename = "pasto.bmp";
         float pasto[4][3];
         Textur t;
-        Steve personaje;
+        Steve personaje, steves[6];;
         Zombie zombie;
         Cerdo cerd;
         arbol arb[8];
@@ -71,6 +71,12 @@ class Escenario
                         {-50,50,25},
                         {25,50,-50},
                         {25,50,50}};
+        float Tsteve[10][3]={{-15,0,-15},
+                        {-15,0,30},
+                        {-15,0,75},
+                        {-15,0,15},
+                        {-15,0,-30},
+                        {-15,0,-75}};
     public:
         Escenario();
         virtual ~Escenario();
