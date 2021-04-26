@@ -30,6 +30,8 @@ class Zombie
         virtual ~Zombie();
         //Metodos para colision
         float* getCentro();
+        float getX();
+        float getZ();
         float getRadio();
         void Rotate(float,float ,float ,float );
         void Translate(float,float,float);

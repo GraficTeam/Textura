@@ -149,7 +149,14 @@ float* Cerdo::getCentro()
 {
     return centro;
 }
-
+float Cerdo::getX()
+{
+    return centro[0];
+}
+float Cerdo::getZ()
+{
+    return centro[2];
+}
 float Cerdo::getRadio()
 {
     return radio;

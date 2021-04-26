@@ -224,6 +224,9 @@ void Steve::draw()
     //Brazo izquierdo
     glPushMatrix();
     glTranslatef(-1,3,0);
+    glPushMatrix();
+    glTranslatef(0,0.15,mov);
+    glRotated(grado,-1,0,0);
 
     i=0;
     while(i<24)
@@ -246,10 +249,14 @@ void Steve::draw()
         i+=4;
     }
     glPopMatrix();
+    glPopMatrix();
 
     //Brazo derecho
     glPushMatrix();
     glTranslatef(2,3,0);
+    glPushMatrix();
+    glTranslatef(0,0.15,-mov);
+    glRotated(grado,1,0,0);
     i=0;
     while(i<24)
     {
@@ -272,6 +279,10 @@ void Steve::draw()
     }
     glPopMatrix();
 
+glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0,0.5,-mov);
+    glRotated(grado,1,0,0);
     //Pierna izquiera
     i=0;
     while(i<24)
@@ -293,10 +304,14 @@ void Steve::draw()
         }
         i+=4;
     }
+    glPopMatrix();
 
     //Pierna derecha
     glPushMatrix();
     glTranslatef(1,0,0);
+    glPushMatrix();
+    glTranslatef(0,0.5,mov);
+    glRotated(grado,-1,0,0);
     i=0;
     while(i<24)
     {
@@ -318,8 +333,37 @@ void Steve::draw()
         i+=4;
     }
     glPopMatrix();
+    glPopMatrix();
 
     glPopMatrix();
 }
 
+void Steve::update(int bandera)
+{
+    if(bandera==0)
+    {
+           if(grado<=30 and band2==0)
+        {
+            if(grado==30)
+                band2=1;
+            grado+=1;
+            mov+=0.05;
+        }
+        else
+        {
+            if(grado>=-30)
+        {
+                if(grado==-30)
+                    band2=0;
+            grado=grado-1;
+            mov=mov-0.05;
+        }
+        }
+    }
+    else
+    {
+        mov=0;
+        grado=0;
+    }
+}
 

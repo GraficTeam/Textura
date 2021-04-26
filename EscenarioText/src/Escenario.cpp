@@ -209,9 +209,9 @@ void Escenario::draw(float x,float y,float z)
     glPopMatrix();
 
     glPushMatrix();
-    zombie.Translate(40-velocidad1,0,6);
+    zombie.Translate(40-velocidad1,0,6+velocidad2);
     zombie.Rotate(270,0,1,0);
-
+    zombie.Rotate(grado_zom,0,1,0);
     zombie.draw();
     glPopMatrix();
 
@@ -262,6 +262,12 @@ void Escenario::draw(float x,float y,float z)
         glPopMatrix();
     }
     glPopMatrix();
+/*
+    glPushMatrix();
+    casita.Translate(0,0,10);
+    casita.Scale(9);
+    casita.draw();
+    glPopMatrix();*/
 
 }
 
@@ -292,7 +298,6 @@ bool Escenario::Choque(float x,float z)
                            bandera=1;
                            return true;
                        }
-
                        i++;
 
                    }
@@ -324,7 +329,187 @@ bool Escenario::Choque(float x,float z)
 }
 void Escenario::update()
 {
-    if(velocidad1<30)
+    personaje.update(0);
+    int i=0;
+    // band_z=1;
+    int bandera=0;
+
+    //while
+    //colisiones Zombie
+
+/*
+    if(casita.Choque(zombie.getX(),zombie.getZ(),1)==false)
+    {
+        velocidad1=velocidad1+0.1;
+        zombie.update(0);
+    }
+    else
+    {
+        zombie.update(0);
+        grado_zom=90;
+        zombie.update(1);
+        if (grado_zom==90)
+            velocidad2+=0.1;
+    }*/
+    if(zombie.getZ()<-50||zombie.getZ()>40||zombie.getX()<-40||zombie.getX()>70)
+    {
+        grado=rand() % 4;
+            switch (grado)
+            {
+                case 0:grado_zom=0;
+
+                    break;
+                case 1:grado_zom=90;
+
+                        break;
+                case 2:grado_zom=180;
+
+                    break;
+                case 3:grado_zom=270;
+
+                    break;
+
+            }
+
+    }
+        if(band_z==1)
+        {
+            grado=rand() % 4;
+            switch (grado)
+            {
+                case 0:grado_zom=0;
+
+                    break;
+                case 1:grado_zom=90;
+
+                        break;
+                case 2:grado_zom=180;
+
+                    break;
+                case 3:grado_zom=270;
+
+                    break;
+
+            }
+              band_z=0;
+        }
+        switch (grado)
+            {
+                case 0:
+                    velocidad1=velocidad1+0.1;
+                    break;
+                case 1:
+                        velocidad2+=0.1;
+                        break;
+                case 2:
+                    velocidad1=velocidad1-0.1;
+                    break;
+                case 3:
+                    velocidad2-=0.1;
+                    break;
+
+            }
+    if(personaje.Choque(zombie.getX(),zombie.getZ(),1)==true)
+            band_z=1;
+    else
+
+        if(fuent.Choque(zombie.getX(),zombie.getZ(),1)==true)
+        {
+            printf("Choque");
+            band_z=1;
+        }
+
+            else
+                if(cerd.Choque(zombie.getX(),zombie.getZ(),1)==true)
+                    band_z=1;
+                else{
+                   while(i<12&&bandera!=1)
+                   {
+                       if(casa[i].Choque(zombie.getX(),zombie.getZ(),1)==true)
+                       {
+                           bandera=1;
+                           band_z=1;
+                       }
+                       i++;
+
+                   }
+
+                   if(bandera==1)
+                        band_z=1;
+                   else
+                   {
+                        i=0;
+                       while(i<8&&bandera!=1)
+                        {
+                       if(arb[i].Choque(zombie.getX(),zombie.getZ(),1)==true)
+                       {
+                           bandera=1;
+                           //return true;
+                       }
+
+                       i++;
+
+                    }
+                    if(bandera==1)
+                        band_z=1;
+                    else
+                        band_z=0;
+                    }
+                }
+
+
+
+
+
+
+//_____________________________________________________________________________________________________________________
+/*
+        if(fuent.Choque(cerd.getX(),zombie.getZ(),1)==false)
+            band_z=1;
+
+            else
+                if(cerd.Choque(cerd.getX(),zombie.getZ(),1)==false)
+                    band_z=1;
+                else{
+                   while(i<12&&bandera!=1)
+                   {
+                       if(casa[i].Choque(zombie.getX(),zombie.getZ(),1)==false)
+                       {
+                           bandera=1;
+                           band_z=1;
+                       }
+                       i++;
+
+                   }
+
+                   if(bandera==1)
+                        band_z=1;
+                   else
+                   {
+                        i=0;
+                       while(i<8&&bandera!=1)
+                        {
+                       if(arb[i].cerd(zombie.getX(),zombie.getZ(),1)==false)
+                       {
+                           bandera=1;
+                           //return true;
+                       }
+
+                       i++;
+
+                    }
+                    if(bandera==1)
+                        band_z=1;
+                    else
+                        band_z=0;
+                        }
+                   }
+
+        //velocidad1=velocidad1+0.1;
+
+
+/*
+    if(velocidad1<=40)
     {
         velocidad1=velocidad1+0.1;
         cerd.update(0);
@@ -332,7 +517,20 @@ void Escenario::update()
     }
     else
     {
-        cerd.update(1);
-        zombie.update(1);
-    }
+        //velocidad1=velocidad1+0.1;
+        zombie.update(0);
+        if(velocidad1>=40&&grado_zom<=90||velocidad2<=90)
+        {
+            if(velocidad1>=40&&grado_zom<=90)
+            {
+                grado_zom+=0.5;
+                zombie.update(0);
+                velocidad2+=0.1;
+            }
+            if(velocidad2<=90)
+                velocidad2+=0.1;
+        }
+        //cerd.update(1);
+        //zombie.update(1);
+    }*/
 }

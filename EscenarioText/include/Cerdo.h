@@ -31,6 +31,8 @@ class Cerdo
         void update(int bandera);
 
         float* getCentro();
+        float getX();
+        float getZ();
         float getRadio();
         //void setCentro(float p1[],float p2[],float x,float y,float z);
         void Rotate(float,float ,float ,float );

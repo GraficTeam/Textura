@@ -17,8 +17,13 @@ class Steve
         float centro[3]={0,0,0};
         float radio;
         int band=0;
+        int band2=0;
         Textur t;
         Colision col;
+
+        float grado=0;
+        float mov=0;
+
 
     public:
         Steve();
@@ -31,6 +36,7 @@ class Steve
         void Scale(float s);
         bool Choque(float,float,float);
         void draw();
+        void update(int bandera);
 };
 
 #endif // STEVE_H

@@ -27,10 +27,16 @@ class Escenario
         Fuente fuente;
         Fuente fuent;
         Casa casa[12];
+        Casa casita;
         nube nub;
         Colision coli;
         //Variable de control
+        int band_z=1;
+         int grado=rand() % 4;
          float velocidad1=0;
+         float velocidad2=0;
+         float grado_zom=0;
+         float grado_cerd=0;
 
         float Tarb[8][3]={{-13,0,-7},
                            {-13,0,8},

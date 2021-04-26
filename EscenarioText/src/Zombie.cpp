@@ -135,6 +135,14 @@ float* Zombie::getCentro()
 {
     return centro;
 }
+float Zombie::getX()
+{
+    return centro[0];
+}
+float Zombie::getZ()
+{
+    return centro[2];
+}
 
 float Zombie::getRadio()
 {
