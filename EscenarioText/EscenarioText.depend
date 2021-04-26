@@ -107,7 +107,7 @@
 	<math.h>
 	"Escenario.h"
 
-1619370941 c:\users\victor\desktop\proyectos\textura\escenariotext\include\steve.h
+1619408032 c:\users\victor\desktop\proyectos\textura\escenariotext\include\steve.h
 	<GL/glut.h>
 	<stdlib.h>
 	"Textur.h"
@@ -123,19 +123,19 @@
 	"Textur.h"
 	"Colision.h"
 
-1619370941 c:\users\victor\desktop\proyectos\textura\escenariotext\include\cerdo.h
+1619408032 c:\users\victor\desktop\proyectos\textura\escenariotext\include\cerdo.h
 	<GL/glut.h>
 	<stdlib.h>
 	"Textur.h"
 	"Colision.h"
 
-1619370941 c:\users\victor\desktop\proyectos\textura\escenariotext\include\zombie.h
+1619408032 c:\users\victor\desktop\proyectos\textura\escenariotext\include\zombie.h
 	<GL/glut.h>
 	<stdlib.h>
 	"Textur.h"
 	"Colision.h"
 
-1619370942 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\cerdo.cpp
+1619408032 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\cerdo.cpp
 	"Cerdo.h"
 
 1619370942 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\fuente.cpp
@@ -146,10 +146,10 @@
 	<windows.h>
 	"GL/gl.h"
 
-1619371185 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\steve.cpp
+1619408032 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\steve.cpp
 	"Steve.h"
 
-1619370943 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\zombie.cpp
+1619408032 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\zombie.cpp
 	"Zombie.h"
 
 1618985134 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\zomibe.cpp
@@ -230,7 +230,7 @@
 1619370942 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\textur.cpp
 	"Textur.h"
 
-1619370941 c:\users\victor\desktop\proyectos\textura\escenariotext\include\escenario.h
+1619415303 c:\users\victor\desktop\proyectos\textura\escenariotext\include\escenario.h
 	<GL/glut.h>
 	<stdlib.h>
 	<math.h>
@@ -244,7 +244,7 @@
 	"nube.h"
 	"Casa.h"
 
-1619371185 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\escenario.cpp
+1619415770 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\escenario.cpp
 	"Escenario.h"
 
 1619370941 c:\users\victor\desktop\proyectos\textura\escenariotext\include\arbol.h

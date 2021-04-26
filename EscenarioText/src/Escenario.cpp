@@ -197,8 +197,8 @@ void Escenario::draw(float x,float y,float z)
     glPopMatrix();
 
     glPushMatrix();
-    cerd.Translate(25-velocidad1,0,-1.5);
-    cerd.Rotate(270,0,1,0);
+    cerd.Translate(moviC[1],0,moviC[2]);
+    cerd.Rotate(moviC[0],0,1,0);
     cerd.draw();
     glPopMatrix();
 
@@ -456,6 +456,89 @@ void Escenario::update()
                         band_z=0;
                     }
                 }
+    switch((int)moviC[3])
+    {
+        case 0: if(moviC[2]<12)
+                    moviC[2]+=0.1;
+                else
+                {
+                    moviC[0]=90;
+                    moviC[3]=1;
+                }
+                break;
+        case 1: if(moviC[1]<-50)
+                    moviC[1]+=0.1;
+                else
+                {
+                    moviC[0]=0;
+                    moviC[3]=2;
+                }
+                break;
+        case 2: if(moviC[2]<22)
+                    moviC[2]+=0.1;
+                else
+                {
+                    moviC[0]=90;
+                    moviC[3]=3;
+                }
+                break;
+        case 3: if(moviC[1]<-35)
+                    moviC[1]+=0.1;
+                else
+                {
+                    moviC[0]=180;
+                    moviC[3]=4;
+                }
+                break;
+        case 4: if(moviC[2]>12)
+                    moviC[2]-=0.1;
+                else
+                {
+                    moviC[0]=90;
+                    moviC[3]=5;
+                }
+                break;
+        case 5: if(moviC[1]<-20)
+                    moviC[1]+=0.1;
+                else
+                {
+                    moviC[0]=180;
+                    moviC[3]=6;
+                }
+                break;
+        case 6: if(moviC[2]>8)
+                    moviC[2]-=0.1;
+                else
+                {
+                    moviC[0]=90;
+                    moviC[3]=7;
+                }
+                break;
+        case 7: if(moviC[1]<40)
+                    moviC[1]+=0.1;
+                else
+                {
+                    moviC[0]=180;
+                    moviC[3]=8;
+                }
+                break;
+        case 8:if(moviC[2]>-10)
+                    moviC[2]-=0.1;
+                else
+                {
+                    moviC[0]=270;
+                    moviC[3]=9;
+                }
+                break;
+        case 9: if(moviC[1]>-80)
+                    moviC[1]-=0.1;
+                else
+                {
+                    moviC[0]=0;
+                    moviC[3]=0;
+                }
+                break;
+    }
 
 
 

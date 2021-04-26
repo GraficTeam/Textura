@@ -37,6 +37,7 @@ class Escenario
          float velocidad2=0;
          float grado_zom=0;
          float grado_cerd=0;
+         float moviC[4]={0,-80,-10,0};
 
         float Tarb[8][3]={{-13,0,-7},
                            {-13,0,8},
