@@ -215,6 +215,12 @@ void Escenario::draw(float x,float y,float z)
     zombie.draw();
     glPopMatrix();
 
+    glPushMatrix();
+    zombie2.Translate(moviZ[1],0,moviZ[2]);
+    zombie2.Rotate(moviZ[0],0,1,0);
+    zombie2.draw();
+    glPopMatrix();
+
 
     //Nubes
 
@@ -351,10 +357,30 @@ bool Escenario::Choque(float x,float z)
 void Escenario::update()
 {
     personaje.update(0);
+     zombie2.update(0);
+    zombie.update(0);
+    cerd.update(0);
     int i=0;
-
+    // band_z=1;
     int bandera=0;
 
+    //while
+    //colisiones Zombie
+
+/*
+    if(casita.Choque(zombie.getX(),zombie.getZ(),1)==false)
+    {
+        velocidad1=velocidad1+0.1;
+        zombie.update(0);
+    }
+    else
+    {
+        zombie.update(0);
+        grado_zom=90;
+        zombie.update(1);
+        if (grado_zom==90)
+            velocidad2+=0.1;
+    }*/
     if(zombie.getZ()<-50||zombie.getZ()>40||zombie.getX()<-40||zombie.getX()>70)
     {
         grado=rand() % 4;
@@ -374,6 +400,7 @@ void Escenario::update()
                     break;
 
             }
+
     }
         if(band_z==1)
         {
@@ -459,6 +486,114 @@ void Escenario::update()
                         band_z=0;
                     }
                 }
+    switch((int)moviZ[3])
+    {
+        case 0: if(moviZ[1]>0)
+                    moviZ[1]-=0.1;
+                else
+                {
+                    moviZ[0]=0;
+                    moviZ[3]=1;
+                }
+                break;
+        case 1: if(moviZ[2]<40)
+                    moviZ[2]+=0.1;
+                else
+                {
+                    moviZ[0]=270;
+                    moviZ[3]=2;
+                }
+                break;
+        case 2: if(moviZ[1]>-80)
+                    moviZ[1]-=0.1;
+                else
+                {
+                    moviZ[0]=180;
+                    moviZ[3]=3;
+                }
+                break;
+        case 3: if(moviZ[2]>-40)
+                    moviZ[2]-=0.1;
+                else
+                {
+                    moviZ[0]=90;
+                    moviZ[3]=4;
+                }
+                break;
+        case 4: if(moviZ[1]<0)
+                    moviZ[1]+=0.1;
+                else
+                {
+                    moviZ[0]=0;
+                    moviZ[3]=5;
+                }
+                break;
+        case 5: if(moviZ[2]<-5)
+                    moviZ[2]+=0.1;
+                else
+                {
+                    moviZ[0]=90;
+                    moviZ[3]=6;
+                }
+                break;
+        case 6: if(moviZ[1]<40)
+                    moviZ[1]+=0.1;
+                else
+                {
+                    moviZ[0]=180;
+                    moviZ[3]=7;
+                }
+                break;
+        case 7: if(moviZ[2]>-40)
+                    moviZ[2]-=0.1;
+                else
+                {
+                    moviZ[0]=90;
+                    moviZ[3]=8;
+                }
+                break;
+        case 8:if(moviZ[1]<58)
+                    moviZ[1]+=0.1;
+                else
+                {
+                    moviZ[0]=0;
+                    moviZ[3]=9;
+                }
+                break;
+        case 9: if(moviZ[2]<5)
+                    moviZ[2]+=0.1;
+                else
+                {
+                    moviZ[0]=270;
+                    moviZ[3]=10;
+                }
+                break;
+        case 10: if(moviZ[1]>40)
+                    moviZ[1]-=0.1;
+                else
+                {
+                    moviZ[0]=180;
+                    moviZ[3]=11;
+                }
+                break;
+        case 11: if(moviZ[2]>0)
+                    moviZ[2]-=0.1;
+                else
+                {
+                    moviZ[0]=270;
+                    moviZ[3]=12;
+                }
+                break;
+        case 12: if(moviZ[1]>0)
+                    moviZ[1]-=0.1;
+                else
+                {
+                    moviZ[0]=270;
+                    moviZ[3]=0;
+                }
+                break;
+    }
+
     switch((int)moviC[3])
     {
         case 0: if(moviC[2]<12)
@@ -544,79 +679,4 @@ void Escenario::update()
     }
 
 
-
-
-
-
-//_____________________________________________________________________________________________________________________
-/*
-        if(fuent.Choque(cerd.getX(),zombie.getZ(),1)==false)
-            band_z=1;
-
-            else
-                if(cerd.Choque(cerd.getX(),zombie.getZ(),1)==false)
-                    band_z=1;
-                else{
-                   while(i<12&&bandera!=1)
-                   {
-                       if(casa[i].Choque(zombie.getX(),zombie.getZ(),1)==false)
-                       {
-                           bandera=1;
-                           band_z=1;
-                       }
-                       i++;
-
-                   }
-
-                   if(bandera==1)
-                        band_z=1;
-                   else
-                   {
-                        i=0;
-                       while(i<8&&bandera!=1)
-                        {
-                       if(arb[i].cerd(zombie.getX(),zombie.getZ(),1)==false)
-                       {
-                           bandera=1;
-                           //return true;
-                       }
-
-                       i++;
-
-                    }
-                    if(bandera==1)
-                        band_z=1;
-                    else
-                        band_z=0;
-                        }
-                   }
-
-        //velocidad1=velocidad1+0.1;
-
-
-/*
-    if(velocidad1<=40)
-    {
-        velocidad1=velocidad1+0.1;
-        cerd.update(0);
-        zombie.update(0);
-    }
-    else
-    {
-        //velocidad1=velocidad1+0.1;
-        zombie.update(0);
-        if(velocidad1>=40&&grado_zom<=90||velocidad2<=90)
-        {
-            if(velocidad1>=40&&grado_zom<=90)
-            {
-                grado_zom+=0.5;
-                zombie.update(0);
-                velocidad2+=0.1;
-            }
-            if(velocidad2<=90)
-                velocidad2+=0.1;
-        }
-        //cerd.update(1);
-        //zombie.update(1);
-    }*/
 }

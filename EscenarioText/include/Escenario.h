@@ -22,6 +22,7 @@ class Escenario
         Textur t;
         Personaje personaje, steves[6];;
         Zombie zombie;
+        Zombie zombie2;
         Cerdo cerd;
         arbol arb[8];
         Fuente fuente;
@@ -38,6 +39,8 @@ class Escenario
          float grado_zom=0;
          float grado_cerd=0;
          float moviC[4]={0,-80,-10,0};
+        float moviZ[4]={270,20,0,0};
+
 
         float Tarb[8][3]={{-13,0,-7},
                            {-13,0,8},

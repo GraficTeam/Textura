@@ -265,7 +265,7 @@
 	<math.h>
 	"Escenario.h"
 
-1619405034 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\escenario.h
+1619421164 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\escenario.h
 	<GL/glut.h>
 	<stdlib.h>
 	<math.h>
@@ -274,12 +274,12 @@
 	"Zombie.h"
 	"Cerdo.h"
 	"Fuente.h"
-	"Steve.h"
+	"Personaje.h"
 	"Colision.h"
 	"nube.h"
 	"Casa.h"
 
-1619321158 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\textur.h
+1619420933 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\textur.h
 	<GL/glut.h>
 	<stdlib.h>
 	"RgbImage.h"
@@ -312,7 +312,7 @@
 	"Textur.h"
 	"Colision.h"
 
-1619406256 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\escenario.cpp
+1619420933 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\escenario.cpp
 	"Escenario.h"
 
 1619327744 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\fuente.cpp
@@ -332,7 +332,7 @@
 1619392606 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\steve.cpp
 	"Steve.h"
 
-1619321159 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\textur.cpp
+1619420933 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\textur.cpp
 	"Textur.h"
 
 1619394458 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\zombie.cpp
@@ -469,4 +469,13 @@
 	<stdlib.h>
 	"Textur.h"
 	"Colision.h"
+
+1619420933 c:\users\hucom\documents\github\proyecto\textura\escenariotext\include\personaje.h
+	<GL/glut.h>
+	<stdlib.h>
+	"Textur.h"
+	"Colision.h"
+
+1619420933 source:c:\users\hucom\documents\github\proyecto\textura\escenariotext\src\personaje.cpp
+	"Personaje.h"
 
