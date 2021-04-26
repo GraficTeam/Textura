@@ -275,7 +275,7 @@ void Escenario::draw(float x,float y,float z)
     {
         glPushMatrix();
         steves[i].Rotate(270,0,1,0);
-        glTranslated(Tsteve[i][0],Tsteve[i][1],Tsteve[i][2]);
+        steves[i].Translate(Tsteve[i][0],Tsteve[i][1],Tsteve[i][2]);
         steves[i].draw();
         glPopMatrix();
     }
@@ -286,7 +286,7 @@ void Escenario::draw(float x,float y,float z)
     {
         glPushMatrix();
         steves[i].Rotate(90,0,1,0);
-        glTranslated(Tsteve[i][0],Tsteve[i][1],Tsteve[i][2]);
+        steves[i].Translate(Tsteve[i][0],Tsteve[i][1],Tsteve[i][2]);
         steves[i].draw();
         glPopMatrix();
     }
@@ -306,8 +306,9 @@ bool Escenario::Choque(float x,float z)
 
     int i=0;
     int bandera=0;
-    if(cerd.Choque(x,z,1.0))
-        return cerd.Choque(x,z,1.0);
+
+    if(zombie2.Choque(x,z,1.0)==true)
+        return zombie2.Choque(x,z,1.0);
     else
         if(zombie.Choque(x,z,1.0)==true)
             return zombie.Choque(x,z,1.0);
@@ -348,10 +349,26 @@ bool Escenario::Choque(float x,float z)
                     if(bandera==1)
                         return true;
                     else
-                        return false;
-                        }
-                   }
+                    {
+                        i=0;
+                       while(i<6&&bandera!=1)
+                        {
+                           if(steves[i].Choque(x,z,1.0)==true)
+                           {
+                               bandera=1;
+                           }
 
+                            i++;
+                        }
+
+
+                    }
+                    if(bandera==1)
+                        return true;
+                    else
+                        return false;
+            }
+                }
 
 }
 void Escenario::update()
