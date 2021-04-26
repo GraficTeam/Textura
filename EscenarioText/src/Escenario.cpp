@@ -360,8 +360,6 @@ bool Escenario::Choque(float x,float z)
 
                             i++;
                         }
-
-
                     }
                     if(bandera==1)
                         return true;
@@ -398,7 +396,7 @@ void Escenario::update()
         if (grado_zom==90)
             velocidad2+=0.1;
     }*/
-    if(zombie.getZ()<-50||zombie.getZ()>40||zombie.getX()<-40||zombie.getX()>70)
+    if(zombie.getZ()<-80||zombie.getZ()>80||zombie.getX()<-80||zombie.getX()>80)
     {
         grado=rand() % 4;
             switch (grado)
