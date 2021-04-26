@@ -14,7 +14,6 @@ class Textur
         void loadTextureFromFile(char*,int);
         void texturiza(int,float (*)[3] ,int);
         void texturizaM(int,float (*)[3] ,int);
-        void multiplicar(float (*)[4],float aux[]);
 };
 
 #endif // TEXTUR_H

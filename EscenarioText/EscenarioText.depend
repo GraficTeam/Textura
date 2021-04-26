@@ -222,15 +222,15 @@
 	<stdlib.h>
 	"RgbImage.h"
 
-1619370941 c:\users\victor\desktop\proyectos\textura\escenariotext\include\textur.h
+1619419509 c:\users\victor\desktop\proyectos\textura\escenariotext\include\textur.h
 	<GL/glut.h>
 	<stdlib.h>
 	"RgbImage.h"
 
-1619370942 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\textur.cpp
+1619419509 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\textur.cpp
 	"Textur.h"
 
-1619415303 c:\users\victor\desktop\proyectos\textura\escenariotext\include\escenario.h
+1619420509 c:\users\victor\desktop\proyectos\textura\escenariotext\include\escenario.h
 	<GL/glut.h>
 	<stdlib.h>
 	<math.h>
@@ -239,12 +239,12 @@
 	"Zombie.h"
 	"Cerdo.h"
 	"Fuente.h"
-	"Steve.h"
+	"Personaje.h"
 	"Colision.h"
 	"nube.h"
 	"Casa.h"
 
-1619415770 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\escenario.cpp
+1619419509 source:c:\users\victor\desktop\proyectos\textura\escenariotext\src\escenario.cpp
 	"Escenario.h"
 
 1619370941 c:\users\victor\desktop\proyectos\textura\escenariotext\include\arbol.h
@@ -463,4 +463,10 @@
 
 1619416692 source:c:\users\btpas\documents\github\textura\escenariotext\src\nube.cpp
 	"nube.h"
+
+1619420077 c:\users\victor\desktop\proyectos\textura\escenariotext\include\personaje.h
+	<GL/glut.h>
+	<stdlib.h>
+	"Textur.h"
+	"Colision.h"
 

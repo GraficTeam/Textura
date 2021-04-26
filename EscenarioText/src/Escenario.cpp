@@ -300,10 +300,9 @@ bool Escenario::Choque(float x,float z)
 
     int i=0;
     int bandera=0;
-    /*if(personaje.Choque(x,z,1.0)==true)
-         return personaje.Choque(x,z,1.0);
+    if(cerd.Choque(x,z,1.0))
+        return cerd.Choque(x,z,1.0);
     else
-    {*/
         if(zombie.Choque(x,z,1.0)==true)
             return zombie.Choque(x,z,1.0);
         else
@@ -335,7 +334,6 @@ bool Escenario::Choque(float x,float z)
                        if(arb[i].Choque(x,z,1.0)==true)
                        {
                            bandera=1;
-                           //return true;
                        }
 
                        i++;
@@ -354,26 +352,9 @@ void Escenario::update()
 {
     personaje.update(0);
     int i=0;
-    // band_z=1;
+
     int bandera=0;
 
-    //while
-    //colisiones Zombie
-
-/*
-    if(casita.Choque(zombie.getX(),zombie.getZ(),1)==false)
-    {
-        velocidad1=velocidad1+0.1;
-        zombie.update(0);
-    }
-    else
-    {
-        zombie.update(0);
-        grado_zom=90;
-        zombie.update(1);
-        if (grado_zom==90)
-            velocidad2+=0.1;
-    }*/
     if(zombie.getZ()<-50||zombie.getZ()>40||zombie.getX()<-40||zombie.getX()>70)
     {
         grado=rand() % 4;
@@ -393,7 +374,6 @@ void Escenario::update()
                     break;
 
             }
-
     }
         if(band_z==1)
         {

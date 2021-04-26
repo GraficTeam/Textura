@@ -49,8 +49,8 @@
 		<Unit filename="include/Colision.h" />
 		<Unit filename="include/Escenario.h" />
 		<Unit filename="include/Fuente.h" />
+		<Unit filename="include/Personaje.h" />
 		<Unit filename="include/RgbImage.h" />
-		<Unit filename="include/Steve.h" />
 		<Unit filename="include/Textur.h" />
 		<Unit filename="include/Zombie.h" />
 		<Unit filename="include/arbol.h" />
@@ -62,8 +62,8 @@
 		<Unit filename="src/Colision.cpp" />
 		<Unit filename="src/Escenario.cpp" />
 		<Unit filename="src/Fuente.cpp" />
+		<Unit filename="src/Personaje.cpp" />
 		<Unit filename="src/RgbImage.cpp" />
-		<Unit filename="src/Steve.cpp" />
 		<Unit filename="src/Textur.cpp" />
 		<Unit filename="src/Zombie.cpp" />
 		<Unit filename="src/arbol.cpp" />

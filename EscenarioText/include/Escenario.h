@@ -9,7 +9,7 @@
 #include "Zombie.h"
 #include "Cerdo.h"
 #include "Fuente.h"
-#include "Steve.h"
+#include "Personaje.h"
 #include "Colision.h"
 #include "nube.h"
 #include "Casa.h"
@@ -20,7 +20,7 @@ class Escenario
         char* filename = "pasto.bmp";
         float pasto[4][3];
         Textur t;
-        Steve personaje, steves[6];;
+        Personaje personaje, steves[6];;
         Zombie zombie;
         Cerdo cerd;
         arbol arb[8];
